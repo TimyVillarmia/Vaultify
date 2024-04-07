@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="vaultify_colorPrimary">#121212</color>
+	<color name="vaultify_colorPrimaryVariant">#25202B</color>
+	<color name="vaultify_colorOnPrimary">#ffffff</color>
+	<color name="vaultify_colorSecondary">#6FCF97</color>
+	<color name="vaultify_colorSecondaryVariant">#319F43</color>
+	<color name="vaultify_colorOnSecondary">#000000</color>
+	<color name="vaultify_colorError">#B00020</color>
+	<color name="vaultify_colorOnError">#ffffff</color>
+	<color name="vaultify_colorBackground">#25202B</color>
+	<color name="vaultify_colorOnBackground">#ffffff</color>
+</resources>
