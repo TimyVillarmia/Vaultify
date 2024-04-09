@@ -3312,112 +3312,115 @@ namespace Vaultify.Droid
 			public const int avd_show_password = 2131230813;
 			
 			// aapt resource value: 0x7F08005E
-			public const int btn_checkbox_checked_mtrl = 2131230814;
+			public const int bg = 2131230814;
 			
 			// aapt resource value: 0x7F08005F
-			public const int btn_checkbox_checked_to_unchecked_mtrl_animation = 2131230815;
+			public const int btn_checkbox_checked_mtrl = 2131230815;
 			
 			// aapt resource value: 0x7F080060
-			public const int btn_checkbox_unchecked_mtrl = 2131230816;
+			public const int btn_checkbox_checked_to_unchecked_mtrl_animation = 2131230816;
 			
 			// aapt resource value: 0x7F080061
-			public const int btn_checkbox_unchecked_to_checked_mtrl_animation = 2131230817;
+			public const int btn_checkbox_unchecked_mtrl = 2131230817;
 			
 			// aapt resource value: 0x7F080062
-			public const int btn_radio_off_mtrl = 2131230818;
+			public const int btn_checkbox_unchecked_to_checked_mtrl_animation = 2131230818;
 			
 			// aapt resource value: 0x7F080063
-			public const int btn_radio_off_to_on_mtrl_animation = 2131230819;
+			public const int btn_radio_off_mtrl = 2131230819;
 			
 			// aapt resource value: 0x7F080064
-			public const int btn_radio_on_mtrl = 2131230820;
+			public const int btn_radio_off_to_on_mtrl_animation = 2131230820;
 			
 			// aapt resource value: 0x7F080065
-			public const int btn_radio_on_to_off_mtrl_animation = 2131230821;
+			public const int btn_radio_on_mtrl = 2131230821;
 			
 			// aapt resource value: 0x7F080066
-			public const int design_bottom_navigation_item_background = 2131230822;
+			public const int btn_radio_on_to_off_mtrl_animation = 2131230822;
 			
 			// aapt resource value: 0x7F080067
-			public const int design_fab_background = 2131230823;
+			public const int design_bottom_navigation_item_background = 2131230823;
 			
 			// aapt resource value: 0x7F080068
-			public const int design_ic_visibility = 2131230824;
+			public const int design_fab_background = 2131230824;
 			
 			// aapt resource value: 0x7F080069
-			public const int design_ic_visibility_off = 2131230825;
+			public const int design_ic_visibility = 2131230825;
 			
 			// aapt resource value: 0x7F08006A
-			public const int design_password_eye = 2131230826;
+			public const int design_ic_visibility_off = 2131230826;
 			
 			// aapt resource value: 0x7F08006B
-			public const int design_snackbar_background = 2131230827;
+			public const int design_password_eye = 2131230827;
 			
 			// aapt resource value: 0x7F08006C
-			public const int ic_google = 2131230828;
+			public const int design_snackbar_background = 2131230828;
 			
 			// aapt resource value: 0x7F08006D
-			public const int ic_mtrl_chip_checked_black = 2131230829;
+			public const int ic_google = 2131230829;
 			
 			// aapt resource value: 0x7F08006E
-			public const int ic_mtrl_chip_checked_circle = 2131230830;
+			public const int ic_mtrl_chip_checked_black = 2131230830;
 			
 			// aapt resource value: 0x7F08006F
-			public const int ic_mtrl_chip_close_circle = 2131230831;
+			public const int ic_mtrl_chip_checked_circle = 2131230831;
 			
 			// aapt resource value: 0x7F080070
-			public const int line = 2131230832;
+			public const int ic_mtrl_chip_close_circle = 2131230832;
 			
 			// aapt resource value: 0x7F080071
-			public const int mtrl_snackbar_background = 2131230833;
+			public const int line = 2131230833;
 			
 			// aapt resource value: 0x7F080072
-			public const int mtrl_tabs_default_indicator = 2131230834;
+			public const int mtrl_snackbar_background = 2131230834;
 			
 			// aapt resource value: 0x7F080073
-			public const int navigation_empty_icon = 2131230835;
+			public const int mtrl_tabs_default_indicator = 2131230835;
 			
 			// aapt resource value: 0x7F080074
-			public const int notification_action_background = 2131230836;
+			public const int navigation_empty_icon = 2131230836;
 			
 			// aapt resource value: 0x7F080075
-			public const int notification_bg = 2131230837;
+			public const int notification_action_background = 2131230837;
 			
 			// aapt resource value: 0x7F080076
-			public const int notification_bg_low = 2131230838;
+			public const int notification_bg = 2131230838;
 			
 			// aapt resource value: 0x7F080077
-			public const int notification_bg_low_normal = 2131230839;
+			public const int notification_bg_low = 2131230839;
 			
 			// aapt resource value: 0x7F080078
-			public const int notification_bg_low_pressed = 2131230840;
+			public const int notification_bg_low_normal = 2131230840;
 			
 			// aapt resource value: 0x7F080079
-			public const int notification_bg_normal = 2131230841;
+			public const int notification_bg_low_pressed = 2131230841;
 			
 			// aapt resource value: 0x7F08007A
-			public const int notification_bg_normal_pressed = 2131230842;
+			public const int notification_bg_normal = 2131230842;
 			
 			// aapt resource value: 0x7F08007B
-			public const int notification_icon_background = 2131230843;
+			public const int notification_bg_normal_pressed = 2131230843;
 			
 			// aapt resource value: 0x7F08007C
-			public const int notification_template_icon_bg = 2131230844;
+			public const int notification_icon_background = 2131230844;
 			
 			// aapt resource value: 0x7F08007D
-			public const int notification_template_icon_low_bg = 2131230845;
+			public const int notification_template_icon_bg = 2131230845;
 			
 			// aapt resource value: 0x7F08007E
-			public const int notification_tile_bg = 2131230846;
+			public const int notification_template_icon_low_bg = 2131230846;
 			
 			// aapt resource value: 0x7F08007F
-			public const int notify_panel_notification_icon_bg = 2131230847;
+			public const int notification_tile_bg = 2131230847;
 			
 			// aapt resource value: 0x7F080080
-			public const int tooltip_frame_dark = 2131230848;
+			public const int notify_panel_notification_icon_bg = 2131230848;
 			
 			// aapt resource value: 0x7F080081
-			public const int tooltip_frame_light = 2131230849;
+			public const int tooltip_frame_dark = 2131230849;
+			
+			// aapt resource value: 0x7F080082
+			public const int tooltip_frame_light = 2131230850;
 			
 			static Drawable()
 			{

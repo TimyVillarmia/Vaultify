@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+	<corners
+		android:bottomLeftRadius="30dp"
+		android:bottomRightRadius="30dp"
+		android:topLeftRadius="30dp"
+		android:topRightRadius="30dp" />
+	<solid android:color="@color/vaultify_colorPrimary" />
+
+	<stroke
+		android:width="5dp"
+		android:color="@color/vaultify_colorPrimary" />
+
+	<padding
+		android:bottom="2dp"
+		android:left="2dp"
+		android:right="2dp"
+		android:top="2dp" />
+	
+	
+</shape>
