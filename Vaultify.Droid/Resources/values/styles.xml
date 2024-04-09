@@ -2,17 +2,17 @@
 
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/vaultify_colorPrimary</item>
+	<!-- Base application theme. -->
+	<style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+		<!-- Customize your theme here. -->
+		<item name="colorPrimary">@color/vaultify_colorPrimary</item>
 		<item name="colorSecondary">@color/vaultify_colorSecondary</item>
 		<item name="colorError">@color/vaultify_colorError</item>
 		<item name="android:colorBackground">@color/vaultify_colorBackground</item>
 		<item name="colorAccent">@color/vaultify_colorSecondary</item>
 		<item name="android:textColorPrimary">@color/vaultify_colorOnPrimary</item>
-		<!-- <item name="colorOnSurface">@color/vaultify_colorSecondary</item> -->
-
-</style>
+	</style>
+	
+	
 
 </resources>
