@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Vaultify.Droid</string>
     <string name="action_settings">Settings</string>
-	<string name="headline_signin">Sign In to Your Personal Account</string>
+	<string name="headline_signin">Sign In to Your Vaultify Account</string>
 	<string name="placeholder_email">Enter email</string>
 	<string name="placeholder_pass">Enter password</string>
 	<string name="button_signin">Sign in</string>
@@ -11,7 +11,7 @@
 	<string name="hyperlink_create">Create account</string>
 	<string name="separator">or</string>
 	<string name="preline_create">Don’t have an account yet?</string>
-	<string name="headline_signup">Start managing with a new account</string>
+	<string name="headline_signup">Create Your Vaultify Account</string>
 	<string name="placeholder_fullname">Enter full name</string>
 	<string name="placeholder_create_pass">Create pasword</string>
 	<string name="placeholder_confirm_pass">Confirm password</string>
