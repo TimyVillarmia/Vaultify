@@ -5,11 +5,11 @@
 		android:bottomRightRadius="30dp"
 		android:topLeftRadius="30dp"
 		android:topRightRadius="30dp" />
-	<solid android:color="@color/vaultify_colorPrimary" />
+	<solid android:color="@color/vaultify_colorContainer" />
 
 	<stroke
 		android:width="5dp"
-		android:color="@color/vaultify_colorPrimary" />
+		android:color="@color/vaultify_colorContainer" />
 
 	<padding
 		android:bottom="2dp"
