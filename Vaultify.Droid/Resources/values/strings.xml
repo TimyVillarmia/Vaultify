@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Vaultify.Droid</string>
     <string name="action_settings">Settings</string>
@@ -7,4 +8,7 @@
 	<string name="button_signin">Sign in</string>
 	<string name="hyperlink_forgot">Forgot password?</string>
 	<string name="button_google">Continue with Google</string>
+	<string name="hyperlink_create">Create account</string>
+	<string name="separator">or</string>
+	<string name="preline_create">Don’t have an account yet?</string>
 </resources>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -66,8 +67,44 @@
         android:layout_height="wrap_content"
         android:text="@string/hyperlink_forgot"
         android:gravity="end"
+        android:textAllCaps="false"
         style="@style/TextAppearance.MaterialComponents.Overline"
         />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_centerVertical="true">
+
+        <TextView
+            android:id="@+id/tvText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/separator"
+            android:textColor="@color/vaultify_colorOnPrimary"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/tvText"
+            android:background="@color/vaultify_colorOnPrimary"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/tvText"
+            android:background="@color/vaultify_colorOnPrimary"
+            />
+
+    </RelativeLayout>
+
 
     <Button
         android:id="@+id/btnGoogle"
@@ -83,6 +120,31 @@
         android:drawableStart="@drawable/ic_google"
         />
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/pretext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:text="@string/preline_create"
+            android:textColor="@color/vaultify_colorOnPrimary"/>
+
+        <TextView
+            android:id="@+id/hyperlink_create"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/pretext"
+            android:text="@string/hyperlink_create"
+            android:textColor="@color/vaultify_colorSecondary"/>
+
+
+    </RelativeLayout>
 
 
 </LinearLayout>

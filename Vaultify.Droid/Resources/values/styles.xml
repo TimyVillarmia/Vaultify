@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <resources>
 
     <!-- Base application theme. -->
@@ -9,7 +11,7 @@
 		<item name="android:colorBackground">@color/vaultify_colorBackground</item>
 		<item name="colorAccent">@color/vaultify_colorSecondary</item>
 		<item name="android:textColorPrimary">@color/vaultify_colorOnPrimary</item>
-		<item name="colorOnSurface">@color/vaultify_colorSecondary</item>
+		<!-- <item name="colorOnSurface">@color/vaultify_colorSecondary</item> -->
 
 </style>
 
