@@ -40,7 +40,6 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@android:color/black"
                 style="@style/TextAppearance.Vaultify.Body1"
         />
 
@@ -60,7 +59,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:textColor="@android:color/black"
                 style="@style/TextAppearance.Vaultify.Body1"
         />
 
@@ -151,7 +149,6 @@
                 style="@style/TextAppearance.Vaultify.Caption"
                 android:textColor="@color/vaultify_colorOnPrimary"/>
 
-
             <TextView
                 android:id="@+id/hyperlink_create"
                 android:clickable="true"
@@ -159,6 +156,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/pretext"
                 android:text="@string/hyperlink_create"
+                android:layout_alignBaseline="@id/pretext"
                 style="@style/TextAppearance.Vaultify.Caption"
                 android:textColor="@color/vaultify_colorSecondary"/>
 

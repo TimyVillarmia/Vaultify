@@ -9,7 +9,6 @@
 		<item name="colorSecondary">@color/vaultify_colorSecondary</item>
 		<item name="colorError">@color/vaultify_colorError</item>
 		<item name="colorAccent">@color/vaultify_colorSecondary</item>
-		<item name="android:textColorPrimary">@color/vaultify_colorOnPrimary</item>
 	</style>
 	
 	

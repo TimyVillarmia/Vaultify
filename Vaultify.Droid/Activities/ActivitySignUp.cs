@@ -19,6 +19,8 @@ namespace Vaultify.Droid.Activities
             base.OnCreate(savedInstanceState);
 
             // Create your application here
+            SetContentView(Resource.Layout.signup);
+
         }
     }
 }
