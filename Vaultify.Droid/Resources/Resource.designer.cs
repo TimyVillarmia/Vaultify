@@ -4081,104 +4081,116 @@ namespace Vaultify.Droid
 			// aapt resource value: 0x7F0A00D2
 			public const int text2 = 2131362002;
 			
+			// aapt resource value: 0x7F0A00D6
+			public const int textFieldconfirmPass = 2131362006;
+			
+			// aapt resource value: 0x7F0A00D7
+			public const int textFieldcreateEmail = 2131362007;
+			
+			// aapt resource value: 0x7F0A00D8
+			public const int textFieldcreatePass = 2131362008;
+			
 			// aapt resource value: 0x7F0A00D3
 			public const int textFieldEmail = 2131362003;
 			
 			// aapt resource value: 0x7F0A00D4
-			public const int textFieldPass = 2131362004;
-			
-			// aapt resource value: 0x7F0A00D9
-			public const int textinput_counter = 2131362009;
-			
-			// aapt resource value: 0x7F0A00DA
-			public const int textinput_error = 2131362010;
-			
-			// aapt resource value: 0x7F0A00DB
-			public const int textinput_helper_text = 2131362011;
+			public const int textFieldFullname = 2131362004;
 			
 			// aapt resource value: 0x7F0A00D5
-			public const int textSpacerNoButtons = 2131362005;
-			
-			// aapt resource value: 0x7F0A00D6
-			public const int textSpacerNoTitle = 2131362006;
-			
-			// aapt resource value: 0x7F0A00D7
-			public const int textStart = 2131362007;
-			
-			// aapt resource value: 0x7F0A00D8
-			public const int text_input_password_toggle = 2131362008;
-			
-			// aapt resource value: 0x7F0A00DC
-			public const int time = 2131362012;
+			public const int textFieldPass = 2131362005;
 			
 			// aapt resource value: 0x7F0A00DD
-			public const int title = 2131362013;
+			public const int textinput_counter = 2131362013;
 			
 			// aapt resource value: 0x7F0A00DE
-			public const int titleDividerNoCustom = 2131362014;
+			public const int textinput_error = 2131362014;
 			
 			// aapt resource value: 0x7F0A00DF
-			public const int title_template = 2131362015;
+			public const int textinput_helper_text = 2131362015;
+			
+			// aapt resource value: 0x7F0A00D9
+			public const int textSpacerNoButtons = 2131362009;
+			
+			// aapt resource value: 0x7F0A00DA
+			public const int textSpacerNoTitle = 2131362010;
+			
+			// aapt resource value: 0x7F0A00DB
+			public const int textStart = 2131362011;
+			
+			// aapt resource value: 0x7F0A00DC
+			public const int text_input_password_toggle = 2131362012;
 			
 			// aapt resource value: 0x7F0A00E0
-			public const int top = 2131362016;
+			public const int time = 2131362016;
 			
 			// aapt resource value: 0x7F0A00E1
-			public const int topPanel = 2131362017;
+			public const int title = 2131362017;
 			
 			// aapt resource value: 0x7F0A00E2
-			public const int touch_outside = 2131362018;
+			public const int titleDividerNoCustom = 2131362018;
 			
 			// aapt resource value: 0x7F0A00E3
-			public const int transition_current_scene = 2131362019;
+			public const int title_template = 2131362019;
 			
 			// aapt resource value: 0x7F0A00E4
-			public const int transition_layout_save = 2131362020;
+			public const int top = 2131362020;
 			
 			// aapt resource value: 0x7F0A00E5
-			public const int transition_position = 2131362021;
+			public const int topPanel = 2131362021;
 			
 			// aapt resource value: 0x7F0A00E6
-			public const int transition_scene_layoutid_cache = 2131362022;
+			public const int touch_outside = 2131362022;
 			
 			// aapt resource value: 0x7F0A00E7
-			public const int transition_transform = 2131362023;
+			public const int transition_current_scene = 2131362023;
 			
 			// aapt resource value: 0x7F0A00E8
-			public const int tvText = 2131362024;
+			public const int transition_layout_save = 2131362024;
 			
 			// aapt resource value: 0x7F0A00E9
-			public const int @unchecked = 2131362025;
+			public const int transition_position = 2131362025;
 			
 			// aapt resource value: 0x7F0A00EA
-			public const int uniform = 2131362026;
+			public const int transition_scene_layoutid_cache = 2131362026;
 			
 			// aapt resource value: 0x7F0A00EB
-			public const int unlabeled = 2131362027;
+			public const int transition_transform = 2131362027;
 			
 			// aapt resource value: 0x7F0A00EC
-			public const int up = 2131362028;
+			public const int tvText = 2131362028;
 			
 			// aapt resource value: 0x7F0A00ED
-			public const int useLogo = 2131362029;
+			public const int @unchecked = 2131362029;
 			
 			// aapt resource value: 0x7F0A00EE
-			public const int view_offset_helper = 2131362030;
+			public const int uniform = 2131362030;
 			
 			// aapt resource value: 0x7F0A00EF
-			public const int view_tree_saved_state_registry_owner = 2131362031;
+			public const int unlabeled = 2131362031;
 			
 			// aapt resource value: 0x7F0A00F0
-			public const int visible = 2131362032;
+			public const int up = 2131362032;
 			
 			// aapt resource value: 0x7F0A00F1
-			public const int visible_removing_fragment_view_tag = 2131362033;
+			public const int useLogo = 2131362033;
 			
 			// aapt resource value: 0x7F0A00F2
-			public const int withText = 2131362034;
+			public const int view_offset_helper = 2131362034;
 			
 			// aapt resource value: 0x7F0A00F3
-			public const int wrap_content = 2131362035;
+			public const int view_tree_saved_state_registry_owner = 2131362035;
+			
+			// aapt resource value: 0x7F0A00F4
+			public const int visible = 2131362036;
+			
+			// aapt resource value: 0x7F0A00F5
+			public const int visible_removing_fragment_view_tag = 2131362037;
+			
+			// aapt resource value: 0x7F0A00F6
+			public const int withText = 2131362038;
+			
+			// aapt resource value: 0x7F0A00F7
+			public const int wrap_content = 2131362039;
 			
 			static Id()
 			{
@@ -4472,7 +4484,10 @@ namespace Vaultify.Droid
 			public const int signin = 2131558457;
 			
 			// aapt resource value: 0x7F0D003A
-			public const int support_simple_spinner_dropdown_item = 2131558458;
+			public const int signup = 2131558458;
+			
+			// aapt resource value: 0x7F0D003B
+			public const int support_simple_spinner_dropdown_item = 2131558459;
 			
 			static Layout()
 			{
@@ -4609,76 +4624,97 @@ namespace Vaultify.Droid
 			public const int button_signin = 2131689504;
 			
 			// aapt resource value: 0x7F0F0021
-			public const int character_counter_content_description = 2131689505;
+			public const int button_signup = 2131689505;
 			
 			// aapt resource value: 0x7F0F0022
-			public const int character_counter_pattern = 2131689506;
+			public const int character_counter_content_description = 2131689506;
 			
 			// aapt resource value: 0x7F0F0023
-			public const int copy_toast_msg = 2131689507;
+			public const int character_counter_pattern = 2131689507;
 			
 			// aapt resource value: 0x7F0F0024
-			public const int fab_transformation_scrim_behavior = 2131689508;
+			public const int copy_toast_msg = 2131689508;
 			
 			// aapt resource value: 0x7F0F0025
-			public const int fab_transformation_sheet_behavior = 2131689509;
+			public const int fab_transformation_scrim_behavior = 2131689509;
 			
 			// aapt resource value: 0x7F0F0026
-			public const int fallback_menu_item_copy_link = 2131689510;
+			public const int fab_transformation_sheet_behavior = 2131689510;
 			
 			// aapt resource value: 0x7F0F0027
-			public const int fallback_menu_item_open_in_browser = 2131689511;
+			public const int fallback_menu_item_copy_link = 2131689511;
 			
 			// aapt resource value: 0x7F0F0028
-			public const int fallback_menu_item_share_link = 2131689512;
+			public const int fallback_menu_item_open_in_browser = 2131689512;
 			
 			// aapt resource value: 0x7F0F0029
-			public const int headline_signin = 2131689513;
+			public const int fallback_menu_item_share_link = 2131689513;
 			
 			// aapt resource value: 0x7F0F002A
-			public const int hide_bottom_view_on_scroll_behavior = 2131689514;
+			public const int headline_signin = 2131689514;
 			
 			// aapt resource value: 0x7F0F002B
-			public const int hyperlink_create = 2131689515;
+			public const int headline_signup = 2131689515;
 			
 			// aapt resource value: 0x7F0F002C
-			public const int hyperlink_forgot = 2131689516;
+			public const int hide_bottom_view_on_scroll_behavior = 2131689516;
 			
 			// aapt resource value: 0x7F0F002D
-			public const int mtrl_chip_close_icon_content_description = 2131689517;
+			public const int hyperlink_create = 2131689517;
 			
 			// aapt resource value: 0x7F0F002E
-			public const int password_toggle_content_description = 2131689518;
+			public const int hyperlink_forgot = 2131689518;
 			
 			// aapt resource value: 0x7F0F002F
-			public const int path_password_eye = 2131689519;
+			public const int hyperlink_signin = 2131689519;
 			
 			// aapt resource value: 0x7F0F0030
-			public const int path_password_eye_mask_strike_through = 2131689520;
+			public const int mtrl_chip_close_icon_content_description = 2131689520;
 			
 			// aapt resource value: 0x7F0F0031
-			public const int path_password_eye_mask_visible = 2131689521;
+			public const int password_toggle_content_description = 2131689521;
 			
 			// aapt resource value: 0x7F0F0032
-			public const int path_password_strike_through = 2131689522;
+			public const int path_password_eye = 2131689522;
 			
 			// aapt resource value: 0x7F0F0033
-			public const int placeholder_email = 2131689523;
+			public const int path_password_eye_mask_strike_through = 2131689523;
 			
 			// aapt resource value: 0x7F0F0034
-			public const int placeholder_pass = 2131689524;
+			public const int path_password_eye_mask_visible = 2131689524;
 			
 			// aapt resource value: 0x7F0F0035
-			public const int preline_create = 2131689525;
+			public const int path_password_strike_through = 2131689525;
 			
 			// aapt resource value: 0x7F0F0036
-			public const int search_menu_title = 2131689526;
+			public const int placeholder_confirm_pass = 2131689526;
 			
 			// aapt resource value: 0x7F0F0037
-			public const int separator = 2131689527;
+			public const int placeholder_create_pass = 2131689527;
 			
 			// aapt resource value: 0x7F0F0038
-			public const int status_bar_notification_info_overflow = 2131689528;
+			public const int placeholder_email = 2131689528;
+			
+			// aapt resource value: 0x7F0F0039
+			public const int placeholder_fullname = 2131689529;
+			
+			// aapt resource value: 0x7F0F003A
+			public const int placeholder_pass = 2131689530;
+			
+			// aapt resource value: 0x7F0F003B
+			public const int preline_create = 2131689531;
+			
+			// aapt resource value: 0x7F0F003C
+			public const int preline_signin = 2131689532;
+			
+			// aapt resource value: 0x7F0F003D
+			public const int search_menu_title = 2131689533;
+			
+			// aapt resource value: 0x7F0F003E
+			public const int separator = 2131689534;
+			
+			// aapt resource value: 0x7F0F003F
+			public const int status_bar_notification_info_overflow = 2131689535;
 			
 			static String()
 			{

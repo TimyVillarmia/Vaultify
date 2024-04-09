@@ -11,4 +11,11 @@
 	<string name="hyperlink_create">Create account</string>
 	<string name="separator">or</string>
 	<string name="preline_create">Don’t have an account yet?</string>
+	<string name="headline_signup">Start managing with a new account</string>
+	<string name="placeholder_fullname">Enter full name</string>
+	<string name="placeholder_create_pass">Create pasword</string>
+	<string name="placeholder_confirm_pass">Confirm password</string>
+	<string name="button_signup">Create New Account</string>
+	<string name="preline_signin">Already have an account?</string>
+	<string name="hyperlink_signin">Sign in</string>
 </resources>
