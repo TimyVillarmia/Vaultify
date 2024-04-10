@@ -42,16 +42,37 @@ namespace Vaultify.Droid.Common
             return database;
         }
 
+        /*
+         Check current auth state
+         Check if user is signed in (non-null) and update UI accordingly.
 
-        public void Login()
+        return 'true' if user is signed 
+        otherwise return 'false
+         */
+        public bool isUserCurrentlySignedIn()
         {
             throw new NotImplementedException();
         }
 
-        public void Register()
+        /*
+         Create a new signIn method which takes in an email address and password,
+        validates them, and then signs a user in with the signInWithEmailAndPassword method.
+         */
+        public void SignIn()
         {
             throw new NotImplementedException();
         }
+
+        /*
+         Create a new createAccount method that takes in an email address and password,
+        validates them, and then creates a new user with the createUserWithEmailAndPassword method.
+         */
+        public void createAccount()
+        {
+            throw new NotImplementedException();
+        }
+
+     
     }
 
 

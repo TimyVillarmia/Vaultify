@@ -13,8 +13,10 @@ namespace Vaultify.Droid.Common
 {
     internal interface IFirebase
     {
-
-        void Register();
-         void Login();
+        bool isUserCurrentlySignedIn();
+        void SignIn();
+        void createAccount();
+        
+        
     }
 }
