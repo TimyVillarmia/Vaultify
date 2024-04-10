@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "587698664283",
+    "project_id": "vaultify-1556e",
+    "storage_bucket": "vaultify-1556e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:587698664283:android:008c3997597e3057fc607e",
+        "android_client_info": {
+          "package_name": "com.companyname.vaultify.droid"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOF3-W3yS5DL24QY7fCv9s7VVHHW7BAIU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

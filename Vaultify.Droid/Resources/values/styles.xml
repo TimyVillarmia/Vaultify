@@ -8,7 +8,8 @@
 
 		<!-- Original AppCompat attributes. -->
 		<item name="colorPrimary">@color/vaultify_colorOnPrimary</item>
-		<item name="colorSecondary">@color/vaultify_colorSecondary</item>
+		<item name="colorSecondary">@color/vaultify_colorPrimary</item>
+		<item name="colorAccent">@color/vaultify_colorSecondary</item>
 		<item name="android:colorBackground">@color/vaultify_colorBackground</item>
 		<item name="colorError">@color/vaultify_colorError</item>
 
@@ -38,6 +39,14 @@
 		<item name="textAppearanceCaption">@style/TextAppearance.Vaultify.Caption</item>
 		<item name="textAppearanceButton">@style/TextAppearance.Vaultify.Button</item>
 		<item name="textAppearanceOverline">@style/TextAppearance.Vaultify.Overline</item>	
+	</style>
+
+	<style name="AppTheme.Splash" parent ="Theme.AppCompat.Light.NoActionBar">
+		<item name="android:windowBackground">@drawable/splash_screen</item>
+		<item name="android:windowNoTitle">true</item>
+		<item name="android:windowFullscreen">true</item>
+		<item name="android:windowContentOverlay">@null</item>
+		<item name="android:windowActionBar">true</item>
 	</style>
 
 
