@@ -27,7 +27,6 @@ namespace Vaultify.Droid.Common
 
         private FirebaseFirestore getFirebaseAuth()
         {
-            FirebaseFirestore database;
 
             var options = new FirebaseOptions.Builder()
                 .SetProjectId("vaultify-1556e")
@@ -37,9 +36,8 @@ namespace Vaultify.Droid.Common
                 .Build();
 
             var app = FirebaseApp.InitializeApp(Application.Context, options);
-            database = FirebaseFirestore.GetInstance(app);
 
-            return database;
+            return FirebaseFirestore.GetInstance(app);
         }
 
         /*
