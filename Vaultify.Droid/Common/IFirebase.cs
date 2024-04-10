@@ -11,7 +11,7 @@ using System.Text;
 
 namespace Vaultify.Droid.Common
 {
-    internal interface IFirebase
+    public interface IFirebase
     {
         bool isUserCurrentlySignedIn();
         void SignIn();

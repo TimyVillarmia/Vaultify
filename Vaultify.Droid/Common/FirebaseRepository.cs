@@ -25,7 +25,7 @@ namespace Vaultify.Droid.Common
 
  
 
-        private FirebaseFirestore getFirebaseAuth()
+        public FirebaseFirestore getFirebaseAuth()
         {
 
             var options = new FirebaseOptions.Builder()
@@ -43,6 +43,11 @@ namespace Vaultify.Droid.Common
         /*
          Check current auth state
          Check if user is signed in (non-null) and update UI accordingly.
+
+        Get the currently signed-in user
+        The recommended way to get the current user is by calling the getCurrentUser method.
+        If no user is signed in, getCurrentUser returns null:
+
 
         return 'true' if user is signed 
         otherwise return 'false
