@@ -5,12 +5,40 @@
 	<!-- Base application theme. -->
 	<style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
 		<!-- Customize your theme here. -->
-		<item name="colorPrimary">@color/vaultify_colorPrimary</item>
+
+		<!-- Original AppCompat attributes. -->
+		<item name="colorPrimary">@color/vaultify_colorOnPrimary</item>
 		<item name="colorSecondary">@color/vaultify_colorSecondary</item>
+		<item name="android:colorBackground">@color/vaultify_colorBackground</item>
 		<item name="colorError">@color/vaultify_colorError</item>
-		<item name="colorAccent">@color/vaultify_colorSecondary</item>
+
+		<!-- New MaterialComponents attributes. -->
+		<!--<item name="colorPrimaryVariant">@color/vaultify_colorPrimaryVariant</item>
+		<item name="colorSecondaryVariant">@color/vaultify_colorSecondaryVariant</item>
+		<item name="colorSurface">@color/vaultify_colorSurface</item>
+		<item name="colorOnPrimary">@color/vaultify_colorOnPrimary</item>
+		<item name="colorOnSecondary">@color/vaultify_colorOnSecondary</item>
+		<item name="colorOnBackground">@color/vaultify_colorOnBackground</item>
+		<item name="colorOnError">@color/vaultify_colorOnError</item>
+		<item name="colorOnSurface">@color/vaultify_colorOnSurface</item>
+		<item name="scrimBackground">@color/mtrl_scrim_color</item>-->
+
+
+
+		<item name="textAppearanceHeadline1">@style/TextAppearance.Vaultify.Headline1</item>
+		<item name="textAppearanceHeadline2">@style/TextAppearance.Vaultify.Headline2</item>
+		<item name="textAppearanceHeadline3">@style/TextAppearance.Vaultify.Headline3</item>
+		<item name="textAppearanceHeadline4">@style/TextAppearance.Vaultify.Headline4</item>
+		<item name="textAppearanceHeadline5">@style/TextAppearance.Vaultify.Headline5</item>
+		<item name="textAppearanceHeadline6">@style/TextAppearance.Vaultify.Headline6</item>
+		<item name="textAppearanceSubtitle1">@style/TextAppearance.Vaultify.Subtitle1</item>
+		<item name="textAppearanceSubtitle2">@style/TextAppearance.Vaultify.Subtitle2</item>
+		<item name="textAppearanceBody1">@style/TextAppearance.Vaultify.Body1</item>
+		<item name="textAppearanceBody2">@style/TextAppearance.Vaultify.Body2</item>
+		<item name="textAppearanceCaption">@style/TextAppearance.Vaultify.Caption</item>
+		<item name="textAppearanceButton">@style/TextAppearance.Vaultify.Button</item>
+		<item name="textAppearanceOverline">@style/TextAppearance.Vaultify.Overline</item>	
 	</style>
-	
-	
+
 
 </resources>

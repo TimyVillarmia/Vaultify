@@ -33,15 +33,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/placeholder_email"
-            app:boxBackgroundColor="@android:color/white"
             android:layout_marginBottom="8dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            app:boxBackgroundColor="@android:color/white"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/TextAppearance.Vaultify.Body1"
-        />
+                style="@style/TextAppearance.Vaultify.Body1"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -53,23 +53,21 @@
             app:boxBackgroundColor="@android:color/white"
             android:layout_marginBottom="8dp"
             app:passwordToggleEnabled="true"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                style="@style/TextAppearance.Vaultify.Body1"
-        />
+                style="@style/TextAppearance.Vaultify.Body1"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSignin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/TextAppearance.Vaultify.Button"
-            android:textColor="@color/vaultify_colorOnSecondary"
             android:text="@string/button_signin"/>
 
         <TextView
@@ -119,19 +117,29 @@
         </RelativeLayout>
 
 
-        <Button
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnGoogle"
+            android:text="@string/button_google"
+            app:icon="@drawable/ic_google"
+            app:iconSize="@dimen/design_bottom_navigation_icon_size"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            app:iconTint="@null"
+            app:strokeColor="@color/vaultify_colorSecondary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <!--        <Button
             android:id="@+id/btnGoogle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            style="@style/TextAppearance.Vaultify.Button"
             app:strokeColor="@color/vaultify_colorOnBackground"
             android:textColor="@color/vaultify_colorOnBackground"
             android:text="@string/button_google"
             app:iconGravity="start"
             app:icon="@drawable/ic_google"
             app:iconSize="@dimen/design_bottom_navigation_icon_size"
-            android:drawableStart="@drawable/ic_google"
-        />
+        />-->
 
         <RelativeLayout
             android:layout_width="match_parent"
