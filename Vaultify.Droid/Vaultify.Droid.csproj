@@ -63,6 +63,7 @@
     <Compile Include="Activities\ActivitySignIn.cs" />
     <Compile Include="Activities\ActivitySignUp.cs" />
     <Compile Include="Activities\SplashActivity.cs" />
+    <Compile Include="Common\FirebaseRepository.cs" />
     <Compile Include="Common\IFirebase.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Fragments\LoginFragment.cs" />

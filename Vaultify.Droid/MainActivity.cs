@@ -24,7 +24,6 @@ namespace Vaultify.Droid
         MaterialButton btnSignIn;
         TextInputLayout TextFieldEmail;
 
-        FirebaseFirestore database;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -32,7 +31,6 @@ namespace Vaultify.Droid
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.signin);
 
-            database = GetDatabase();
 
 
 
@@ -55,23 +53,7 @@ namespace Vaultify.Droid
             }
         }
 
-        private FirebaseFirestore GetDatabase()
-        {
-            FirebaseFirestore database;
-
-            var options = new FirebaseOptions.Builder()
-                .SetProjectId("vaultify-1556e")
-                .SetApplicationId("vaultify-1556e")
-                .SetApiKey("AIzaSyDOF3-W3yS5DL24QY7fCv9s7VVHHW7BAIU")
-                .SetStorageBucket("vaultify-1556e.appspot.com")
-                .Build();
-
-            var app = FirebaseApp.InitializeApp(this, options);
-            database = FirebaseFirestore.GetInstance(app);
-
-            return database;
-        }
-
+ 
         private void Signup_Click(object sender, System.EventArgs e)
         {
             Intent Signup = new Intent(this, typeof(ActivitySignUp));
