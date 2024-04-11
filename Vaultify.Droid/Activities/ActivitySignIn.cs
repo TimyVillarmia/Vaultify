@@ -6,38 +6,48 @@ using Android.Runtime;
 using Android.Text;
 using Android.Views;
 using Android.Widget;
+using AndroidX.AppCompat.App;
 using AndroidX.Core.Content;
 using Google.Android.Material.Button;
+using Google.Android.Material.Snackbar;
 using Google.Android.Material.TextField;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Vaultify.Droid.Common;
+using Vaultify.Droid.Common.IViews;
+using Vaultify.Droid.Presenters;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace Vaultify.Droid.Activities
 {
     [Activity(Label = "ActivitySignIn")]
-    public class ActivitySignIn : Activity
+    public class ActivitySignIn : AppCompatActivity, ISignInView
     {
-        private readonly IFirebase _firebaseRepository;
 
 
         TextView CreateAccountLink;
         TextInputLayout TextFieldEmail;
         MaterialButton btnSignIn;
 
+        public event EventHandler SignIn;
 
-        public ActivitySignIn(IFirebase repository)
-        {
-            _firebaseRepository = repository;
-
-        }
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.signin);
+
+
+
+            // get the auth from the repository
+            FirebaseRepository firebaseRepository = new FirebaseRepository();
+            // start firebase
+
+
+            // pass the firebaseRepository object
+            // allows activities below get access all method of this class
+            new SignInPresenter(this, firebaseRepository);
 
             // Create your application here
             CreateAccountLink = FindViewById<TextView>(Resource.Id.hyperlink_create);
@@ -45,11 +55,16 @@ namespace Vaultify.Droid.Activities
             btnSignIn = FindViewById<MaterialButton>(Resource.Id.btnSignin);
 
 
+
+
             var EditTextEmail = TextFieldEmail.EditText;
 
             CreateAccountLink.Click += Signup_Click;
             btnSignIn.Click += BtnSignIn_Click;
+
+
         }
+
 
         private void BtnSignIn_Click(object sender, EventArgs e)
         {
@@ -60,17 +75,25 @@ namespace Vaultify.Droid.Activities
             {
                 TextFieldEmail.HelperText = "Must not be empty";
             }
+            else
+            {
+                // invoke the event from the SignInPresenter
+                SignIn?.Invoke(this, new EventArgs());
+
+                View view = (View)sender;
+                Snackbar.Make(view, "Replace with your own action", Snackbar.LengthLong)
+                    .SetAction("Action", (View.IOnClickListener)null).Show();
 
 
-            try
-            {
-                // insert Firebase Authentication method from the FirebaseRepo class
-                // create payload for the User and Pass Credentials
+
+                Intent Home = new Intent(this, typeof(ActivityHome));
+                StartActivity(Home);
+
+
             }
-            catch (Exception ex)
-            {
-                    
-            }
+
+            Finish();
+
         }
 
         private void Signup_Click(object sender, EventArgs e)

@@ -14,12 +14,13 @@ using Google.Android.Material.TextField;
 using System;
 using Vaultify.Droid.Activities;
 using Vaultify.Droid.Common;
+using Vaultify.Droid.Presenters;
 using Vaultify.Droid.Resources.layout;
 
 namespace Vaultify.Droid
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme")]
-    public class MainActivity : AppCompatActivity
+    public class MainApplication : AppCompatActivity
     {
 
 
@@ -28,18 +29,16 @@ namespace Vaultify.Droid
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
 
-            // get the auth from the repository
-            FirebaseRepository firebaseRepository = new FirebaseRepository();
-            // start firebase
-            
-
-            // pass the firebaseRepository object
-            // allows activities below get access all method of this class
-            new ActivitySignIn(firebaseRepository);
-            new ActivitySignUp(firebaseRepository);
+           
 
 
             // TODO: Check current user signed in
+            if (true)
+            {
+                StartActivity(new Intent(Application.Context, typeof(ActivitySignIn)));
+                Finish();
+
+            }
 
         }
 

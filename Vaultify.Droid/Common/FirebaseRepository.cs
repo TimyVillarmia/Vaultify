@@ -23,7 +23,7 @@ namespace Vaultify.Droid.Common
 
         }
 
- 
+
 
         public FirebaseFirestore getFirebaseAuth()
         {

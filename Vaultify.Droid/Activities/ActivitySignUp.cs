@@ -9,28 +9,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Vaultify.Droid.Common;
+using Vaultify.Droid.Common.IViews;
 
 namespace Vaultify.Droid.Activities
 {
     [Activity(Label = "ActivitySignUp")]
     public class ActivitySignUp : Activity
     {
-        private readonly IFirebase _firebaseRepository;
 
-
-        public ActivitySignUp(IFirebase repository)
+        public void SignIn()
         {
-            _firebaseRepository = repository;
-
+            throw new NotImplementedException();
         }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+
+
 
             // Create your application here
             SetContentView(Resource.Layout.signup);
 
         }
+
+
+ 
 
 
     }

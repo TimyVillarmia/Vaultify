@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace Vaultify.Droid.Activities
 {
-    [Activity(Theme = "@style/AppTheme.Splash", MainLauncher = true, NoHistory = true, Label = "SplashActivity")]
+    [Activity(Theme = "@style/AppTheme.Splash", MainLauncher = true, NoHistory = true, Label = "@string/app_name")]
     public class SplashActivity : AppCompatActivity
     {
         static readonly string TAG = "X:" + typeof(SplashActivity).Name;
@@ -41,7 +41,7 @@ namespace Vaultify.Droid.Activities
             Log.Debug(TAG, "Performing some startup work that takes a bit of time.");
             await Task.Delay(8000); // Simulate a bit of startup work.
             Log.Debug(TAG, "Startup work is finished - starting MainActivity.");
-            StartActivity(new Intent(Application.Context, typeof(MainActivity )));
+            StartActivity(new Intent(Application.Context, typeof(MainApplication )));
             Finish();
         }
     }
