@@ -19,8 +19,7 @@
             app:navigationIcon="@drawable/menu_24px"
             app:titleTextColor="@android:color/white"
             android:background="@color/vaultify_colorBackground"
-            app:popupTheme="@style/AppTheme.PopupOverlay">
-        </androidx.appcompat.widget.Toolbar>
+            app:popupTheme="@style/AppTheme.PopupOverlay"/>
 
 
     </com.google.android.material.appbar.AppBarLayout>
