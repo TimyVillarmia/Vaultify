@@ -67,8 +67,10 @@
     <Compile Include="Common\FirebaseRepository.cs" />
     <Compile Include="Common\IFirebase.cs" />
     <Compile Include="Common\IViews\ISignInView.cs" />
+    <Compile Include="Common\IViews\ISignUpVew.cs" />
     <Compile Include="MainApplication.cs" />
     <Compile Include="Presenters\SignInPresenter.cs" />
+    <Compile Include="Presenters\SignUpPresenter.cs" />
     <Compile Include="Resources\Fragments\LoginFragment.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
