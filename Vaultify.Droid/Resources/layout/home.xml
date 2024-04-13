@@ -16,6 +16,7 @@
             android:minHeight="?attr/actionBarSize"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:navigationIcon="@drawable/menu_24px"
             app:titleTextColor="@android:color/white"
             android:background="@color/vaultify_colorBackground"
             app:popupTheme="@style/AppTheme.PopupOverlay">

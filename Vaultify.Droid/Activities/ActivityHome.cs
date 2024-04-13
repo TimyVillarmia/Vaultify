@@ -5,6 +5,7 @@ using Android.Runtime;
 using Android.Views;
 using AndroidX.AppCompat.App;
 using AndroidX.AppCompat.Widget;
+using Google.Android.Material.AppBar;
 using Google.Android.Material.FloatingActionButton;
 using Google.Android.Material.Snackbar;
 using System;
@@ -26,9 +27,16 @@ namespace Vaultify.Droid.Activities
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
 
+            toolbar.NavigationClick += Toolbar_NavigationClick;
+
             FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.floating_action_button);
             fab.Click += FabOnClick;
 
+        }
+
+        private void Toolbar_NavigationClick(object sender, Toolbar.NavigationClickEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -40,7 +48,7 @@ namespace Vaultify.Droid.Activities
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             int id = item.ItemId;
-            if (id == Resource.Id.menu)
+            if (id == Resource.Id.settings)
             {
                 return true;
             }

@@ -3,12 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 	<item
-        android:id="@+id/menu"
-        android:icon="@drawable/menu_24px"
+        android:id="@+id/settings"
+        android:icon="@drawable/settings_24px"
         app:showAsAction="ifRoom" 
 		android:title="Compose"/>
-
-
 
 
 </menu>
