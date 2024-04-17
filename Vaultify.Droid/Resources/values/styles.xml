@@ -6,7 +6,7 @@
 	<style name="AppTheme" parent="Base.Theme.Vaultify">
 
 	</style>
-	<style name="Base.Theme.Vaultify" parent="Theme.MaterialComponents.NoActionBar">
+	<style name="Base.Theme.Vaultify" parent="Theme.MaterialComponents.Light.NoActionBar">
 		<!-- Customize your theme here. -->
 
 		<!-- Original AppCompat attributes. -->
@@ -60,6 +60,7 @@
 	</style>
 
 	<style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+	<item name="android:windowTranslucentStatus">true</item>
 
 	<style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
 
