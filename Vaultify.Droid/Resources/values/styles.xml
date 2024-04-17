@@ -6,7 +6,7 @@
 	<style name="AppTheme" parent="Base.Theme.Vaultify">
 
 	</style>
-	<style name="Base.Theme.Vaultify" parent="Theme.MaterialComponents.NoActionBar">
+	<style name="Base.Theme.Vaultify" parent="Theme.MaterialComponents.Light.NoActionBar">
 		<!-- Customize your theme here. -->
 
 		<!-- Original AppCompat attributes. -->
@@ -43,6 +43,9 @@
 		<item name="textAppearanceCaption">@style/TextAppearance.Vaultify.Caption</item>
 		<item name="textAppearanceButton">@style/TextAppearance.Vaultify.Button</item>
 		<item name="textAppearanceOverline">@style/TextAppearance.Vaultify.Overline</item>
+		
+		<item name="android:windowTranslucentStatus">true</item>
+
 	</style>
 
 	<style name="AppTheme.Splash" parent ="Theme.AppCompat.Light.NoActionBar">

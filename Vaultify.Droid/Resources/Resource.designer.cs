@@ -4165,6 +4165,9 @@ namespace Vaultify.Droid
 			// aapt resource value: 0x7F0A00B0
 			public const int right_icon = 2131361968;
 			
+			// aapt resource value: 0x7F0A00B4
+			public const int scrollable = 2131361972;
+			
 			// aapt resource value: 0x7F0A00B1
 			public const int right_side = 2131361969;
 			
