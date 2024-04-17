@@ -15,6 +15,6 @@
 	<color name="vaultify_colorOnSurface">#ffffff</color>
 	<color name="vaultify_colorOnError">#ffffff</color>
 	
-	<color name="vaultify_colorContainer">#202020</color>
+	<color name="vaultify_colorContainer">#111111</color>
 	<color name="test">#25202B20</color>
 </resources>

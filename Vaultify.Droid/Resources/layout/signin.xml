@@ -35,14 +35,14 @@
             android:hint="@string/placeholder_email"
             android:layout_marginBottom="8dp"
             app:helperTextEnabled="true"
-            app:boxBackgroundColor="@android:color/white"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/TextAppearance.Vaultify.Body1"/>
+                android:textAppearance="@style/TextAppearance.Vaultify.Body1"
+                />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -51,24 +51,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/placeholder_pass"
-            app:boxBackgroundColor="@android:color/white"
             android:layout_marginBottom="8dp"
             app:passwordToggleEnabled="true"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                style="@style/TextAppearance.Vaultify.Body1"/>
+                android:textAppearance="@style/TextAppearance.Vaultify.Body1"/>
 
         </com.google.android.material.textfield.TextInputLayout>
+
+
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSignin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/TextAppearance.Vaultify.Button"
+            android:textColor="@color/vaultify_colorOnSecondary"
             android:text="@string/button_signin"/>
 
         <TextView

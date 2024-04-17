@@ -3,7 +3,10 @@
 <resources>
 
 	<!-- Base application theme. -->
-	<style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+	<style name="AppTheme" parent="Base.Theme.Vaultify">
+
+	</style>
+	<style name="Base.Theme.Vaultify" parent="Theme.MaterialComponents.NoActionBar">
 		<!-- Customize your theme here. -->
 
 		<!-- Original AppCompat attributes. -->
@@ -26,6 +29,7 @@
 
 
 
+
 		<item name="textAppearanceHeadline1">@style/TextAppearance.Vaultify.Headline1</item>
 		<item name="textAppearanceHeadline2">@style/TextAppearance.Vaultify.Headline2</item>
 		<item name="textAppearanceHeadline3">@style/TextAppearance.Vaultify.Headline3</item>
@@ -38,7 +42,7 @@
 		<item name="textAppearanceBody2">@style/TextAppearance.Vaultify.Body2</item>
 		<item name="textAppearanceCaption">@style/TextAppearance.Vaultify.Caption</item>
 		<item name="textAppearanceButton">@style/TextAppearance.Vaultify.Button</item>
-		<item name="textAppearanceOverline">@style/TextAppearance.Vaultify.Overline</item>	
+		<item name="textAppearanceOverline">@style/TextAppearance.Vaultify.Overline</item>
 	</style>
 
 	<style name="AppTheme.Splash" parent ="Theme.AppCompat.Light.NoActionBar">
@@ -48,6 +52,7 @@
 		<item name="android:windowContentOverlay">@null</item>
 		<item name="android:windowActionBar">true</item>
 	</style>
+
 
 	<style name="AppTheme.NoActionBar">
 		<item name="windowActionBar">false</item>

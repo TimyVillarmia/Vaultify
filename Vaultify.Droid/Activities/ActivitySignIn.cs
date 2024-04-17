@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.Content.Res;
+using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Runtime;
 using Android.Text;
@@ -63,6 +64,7 @@ namespace Vaultify.Droid.Activities
             btnSignIn.Click += BtnSignIn_Click;
 
 
+
         }
 
 
@@ -92,7 +94,6 @@ namespace Vaultify.Droid.Activities
 
             }
 
-            Finish();
 
         }
 
@@ -100,6 +101,7 @@ namespace Vaultify.Droid.Activities
         {
             Intent Signup = new Intent(this, typeof(ActivitySignUp));
             StartActivity(Signup);
+
         }
     }
 }
