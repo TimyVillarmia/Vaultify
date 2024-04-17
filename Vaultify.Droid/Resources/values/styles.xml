@@ -44,7 +44,6 @@
 		<item name="textAppearanceButton">@style/TextAppearance.Vaultify.Button</item>
 		<item name="textAppearanceOverline">@style/TextAppearance.Vaultify.Overline</item>
 		
-		<item name="android:windowTranslucentStatus">true</item>
 
 	</style>
 
