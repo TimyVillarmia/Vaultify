@@ -5,6 +5,7 @@ using Android.Runtime;
 using Android.Views;
 using AndroidX.AppCompat.App;
 using AndroidX.AppCompat.Widget;
+using AndroidX.DrawerLayout.Widget;
 using Google.Android.Material.AppBar;
 using Google.Android.Material.FloatingActionButton;
 using Google.Android.Material.Snackbar;
@@ -18,25 +19,28 @@ namespace Vaultify.Droid.Activities
     [Activity(Label = "ActivityHome")]
     public class ActivityHome : AppCompatActivity   
     {
+
+        DrawerLayout drawerLayout;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.home);
 
-
+            FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.floating_action_button);
+            drawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawerLayout);
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+
+
             SetSupportActionBar(toolbar);
 
             toolbar.NavigationClick += Toolbar_NavigationClick;
-
-            FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.floating_action_button);
             fab.Click += FabOnClick;
 
         }
 
         private void Toolbar_NavigationClick(object sender, Toolbar.NavigationClickEventArgs e)
         {
-            throw new NotImplementedException();
+            drawerLayout.Open();
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
