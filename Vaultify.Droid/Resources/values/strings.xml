@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Vaultify.Droid</string>
-    <string name="action_settings">Settings</string>
+	<string name="app_name">Vaultify.Droid</string>
+	<string name="action_settings">Settings</string>
 	<string name="headline_signin">Sign In to Your Vaultify Account</string>
 	<string name="placeholder_email">Enter email</string>
 	<string name="placeholder_pass">Enter password</string>
@@ -18,4 +18,12 @@
 	<string name="button_signup">Create New Account</string>
 	<string name="preline_signin">Already have an account?</string>
 	<string name="hyperlink_signin">Sign in</string>
+	<string name="button_sendcode">Send code to email</string>
+	<string name="placeholder_entercode">Enter code</string>
+	<string name="hyperlink_resendcode">Resend Code</string>
+	<string name="button_cancel">Cancel</string>
+	<string name="button_confirm">Confirm</string>
+	<string name="placeholder_newpass">Enter new password</string>
+	<string name="button_resetpass">Reset Password</string>
+	<string name="button_proceed">Proceed</string>
 </resources>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@drawable/bg"
+    android:paddingHorizontal="32dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="16dp"
+        android:background="@drawable/container"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="To help keep your account safe, We want to make sure it’s really you trying to access"
+            style="@style/TextAppearance.Vaultify.Body2"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="40dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enter the Code"
+            style="@style/TextAppearance.Vaultify.Headline4"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="40dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="An email with a verification code was just sent to johndoe@gmail.com"
+            style="@style/TextAppearance.Vaultify.Caption"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="10dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textFieldFullname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/placeholder_entercode"
+            app:boxBackgroundColor="@android:color/white"
+            android:layout_marginBottom="8dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            tools:ignore="XmlNamespace">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.Vaultify.Body1"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/hyperlink_resendcode"
+            android:clickable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hyperlink_resendcode"
+            style="@style/TextAppearance.Vaultify.Caption"
+            android:textColor="@color/vaultify_colorSecondary"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="210dp"
+            android:layout_marginTop="2dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="90dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCancel"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:textColor="@color/vaultify_colorSecondary"
+                android:text="@string/button_cancel"
+                android:textAllCaps="false"
+                android:layout_marginRight="25dp"
+                app:strokeColor="@color/vaultify_colorSecondary"
+                tools:ignore="XmlNamespace" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnConfirm"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.Vaultify.Button"
+                android:textColor="@color/vaultify_colorOnSecondary"
+                android:text="@string/button_confirm"
+                android:textAllCaps="false"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/pretext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:text="@string/preline_create"
+                style="@style/TextAppearance.Vaultify.Caption"
+                android:textColor="@color/vaultify_colorOnPrimary"/>
+
+            <TextView
+                android:id="@+id/hyperlink_create"
+                android:clickable="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/pretext"
+                android:text="@string/hyperlink_create"
+                style="@style/TextAppearance.Vaultify.Caption"
+                android:textColor="@color/vaultify_colorSecondary"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
