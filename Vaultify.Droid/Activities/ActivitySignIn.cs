@@ -123,6 +123,7 @@ namespace Vaultify.Droid.Activities
             Intent Home = new Intent(this, typeof(ActivityHome));
             StartActivity(Home);
             Finish();
+            //test
         }
     }
 }
