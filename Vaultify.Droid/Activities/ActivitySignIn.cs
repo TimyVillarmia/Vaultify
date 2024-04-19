@@ -7,6 +7,7 @@ using Android.Runtime;
 using Android.Text;
 using Android.Views;
 using Android.Widget;
+using AndroidX.Activity;
 using AndroidX.AppCompat.App;
 using AndroidX.Core.Content;
 using Google.Android.Material.Button;
@@ -31,6 +32,7 @@ namespace Vaultify.Droid.Activities
         TextView CreateAccountLink;
         TextInputLayout TextFieldEmail;
         MaterialButton btnSignIn;
+        TextView linkForgot;
 
         public event EventHandler SignIn;
 
@@ -52,6 +54,7 @@ namespace Vaultify.Droid.Activities
 
             // Create your application here
             CreateAccountLink = FindViewById<TextView>(Resource.Id.hyperlink_create);
+            linkForgot = FindViewById<TextView>(Resource.Id.linkForgot);
             TextFieldEmail = FindViewById<TextInputLayout>(Resource.Id.textFieldEmail);
             btnSignIn = FindViewById<MaterialButton>(Resource.Id.btnSignin);
 
@@ -62,11 +65,25 @@ namespace Vaultify.Droid.Activities
 
             CreateAccountLink.Click += Signup_Click;
             btnSignIn.Click += BtnSignIn_Click;
-
-
+            linkForgot.Click += LinkForgot_Click;
 
         }
 
+        [Obsolete]
+        public override void OnBackPressed()
+        {
+            Toast.MakeText(ApplicationContext, "You're about to exit the app", ToastLength.Long).Show();
+        }
+
+
+
+
+
+        private void LinkForgot_Click(object sender, EventArgs e)
+        {
+            Intent accountRecovery = new Intent(this, typeof(ActivityRecovery));
+            StartActivity(accountRecovery);
+        }
 
         private void BtnSignIn_Click(object sender, EventArgs e)
         {
@@ -90,7 +107,7 @@ namespace Vaultify.Droid.Activities
 
                 Intent Home = new Intent(this, typeof(ActivityHome));
                 StartActivity(Home);
-
+                Finish();
 
             }
 

@@ -67,14 +67,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:gravity="center">
+            android:gravity="center"
+        >
 
             <TextView
                 android:id="@+id/pretext"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="8dp"
-                android:text="@string/preline_signin"
+                android:text="@string/preline_create"
                 style="@style/TextAppearance.Vaultify.Caption"
                 android:textColor="@color/vaultify_colorOnPrimary"/>
 
@@ -84,9 +85,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/pretext"
-                android:text="@string/hyperlink_signin"
+                android:text="@string/hyperlink_create"
+                android:layout_alignBaseline="@id/pretext"
                 style="@style/TextAppearance.Vaultify.Caption"
                 android:textColor="@color/vaultify_colorSecondary"/>
+
 
         </RelativeLayout>
 

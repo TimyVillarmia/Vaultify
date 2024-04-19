@@ -2,20 +2,9 @@
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
-using Android.Widget;
 using AndroidX.AppCompat.App;
-using AndroidX.Fragment;
-using AndroidX.Fragment.App;
-using AndroidX.Transitions;
-using Firebase;
-using Firebase.Firestore;
-using Google.Android.Material.Button;
-using Google.Android.Material.TextField;
-using System;
 using Vaultify.Droid.Activities;
-using Vaultify.Droid.Common;
-using Vaultify.Droid.Presenters;
-using Vaultify.Droid.Resources.layout;
+
 
 namespace Vaultify.Droid
 {

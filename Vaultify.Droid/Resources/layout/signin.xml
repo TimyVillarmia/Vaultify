@@ -133,18 +133,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
-        <!--        <Button
-            android:id="@+id/btnGoogle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/TextAppearance.Vaultify.Button"
-            app:strokeColor="@color/vaultify_colorOnBackground"
-            android:textColor="@color/vaultify_colorOnBackground"
-            android:text="@string/button_google"
-            app:iconGravity="start"
-            app:icon="@drawable/ic_google"
-            app:iconSize="@dimen/design_bottom_navigation_icon_size"
-        />-->
+
 
         <RelativeLayout
             android:layout_width="match_parent"

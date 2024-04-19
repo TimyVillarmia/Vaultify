@@ -4685,7 +4685,7 @@ namespace Vaultify.Droid
 			public const int abc_tooltip = 2131558427;
 			
 			// aapt resource value: 0x7F0D001C
-			public const int AccountRecovery = 2131558428;
+			public const int accountRecovery = 2131558428;
 			
 			// aapt resource value: 0x7F0D001D
 			public const int browser_actions_context_menu_page = 2131558429;
@@ -4694,7 +4694,7 @@ namespace Vaultify.Droid
 			public const int browser_actions_context_menu_row = 2131558430;
 			
 			// aapt resource value: 0x7F0D001F
-			public const int ChangedSuccess = 2131558431;
+			public const int changedSuccess = 2131558431;
 			
 			// aapt resource value: 0x7F0D0020
 			public const int content_main = 2131558432;
@@ -4781,7 +4781,7 @@ namespace Vaultify.Droid
 			public const int notification_template_part_time = 2131558459;
 			
 			// aapt resource value: 0x7F0D003C
-			public const int PasswordChanging = 2131558460;
+			public const int passwordchanging = 2131558460;
 			
 			// aapt resource value: 0x7F0D003D
 			public const int select_dialog_item_material = 2131558461;

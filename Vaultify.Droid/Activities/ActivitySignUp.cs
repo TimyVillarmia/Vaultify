@@ -19,7 +19,7 @@ namespace Vaultify.Droid.Activities
     public class ActivitySignUp : AppCompatActivity, ISignUpVew
     {
         public event EventHandler SignUp;
-
+        TextView linkSignin;
         public void SignIn()
         {
             throw new NotImplementedException();
@@ -28,11 +28,10 @@ namespace Vaultify.Droid.Activities
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
-
-
             // Create your application here
             SetContentView(Resource.Layout.signup);
+            linkSignin = FindViewById<TextView>(Resource.Id.hyperlink_create);
+
 
             // get the auth from the repository
             FirebaseRepository firebaseRepository = new FirebaseRepository();
@@ -43,11 +42,16 @@ namespace Vaultify.Droid.Activities
             // allows activities below get access all method of this
             new SignUpPresenter(this, firebaseRepository);
 
+
+            linkSignin.Click += LinkSignin_Click;
+
         }
 
-
-
-
-
+        private void LinkSignin_Click(object sender, EventArgs e)
+        {
+            Intent signIn = new Intent(this, typeof(ActivitySignIn));
+            StartActivity(signIn);
+            Finish();
+        }
     }
 }
