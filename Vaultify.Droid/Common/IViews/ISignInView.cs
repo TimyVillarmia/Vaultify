@@ -14,5 +14,6 @@ namespace Vaultify.Droid.Common.IViews
     public interface ISignInView
     {
         event EventHandler SignIn;
+        void SignInSucces();
     }
 }

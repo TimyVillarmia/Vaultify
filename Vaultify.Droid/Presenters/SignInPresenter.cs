@@ -35,7 +35,12 @@ namespace Vaultify.Droid.Presenters
         private void SignInEvent(object sender, EventArgs e)
         {
             // implement signin from firebase
-            return;
+
+            bool credentialsIsValid = true;
+            if (credentialsIsValid)
+            {
+                _signInActivity.SignInSucces();
+            }
         }
     }
 }

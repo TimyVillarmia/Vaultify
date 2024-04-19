@@ -36,6 +36,7 @@ namespace Vaultify.Droid.Activities
 
         public event EventHandler SignIn;
 
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -78,12 +79,12 @@ namespace Vaultify.Droid.Activities
 
 
 
-
         private void LinkForgot_Click(object sender, EventArgs e)
         {
             Intent accountRecovery = new Intent(this, typeof(ActivityRecovery));
             StartActivity(accountRecovery);
         }
+
 
         private void BtnSignIn_Click(object sender, EventArgs e)
         {
@@ -103,11 +104,7 @@ namespace Vaultify.Droid.Activities
                 Snackbar.Make(view, "Replace with your own action", Snackbar.LengthLong)
                     .SetAction("Action", (View.IOnClickListener)null).Show();
 
-
-
-                Intent Home = new Intent(this, typeof(ActivityHome));
-                StartActivity(Home);
-                Finish();
+                
 
             }
 
@@ -119,6 +116,13 @@ namespace Vaultify.Droid.Activities
             Intent Signup = new Intent(this, typeof(ActivitySignUp));
             StartActivity(Signup);
 
+        }
+
+        public void SignInSucces()
+        {
+            Intent Home = new Intent(this, typeof(ActivityHome));
+            StartActivity(Home);
+            Finish();
         }
     }
 }
