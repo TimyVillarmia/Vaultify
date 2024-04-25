@@ -13,11 +13,19 @@ namespace Vaultify.Droid.Common
     public class Onetimepassword
     {
         public static string OTP { get; set; }
-
+        private static string CurrentEmail { get; set; }
 
         //method for generating OTP
+
+        public static async Task ResendOTP()
+        {
+            await SendOTP(CurrentEmail);
+            return;
+        }
         public static async Task SendOTP(string email)
         {
+
+            CurrentEmail = email;
             string otp_char = "0123456789";
             OTP = "";
             Random rnd = new Random();

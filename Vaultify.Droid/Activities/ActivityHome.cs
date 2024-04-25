@@ -3,6 +3,7 @@ using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
+using Android.Widget;
 using AndroidX.AppCompat.App;
 using AndroidX.AppCompat.Widget;
 using AndroidX.DrawerLayout.Widget;
@@ -28,7 +29,7 @@ namespace Vaultify.Droid.Activities
 
             FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.floating_action_button);
             drawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawerLayout);
-            Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+            AndroidX.AppCompat.Widget.Toolbar toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.toolbar);
 
 
             SetSupportActionBar(toolbar);
@@ -38,7 +39,13 @@ namespace Vaultify.Droid.Activities
 
         }
 
-        private void Toolbar_NavigationClick(object sender, Toolbar.NavigationClickEventArgs e)
+        [Obsolete]
+        public override void OnBackPressed()
+        {
+            Toast.MakeText(ApplicationContext, "You're about to exit the app", ToastLength.Long).Show();
+        }
+
+        private void Toolbar_NavigationClick(object sender, AndroidX.AppCompat.Widget.Toolbar.NavigationClickEventArgs e)
         {
             drawerLayout.Open();
             //test

@@ -52,6 +52,10 @@ namespace Vaultify.Droid.Activities
                     await Onetimepassword.SendOTP(textFieldEmail.EditText?.Text);
                     View view = (View)sender;
                     Snackbar.Make(view, "OTP has been sent", Snackbar.LengthLong);
+
+                    Intent accountRecovery = new Intent(this, typeof(ActivityRecoveryCode));
+                    StartActivity(accountRecovery);
+                    
                 }
                 else
                 {

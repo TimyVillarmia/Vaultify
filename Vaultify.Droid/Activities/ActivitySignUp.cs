@@ -25,6 +25,12 @@ namespace Vaultify.Droid.Activities
             throw new NotImplementedException();
         }
 
+        [Obsolete]
+        public override void OnBackPressed()
+        {
+            Toast.MakeText(ApplicationContext, "You're about to exit the app", ToastLength.Long).Show();
+        }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);

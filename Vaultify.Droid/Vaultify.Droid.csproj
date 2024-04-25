@@ -60,8 +60,10 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activities\ActivityRecoveryChangePassword.cs" />
     <Compile Include="Activities\ActivityHome.cs" />
     <Compile Include="Activities\ActivityRecovery.cs" />
+    <Compile Include="Activities\ActivityRecoveryCode.cs" />
     <Compile Include="Activities\ActivitySignIn.cs" />
     <Compile Include="Activities\ActivitySignUp.cs" />
     <Compile Include="Activities\SplashActivity.cs" />
@@ -185,12 +187,7 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\InputtingCode.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\passwordchanging.xml">
+    <AndroidResource Include="Resources\layout\inputtingCode.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -204,6 +201,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\layout\header_navigation_drawer.xml" />
+    <AndroidResource Include="Resources\layout\recoveryChangePassword.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <Content Include="Resources\menu\drawer_menu.xml" />
   </ItemGroup>
   <ItemGroup>

@@ -14,7 +14,7 @@ namespace Vaultify.Droid
 {
 	
 	
-	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "13.2.2.120")]
+	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "13.2.1.111")]
 	public partial class Resource
 	{
 		
@@ -4351,14 +4351,14 @@ namespace Vaultify.Droid
 			// aapt resource value: 0x7F0A00EC
 			public const int textFieldConfirmPass = 2131362028;
 			
-			// aapt resource value: 0x7F0A00F1
-			public const int textFieldconfirmPass = 2131362033;
-			
 			// aapt resource value: 0x7F0A00F2
-			public const int textFieldcreateEmail = 2131362034;
+			public const int textFieldconfirmPass = 2131362034;
 			
 			// aapt resource value: 0x7F0A00F3
-			public const int textFieldcreatePass = 2131362035;
+			public const int textFieldcreateEmail = 2131362035;
+			
+			// aapt resource value: 0x7F0A00F4
+			public const int textFieldcreatePass = 2131362036;
 			
 			// aapt resource value: 0x7F0A00ED
 			public const int textFieldEmail = 2131362029;
@@ -4370,115 +4370,118 @@ namespace Vaultify.Droid
 			public const int textFieldNewPass = 2131362031;
 			
 			// aapt resource value: 0x7F0A00F0
-			public const int textFieldPass = 2131362032;
+			public const int textFieldOTPCode = 2131362032;
 			
-			// aapt resource value: 0x7F0A00F8
-			public const int textinput_counter = 2131362040;
+			// aapt resource value: 0x7F0A00F1
+			public const int textFieldPass = 2131362033;
 			
 			// aapt resource value: 0x7F0A00F9
-			public const int textinput_error = 2131362041;
+			public const int textinput_counter = 2131362041;
 			
 			// aapt resource value: 0x7F0A00FA
-			public const int textinput_helper_text = 2131362042;
-			
-			// aapt resource value: 0x7F0A00F4
-			public const int textSpacerNoButtons = 2131362036;
-			
-			// aapt resource value: 0x7F0A00F5
-			public const int textSpacerNoTitle = 2131362037;
-			
-			// aapt resource value: 0x7F0A00F6
-			public const int textStart = 2131362038;
-			
-			// aapt resource value: 0x7F0A00F7
-			public const int text_input_password_toggle = 2131362039;
+			public const int textinput_error = 2131362042;
 			
 			// aapt resource value: 0x7F0A00FB
-			public const int time = 2131362043;
+			public const int textinput_helper_text = 2131362043;
+			
+			// aapt resource value: 0x7F0A00F5
+			public const int textSpacerNoButtons = 2131362037;
+			
+			// aapt resource value: 0x7F0A00F6
+			public const int textSpacerNoTitle = 2131362038;
+			
+			// aapt resource value: 0x7F0A00F7
+			public const int textStart = 2131362039;
+			
+			// aapt resource value: 0x7F0A00F8
+			public const int text_input_password_toggle = 2131362040;
 			
 			// aapt resource value: 0x7F0A00FC
-			public const int title = 2131362044;
+			public const int time = 2131362044;
 			
 			// aapt resource value: 0x7F0A00FD
-			public const int titleDividerNoCustom = 2131362045;
+			public const int title = 2131362045;
 			
 			// aapt resource value: 0x7F0A00FE
-			public const int title_template = 2131362046;
+			public const int titleDividerNoCustom = 2131362046;
 			
 			// aapt resource value: 0x7F0A00FF
-			public const int toolbar = 2131362047;
+			public const int title_template = 2131362047;
 			
 			// aapt resource value: 0x7F0A0100
-			public const int top = 2131362048;
+			public const int toolbar = 2131362048;
 			
 			// aapt resource value: 0x7F0A0101
-			public const int topPanel = 2131362049;
+			public const int top = 2131362049;
 			
 			// aapt resource value: 0x7F0A0102
-			public const int touch_outside = 2131362050;
+			public const int topPanel = 2131362050;
 			
 			// aapt resource value: 0x7F0A0103
-			public const int transition_current_scene = 2131362051;
+			public const int touch_outside = 2131362051;
 			
 			// aapt resource value: 0x7F0A0104
-			public const int transition_layout_save = 2131362052;
+			public const int transition_current_scene = 2131362052;
 			
 			// aapt resource value: 0x7F0A0105
-			public const int transition_position = 2131362053;
+			public const int transition_layout_save = 2131362053;
 			
 			// aapt resource value: 0x7F0A0106
-			public const int transition_scene_layoutid_cache = 2131362054;
+			public const int transition_position = 2131362054;
 			
 			// aapt resource value: 0x7F0A0107
-			public const int transition_transform = 2131362055;
+			public const int transition_scene_layoutid_cache = 2131362055;
 			
 			// aapt resource value: 0x7F0A0108
-			public const int tvText = 2131362056;
+			public const int transition_transform = 2131362056;
 			
 			// aapt resource value: 0x7F0A0109
-			public const int @unchecked = 2131362057;
+			public const int tvText = 2131362057;
 			
 			// aapt resource value: 0x7F0A010A
-			public const int uniform = 2131362058;
+			public const int @unchecked = 2131362058;
 			
 			// aapt resource value: 0x7F0A010B
-			public const int unlabeled = 2131362059;
+			public const int uniform = 2131362059;
 			
 			// aapt resource value: 0x7F0A010C
-			public const int up = 2131362060;
+			public const int unlabeled = 2131362060;
 			
 			// aapt resource value: 0x7F0A010D
-			public const int useLogo = 2131362061;
+			public const int up = 2131362061;
 			
 			// aapt resource value: 0x7F0A010E
-			public const int view_offset_helper = 2131362062;
+			public const int useLogo = 2131362062;
 			
 			// aapt resource value: 0x7F0A010F
-			public const int view_tree_lifecycle_owner = 2131362063;
+			public const int view_offset_helper = 2131362063;
 			
 			// aapt resource value: 0x7F0A0110
-			public const int view_tree_on_back_pressed_dispatcher_owner = 2131362064;
+			public const int view_tree_lifecycle_owner = 2131362064;
 			
 			// aapt resource value: 0x7F0A0111
-			public const int view_tree_saved_state_registry_owner = 2131362065;
+			public const int view_tree_on_back_pressed_dispatcher_owner = 2131362065;
 			
 			// aapt resource value: 0x7F0A0112
-			public const int view_tree_view_model_store_owner = 2131362066;
+			public const int view_tree_saved_state_registry_owner = 2131362066;
 			
 			// aapt resource value: 0x7F0A0113
-			public const int visible = 2131362067;
+			public const int view_tree_view_model_store_owner = 2131362067;
 			
 			// aapt resource value: 0x7F0A0114
-			public const int visible_removing_fragment_view_tag = 2131362068;
+			public const int visible = 2131362068;
 			
 			// aapt resource value: 0x7F0A0115
-			public const int wide = 2131362069;
+			public const int visible_removing_fragment_view_tag = 2131362069;
 			
 			// aapt resource value: 0x7F0A0116
-			public const int withText = 2131362070;
+			public const int wide = 2131362070;
 			
 			// aapt resource value: 0x7F0A0117
-			public const int wrap_content = 2131362071;
+			public const int withText = 2131362071;
+			
+			// aapt resource value: 0x7F0A0118
+			public const int wrap_content = 2131362072;
 			
 			static Id()
 			{
@@ -4754,7 +4757,7 @@ namespace Vaultify.Droid
 			public const int ime_secondary_split_test_activity = 2131558450;
 			
 			// aapt resource value: 0x7F0D0033
-			public const int InputtingCode = 2131558451;
+			public const int inputtingCode = 2131558451;
 			
 			// aapt resource value: 0x7F0D0034
 			public const int mtrl_layout_snackbar = 2131558452;
@@ -4781,7 +4784,7 @@ namespace Vaultify.Droid
 			public const int notification_template_part_time = 2131558459;
 			
 			// aapt resource value: 0x7F0D003C
-			public const int passwordchanging = 2131558460;
+			public const int recoveryChangePassword = 2131558460;
 			
 			// aapt resource value: 0x7F0D003D
 			public const int select_dialog_item_material = 2131558461;
