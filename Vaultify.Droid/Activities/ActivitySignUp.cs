@@ -10,15 +10,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Vaultify.Droid.Common;
-using Vaultify.Droid.Common.IViews;
-using Vaultify.Droid.Presenters;
 
 namespace Vaultify.Droid.Activities
 {
     [Activity(Label = "ActivitySignUp")]
-    public class ActivitySignUp : AppCompatActivity, ISignUpVew
+    public class ActivitySignUp : AppCompatActivity
     {
-        public event EventHandler SignUp;
         TextView linkSignin;
         public void SignIn()
         {
@@ -44,9 +41,6 @@ namespace Vaultify.Droid.Activities
             // start firebase
 
 
-            // pass the firebaseRepository object
-            // allows activities below get access all method of this
-            new SignUpPresenter(this, firebaseRepository);
 
 
             linkSignin.Click += LinkSignin_Click;
