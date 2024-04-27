@@ -3,7 +3,9 @@ using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using AndroidX.AppCompat.App;
+using Firebase.Auth;
 using Vaultify.Droid.Activities;
+using Vaultify.Droid.Common;
 
 
 namespace Vaultify.Droid
@@ -18,16 +20,21 @@ namespace Vaultify.Droid
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
 
-           
-
+            FirebaseAuth auth = FirebaseRepository.getFirebaseAuth();
 
             // TODO: Check current user signed in
-            if (true)
+            FirebaseUser user = auth.CurrentUser;
+            if (user != null)
+            {
+                StartActivity(new Intent(Application.Context, typeof(ActivityHome)));
+                Finish();
+            }
+            else
             {
                 StartActivity(new Intent(Application.Context, typeof(ActivitySignIn)));
                 Finish();
-
             }
+
 
         }
 

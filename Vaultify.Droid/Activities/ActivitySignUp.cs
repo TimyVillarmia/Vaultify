@@ -1,10 +1,12 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.Gms.Common.Server.Response;
+using Android.Gms.Tasks;
 using Android.OS;
 using Android.Runtime;
 using Android.Security;
 using Android.Text;
+using Android.Util;
 using Android.Views;
 using Android.Widget;
 using AndroidX.AppCompat.App;
@@ -16,6 +18,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using Vaultify.Droid.Common;
 using static Android.Provider.Telephony.Mms;
 
@@ -25,7 +28,6 @@ namespace Vaultify.Droid.Activities
     public class ActivitySignUp : AppCompatActivity
     {
         TextView linkSignin;
-        TextInputLayout textFieldFullname;
         TextInputLayout textFieldcreateEmail;
         TextInputLayout textFieldcreatePass;
         TextInputLayout textFieldconfirmPass;
@@ -50,7 +52,6 @@ namespace Vaultify.Droid.Activities
             // Create your application here
             SetContentView(Resource.Layout.signup);
             linkSignin = FindViewById<TextView>(Resource.Id.hyperlink_create);
-            textFieldFullname = FindViewById<TextInputLayout>(Resource.Id.textFieldFullname);
             textFieldcreateEmail = FindViewById<TextInputLayout>(Resource.Id.textFieldcreateEmail);
             textFieldcreatePass = FindViewById<TextInputLayout>(Resource.Id.textFieldcreatePass);
             textFieldconfirmPass = FindViewById<TextInputLayout>(Resource.Id.textFieldconfirmPass);
@@ -68,7 +69,6 @@ namespace Vaultify.Droid.Activities
             btnSignup.Click += BtnSignup_Click;
 
        
-            textFieldFullname.EditText.TextChanged += delegate { ValidateField(textFieldFullname); };
             textFieldcreateEmail.EditText.TextChanged += delegate { ValidateField(textFieldcreateEmail); };
             textFieldcreatePass.EditText.TextChanged += delegate { ValidateField(textFieldcreatePass); };
             textFieldconfirmPass.EditText.TextChanged += delegate { ValidateField(textFieldconfirmPass); };
@@ -85,21 +85,16 @@ namespace Vaultify.Droid.Activities
                 return;
 
             }
-            if (field.Id == textFieldFullname.Id)
-            {
-                if (field.EditText?.Text.Length < 4)
-                {
-                    textFieldFullname.Error = "Name too short. Please enter at least 4 characters.";
-                    btnSignup.Clickable = false;
-                    return;
-                }
-                else
-                {
-                    textFieldFullname.ErrorEnabled = false;
-                    btnSignup.Clickable = true;
-                    return;
-                }
-            }
+            //if (field.Id == textFieldFullname.Id)
+            //{
+            //    if (field.EditText?.Text.Length < 4)
+            //    {
+            //        textFieldFullname.Error = "Name too short. Please enter at least 4 characters.";
+            //        btnSignup.Clickable = false;
+            //        return;
+            //    }
+
+            //}
             if (field.Id == textFieldcreateEmail.Id)
             {
                 bool isEmail = Regex.IsMatch(field.EditText?.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
@@ -110,12 +105,7 @@ namespace Vaultify.Droid.Activities
                     btnSignup.Clickable = false;
                     return;
                 }
-                else
-                {
-                    textFieldcreateEmail.ErrorEnabled = false;
-                    btnSignup.Clickable = true;
-                    return;
-                }
+
             }
             if (field.Id == textFieldcreatePass.Id)
             {
@@ -126,6 +116,9 @@ namespace Vaultify.Droid.Activities
                     btnSignup.Clickable = false;
                     return;
                 }
+
+
+
             }
             if (field.Id == textFieldconfirmPass.Id)
             {
@@ -136,9 +129,15 @@ namespace Vaultify.Droid.Activities
                     btnSignup.Clickable = false;
                     return;
                 }
+
+
             }
 
-
+            //textFieldFullname.ErrorEnabled = false;
+            textFieldcreateEmail.ErrorEnabled = false;
+            textFieldcreatePass.ErrorEnabled = false;
+            textFieldconfirmPass.ErrorEnabled = false;
+            btnSignup.Clickable = true;
 
         }
 
@@ -149,28 +148,48 @@ namespace Vaultify.Droid.Activities
         {
 
 
-            string fullname = textFieldFullname.EditText?.Text;
+            //string fullname = textFieldFullname.EditText?.Text;
              string email = textFieldcreateEmail.EditText?.Text;
              string pass = textFieldcreatePass.EditText?.Text;
              string confirmpass = textFieldconfirmPass.EditText?.Text;
 
-            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(pass))
+            if (string.IsNullOrEmpty(email) || 
+                string.IsNullOrEmpty(pass))
             {
-      
+                //textFieldFullname.Error = "Must not be empty.";
+                textFieldcreateEmail.Error = "Must not be empty.";
+                textFieldcreatePass.Error = "Must not be empty.";
+                textFieldconfirmPass.Error = "Must not be empty.";
+
+                return;
+            }
+            FirebaseUser user = auth.CurrentUser;
+
+            if (user != null)
+            {
+                Toast.MakeText(this, "User is already existed!", ToastLength.Short).Show();
                 return;
             }
 
             auth.CreateUserWithEmailAndPassword(email, pass);
 
 
-
+            StartSignInActivity();
+            Toast.MakeText(this, "Login was successful!", ToastLength.Short).Show();
         }
 
-        private void LinkSignin_Click(object sender, EventArgs e)
+        private void StartSignInActivity()
         {
             Intent signIn = new Intent(this, typeof(ActivitySignIn));
             StartActivity(signIn);
             Finish();
         }
+
+        private void LinkSignin_Click(object sender, EventArgs e)
+        {
+            StartSignInActivity();
+        }
+
+
     }
 }

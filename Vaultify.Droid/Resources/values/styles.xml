@@ -6,7 +6,7 @@
 	<style name="AppTheme" parent="Base.Theme.Vaultify">
 
 	</style>
-	<style name="Base.Theme.Vaultify" parent="Theme.MaterialComponents.Light.NoActionBar">
+	<style name="Base.Theme.Vaultify" parent="Theme.MaterialComponents.NoActionBar">
 		<!-- Customize your theme here. -->
 
 		<!-- Original AppCompat attributes. -->
