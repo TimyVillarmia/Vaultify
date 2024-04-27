@@ -17,13 +17,6 @@ namespace Vaultify.Droid.Common
     public class FirebaseRepository
     {
 
-        public FirebaseRepository()
-        {
-
-        }
-
-
-
         public static FirebaseAuth getFirebaseAuth()
         {          
             //app instance
@@ -42,14 +35,10 @@ namespace Vaultify.Droid.Common
 
             }
 
-
-
-
-            return FirebaseAuth.Instance;
+            return FirebaseAuth.GetInstance(app);
         }
 
 
-     
     }
 
 

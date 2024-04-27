@@ -23,19 +23,18 @@ namespace Vaultify.Droid
             FirebaseAuth auth = FirebaseRepository.getFirebaseAuth();
 
             // TODO: Check current user signed in
-            FirebaseUser user = auth.CurrentUser;
-            if (user != null)
-            {
-                StartActivity(new Intent(Application.Context, typeof(ActivityHome)));
-                Finish();
-            }
-            else
-            {
-                StartActivity(new Intent(Application.Context, typeof(ActivitySignIn)));
-                Finish();
-            }
-
-
+            //if (auth.CurrentUser != null)
+            //{
+            //    StartActivity(new Intent(Application.Context, typeof(ActivityHome)));
+            //    Finish();
+            //}
+            //else
+            //{
+            //    StartActivity(new Intent(Application.Context, typeof(ActivitySignIn)));
+            //    Finish();
+            //}
+            StartActivity(new Intent(Application.Context, typeof(ActivitySignIn)));
+            Finish();
         }
 
 
