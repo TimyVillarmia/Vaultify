@@ -41,12 +41,6 @@ namespace Vaultify.Droid.Activities
 
 
 
-            // get the auth from the repository
-            FirebaseRepository firebaseRepository = new FirebaseRepository();
-            // start firebase
-
-
-
             // Create your application here
             CreateAccountLink = FindViewById<TextView>(Resource.Id.hyperlink_create);
             linkForgot = FindViewById<TextView>(Resource.Id.linkForgot);
