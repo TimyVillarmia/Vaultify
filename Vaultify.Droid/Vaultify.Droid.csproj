@@ -69,7 +69,6 @@
     <Compile Include="Activities\SplashActivity.cs" />
     <Compile Include="Common\Onetimepassword.cs" />
     <Compile Include="Common\FirebaseRepository.cs" />
-    <Compile Include="Common\IFirebase.cs" />
     <Compile Include="MainApplication.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
