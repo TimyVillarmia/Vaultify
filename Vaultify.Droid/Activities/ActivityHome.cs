@@ -47,8 +47,8 @@ namespace Vaultify.Droid.Activities
 
         private void Toolbar_NavigationClick(object sender, AndroidX.AppCompat.Widget.Toolbar.NavigationClickEventArgs e)
         {
-            drawerLayout.Open();
-            //test
+            //drawerLayout.Open();
+
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)

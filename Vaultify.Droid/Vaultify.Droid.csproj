@@ -60,6 +60,7 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activities\ActivityContentMain.cs" />
     <Compile Include="Activities\ActivityRecoveryChangePassword.cs" />
     <Compile Include="Activities\ActivityHome.cs" />
     <Compile Include="Activities\ActivityRecovery.cs" />

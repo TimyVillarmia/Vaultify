@@ -14,18 +14,14 @@ using Firebase.Auth;
 using Google.Android.Material.Button;
 using Google.Android.Material.TextField;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using Vaultify.Droid.Common;
-using static Android.Provider.Telephony.Mms;
 
 namespace Vaultify.Droid.Activities
 {
     [Activity(Label = "ActivitySignUp")]
-    public class ActivitySignUp : AppCompatActivity
+    public class ActivitySignUp : AppCompatActivity, IOnCompleteListener
     {
         TextView linkSignin;
         TextInputLayout textFieldcreateEmail;
@@ -58,9 +54,6 @@ namespace Vaultify.Droid.Activities
             btnSignup = FindViewById<MaterialButton>(Resource.Id.btnSignup);
 
             auth = FirebaseRepository.getFirebaseAuth();
-            // get the auth from the repository
-            FirebaseRepository firebaseRepository = new FirebaseRepository();
-            // start firebase
 
 
 
@@ -112,7 +105,7 @@ namespace Vaultify.Droid.Activities
 
                 if (field.EditText?.Text.Length < 8)
                 {
-                    textFieldcreatePass.Error = "Password must be 8-10 characters.";
+                    textFieldcreatePass.Error = "Password should be at least 6 characters.";
                     btnSignup.Clickable = false;
                     return;
                 }
@@ -144,7 +137,7 @@ namespace Vaultify.Droid.Activities
 
 
 
-        private void BtnSignup_Click(object sender, EventArgs e)
+        private async void BtnSignup_Click(object sender, EventArgs e)
         {
 
 
@@ -163,19 +156,13 @@ namespace Vaultify.Droid.Activities
 
                 return;
             }
-            FirebaseUser user = auth.CurrentUser;
-
-            if (user != null)
-            {
-                Toast.MakeText(this, "User is already existed!", ToastLength.Short).Show();
-                return;
-            }
-
-            auth.CreateUserWithEmailAndPassword(email, pass);
 
 
-            StartSignInActivity();
-            Toast.MakeText(this, "Login was successful!", ToastLength.Short).Show();
+            auth.CreateUserWithEmailAndPassword(email, pass)
+                  .AddOnCompleteListener(this, this);
+
+
+
         }
 
         private void StartSignInActivity()
@@ -190,6 +177,18 @@ namespace Vaultify.Droid.Activities
             StartSignInActivity();
         }
 
-
+        public void OnComplete(Android.Gms.Tasks.Task task)
+        {
+            if (task.IsSuccessful)
+            {
+                Toast.MakeText(this, "Registration was successful!", ToastLength.Short).Show();
+                StartSignInActivity();
+                Finish();
+            }
+            else
+            {
+                Toast.MakeText(this, task.Exception.Message, ToastLength.Short).Show();
+            }
+        }
     }
 }
