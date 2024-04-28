@@ -41,9 +41,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/placeholder_email"
-            app:boxBackgroundColor="@android:color/white"
             android:layout_marginBottom="8dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
             tools:ignore="XmlNamespace">
 
             <com.google.android.material.textfield.TextInputEditText

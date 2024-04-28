@@ -137,7 +137,7 @@ namespace Vaultify.Droid.Activities
 
 
 
-        private async void BtnSignup_Click(object sender, EventArgs e)
+        private void BtnSignup_Click(object sender, EventArgs e)
         {
 
 
