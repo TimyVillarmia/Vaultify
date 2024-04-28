@@ -185,6 +185,17 @@
     <AndroidResource Include="Resources\drawable\checkmark.png" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Profile.png" />
+    <AndroidResource Include="Resources\drawable\settings.png" />
+    <AndroidResource Include="Resources\drawable\cards.png" />
+    <AndroidResource Include="Resources\drawable\identification.png" />
+    <AndroidResource Include="Resources\drawable\logout.png" />
+    <AndroidResource Include="Resources\drawable\password.png" />
+    <AndroidResource Include="Resources\drawable\privateNotes.png" />
+    <AndroidResource Include="Resources\drawable\Gears.png" />
+    <AndroidResource Include="Resources\drawable\Vector.png" />
+    <AndroidResource Include="Resources\drawable\UpperSection.png" />
+    <AndroidResource Include="Resources\drawable\splash.png" />
     <Content Include="Resources\layout\header_navigation_drawer.xml" />
     <AndroidResource Include="Resources\layout\recoveryChangePassword.xml">
       <SubType>Designer</SubType>
@@ -192,7 +203,13 @@
     <AndroidResource Include="Resources\layout\recoveryEmail.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\navheader.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <Content Include="Resources\menu\drawer_menu.xml" />
+    <AndroidResource Include="Resources\menu\menuItems.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\fragments\" />

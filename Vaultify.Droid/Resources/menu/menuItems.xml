@@ -1,5 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+	xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
@@ -7,8 +8,11 @@
 		<item
             android:id="@+id/profile"
             android:icon="@drawable/Profile"
-            android:title="johndoe@gmail.com"/>
-	</group>
+            android:title="johndoe@gmail.com"
+			android:divider="@color/test"
+	        android:dividerHeigh="1dp"
+			/>
+	</group>	
 
 	<group android:checkableBehavior="single">
 		<item
@@ -32,11 +36,11 @@
 	<group android:checkableBehavior="single">
 		<item
             android:id="@+id/generator"
-            android:icon="@drawable/Generator"
+            android:icon="@drawable/Gears"
             android:title="Password Generator"/>
 		<item
             android:id="@+id/health"
-            android:icon="@drawable/Health"
+            android:icon="@drawable/vector"
             android:title="Password Health"/>
 	</group>
 
@@ -52,3 +56,4 @@
 	</group>
 	
 </menu>
+
