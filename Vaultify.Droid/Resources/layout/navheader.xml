@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -10,21 +10,11 @@
     android:orientation="vertical"
     android:id="@+id/navheader"
     android:paddingTop="16dp"
-    android:paddingbottom="16dp"
+    android:paddingBottom="16dp"
     android:paddingLeft="8dp"
     android:paddingRight="8dp"
     android:background="@drawable/UpperSection"
     android:theme="@style/ThemeOverlay.MaterialComponents.Dark"
     >
-
-    <ImageView
-        android:id="@+id/user_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="description" />
-
-
-
-
 
 </RelativeLayout>
