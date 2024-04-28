@@ -1,10 +1,12 @@
 ﻿using Android.App;
 using Android.Content;
+using Android.Gms.Tasks;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using AndroidX.AppCompat.App;
+using Firebase.Auth;
 using Google.Android.Material.Button;
 using Google.Android.Material.Snackbar;
 using Google.Android.Material.TextField;
@@ -13,22 +15,28 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using Vaultify.Droid.Common;
 
 namespace Vaultify.Droid.Activities
 {
     [Activity(Label = "ActivityRecovery")]
-    public class ActivityRecovery : AppCompatActivity
+    public class ActivityRecovery : AppCompatActivity, IOnCompleteListener
     {
         TextView linkSignUp;
         MaterialButton btnSendOTP;
         TextInputLayout textFieldEmail;
 
+        FirebaseAuth auth;
+
+  
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.accountRecovery);
+            SetContentView(Resource.Layout.recoveryEmail);
             // Create your application here
+            auth = FirebaseRepository.getFirebaseAuth();
 
             linkSignUp = FindViewById<TextView>(Resource.Id.hyperlink_create);
             btnSendOTP = FindViewById<MaterialButton>(Resource.Id.btnsendcode);
@@ -43,45 +51,84 @@ namespace Vaultify.Droid.Activities
             //check first if the email is already registered in the firebase
             // insert firebase code here
 
-            bool emailisvalid = true;
+            bool isEmail = Regex.IsMatch(textFieldEmail.EditText?.Text.Trim(), @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
 
+
+            if (string.IsNullOrEmpty(textFieldEmail.EditText?.Text))
+            {
+                textFieldEmail.Error = "Must not be empty.";
+                return;
+            }
+            if (!isEmail)
+            {
+                textFieldEmail.Error = "Must be a valid email address";
+                return;
+            }
             try
             {
-                if (emailisvalid)
-                {
-                    await Onetimepassword.SendOTP(textFieldEmail.EditText?.Text);
-                    View view = (View)sender;
-                    Snackbar.Make(view, "OTP has been sent", Snackbar.LengthLong);
+                auth.SendPasswordResetEmail(textFieldEmail.EditText?.Text.Trim())
+                    .AddOnCompleteListener(this,this);
 
-                    Intent accountRecovery = new Intent(this, typeof(ActivityRecoveryCode));
-                    StartActivity(accountRecovery);
+                //if (userRecord == null)
+                //{
+                //    using (var builder = new AndroidX.AppCompat.App.AlertDialog.Builder(this))
+                //    {
+                //        var title = "There are no Vaultify Accounts associated with this email address.";
+                //        builder.SetTitle(title);
+                //        builder.SetPositiveButton("OK", (c, ev) =>
+                //        {
+                //            return;
+                //        });
+                //        var myCustomDialog = builder.Create();
+
+                //        myCustomDialog.Show();
+                //    }
                     
-                }
-                else
-                {
-                    using (var builder = new AndroidX.AppCompat.App.AlertDialog.Builder(this))
-                    {
-                        var title = "There are no Vaultify Accounts associated with this email address.";
-                        builder.SetTitle(title);
-                        builder.SetPositiveButton("OK", (c, ev) => 
-                        { 
+                
 
-                        });
-                        var myCustomDialog = builder.Create();
+                //await Onetimepassword.SendOTP(textFieldEmail.EditText?.Text);
 
-                        myCustomDialog.Show();
-                    }
+                //Intent accountRecovery = new Intent(this, typeof(ActivityRecoveryCode));
+                //StartActivity(accountRecovery);
 
-                }
 
             }
-            catch(Exception)
+            catch(FirebaseAuthException ex)
             {
-                View view = (View)sender;
-                Snackbar.Make(view, "Something went wrong", Snackbar.LengthLong);
+                Toast.MakeText(this, ex.Message, ToastLength.Short).Show();
             }
 
 
+        }
+
+        public void OnComplete(Task task)
+        {
+            if (task.IsSuccessful)
+            {
+                //Toast.MakeText(this, "Email sent, check your ", ToastLength.Short).Show();
+                //Intent Signup = new Intent(this, typeof(ActivitySignIn));
+                //StartActivity(Signup);
+                //Finish();
+
+                using (var builder = new AndroidX.AppCompat.App.AlertDialog.Builder(this))
+                {
+                    var title = "Reset Password.";
+                    var msg = $"We received a request to reset your password for Vaultify. To complete the reset, please check your email: {textFieldEmail.EditText?.Text.Trim()}";
+                    builder.SetTitle(title);
+                    builder.SetMessage(msg);
+                    builder.SetPositiveButton("OK", (c, ev) =>
+                    {
+                        return;
+                    });
+                    var myCustomDialog = builder.Create();
+
+                    myCustomDialog.Show();
+                }
+            }
+            else
+            {
+                Toast.MakeText(this, task.Exception.Message, ToastLength.Short).Show();
+            }
         }
 
         private void LinkSignUp_Click(object sender, EventArgs e)
