@@ -25,5 +25,8 @@
 	<string name="button_confirm">Confirm</string>
 	<string name="placeholder_newpass">Enter new password</string>
 	<string name="button_resetpass">Reset Password</string>
-	<string name="button_proceed">Proceed</string>
+	<string name="button_allitems">All Items</string>
+	<string name="button_notes">Private Notes</string>
+	<string name="button_logins">Logins</string>
+	<string name="button_credit">Credit Card</string>
 </resources>

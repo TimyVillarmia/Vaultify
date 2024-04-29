@@ -14,6 +14,7 @@
 	<color name="vaultify_colorOnBackground">#ffffff</color>
 	<color name="vaultify_colorOnSurface">#ffffff</color>
 	<color name="vaultify_colorOnError">#ffffff</color>
+	<color name="vaultify_colorTertiaryButton">#121212</color>
 	
 	<color name="vaultify_colorContainer">#111111</color>
 	<color name="test">#25202B20</color>
