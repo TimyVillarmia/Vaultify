@@ -8,56 +8,24 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/home"
     android:orientation="vertical"
-    android:paddingHorizontal="16dp"
-    >
+    android:gravity="center">
 
 
     <TextView
-        android:id="@+id/user_greet"
+        android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Welcome"
-        android:layout_marginTop="48dp"
-        android:layout_marginBottom="16dp"
-        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:text="test"
+        style="@style/TextAppearance.MaterialComponents.Headline4"
         />
 
     <com.google.android.material.button.MaterialButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/TextAppearance.MaterialComponents.Subtitle2"
-        app:backgroundTint="@color/vaultify_colorTertiaryButton"
-        android:id="@+id/btnAllItems"
-        app:icon="@drawable/category_24px"
-        android:text="@string/button_allitems"
-        />
-    <com.google.android.material.button.MaterialButton
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:backgroundTint="@color/vaultify_colorTertiaryButton"
-        style="@style/TextAppearance.MaterialComponents.Subtitle2"
-        android:id="@+id/btnNotes"
-        app:icon="@drawable/article_24px"
-        android:text="@string/button_notes"
-        />
-    <com.google.android.material.button.MaterialButton
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:backgroundTint="@color/vaultify_colorTertiaryButton"
-        style="@style/TextAppearance.MaterialComponents.Subtitle2"
-        android:id="@+id/btnLogins"
-        app:icon="@drawable/encrypted_24px"
-        android:text="@string/button_logins"
-        />
-    <com.google.android.material.button.MaterialButton
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:backgroundTint="@color/vaultify_colorTertiaryButton"
-        style="@style/TextAppearance.MaterialComponents.Subtitle2"
-        android:id="@+id/btnCredits"
-        app:icon="@drawable/credit_card_24px"
-        android:text="@string/button_credit"
+        style="@style/Widget.MaterialComponents.Button"
+        android:id="@+id/signout"
+        android:text="sign out"
         />
 
 </LinearLayout>

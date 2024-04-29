@@ -31,11 +31,25 @@ namespace Vaultify.Droid.Activities
 
             signout.Click += Signout_Click;
 
+            //FirebaseUser user = auth.CurrentUser;
+            //if (user != null)
+            //{
+            //    // Name, email address, and profile photo Url
+            //    textView.Text = user.DisplayName;
+            //    textView.Text = user.Email;
+
+            //}
         }
 
         private void Signout_Click(object sender, EventArgs e)
         {
-
+            //auth.SignOut();
+            //if (auth.CurrentUser == null)
+            //{
+            //    Intent signin = new Intent(this, typeof(ActivitySignIn));
+            //    StartActivity(signin);
+            //    Finish();
+            //}
 
         }
     }
