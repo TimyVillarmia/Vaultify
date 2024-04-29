@@ -185,6 +185,10 @@
     <AndroidResource Include="Resources\drawable\checkmark.png" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\drawable\article_24px.xml" />
+    <AndroidResource Include="Resources\drawable\category_24px.xml" />
+    <AndroidResource Include="Resources\drawable\credit_card_24px.xml" />
+    <AndroidResource Include="Resources\drawable\encrypted_24px.xml" />
     <Content Include="Resources\layout\header_navigation_drawer.xml" />
     <AndroidResource Include="Resources\layout\recoveryChangePassword.xml">
       <SubType>Designer</SubType>
