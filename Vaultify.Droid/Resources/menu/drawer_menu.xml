@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-	<group android:checkableBehavior="single">
+	<!--<group android:checkableBehavior="single">
 		<item
             android:id="@+id/profile"
             android:icon="@drawable/Profile"
@@ -49,6 +49,6 @@
             android:id="@+id/logout"
             android:icon="@drawable/logout"
             android:title="Logout"/>
-	</group>
+	</group>-->
 	
 </menu>

@@ -10,7 +10,7 @@
     android:orientation="vertical"
     android:id="@+id/navheader"
     android:paddingTop="16dp"
-    android:paddingbottom="16dp"
+    android:paddingBottom="16dp"
     android:paddingLeft="8dp"
     android:paddingRight="8dp"
     android:background="@drawable/UpperSection"
