@@ -60,7 +60,6 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Activities\ActivityContentMain.cs" />
     <Compile Include="Activities\ActivityHome.cs" />
     <Compile Include="Activities\ActivityRecovery.cs" />
     <Compile Include="Activities\ActivitySignIn.cs" />
@@ -233,6 +232,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\menu\menu_main.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\article_24px.xml" />
+    <AndroidResource Include="Resources\drawable\category_24px.xml" />
+    <AndroidResource Include="Resources\drawable\credit_card_24px.xml" />
+    <AndroidResource Include="Resources\drawable\encrypted_24px.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

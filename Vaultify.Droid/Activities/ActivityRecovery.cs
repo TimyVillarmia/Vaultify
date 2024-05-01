@@ -29,7 +29,6 @@ namespace Vaultify.Droid.Activities
 
         FirebaseAuth auth;
 
-  
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -46,7 +45,7 @@ namespace Vaultify.Droid.Activities
             btnSendOTP.Click += BtnSendOTP_Click;
         }
 
-        private async void BtnSendOTP_Click(object sender, EventArgs e)
+        private void BtnSendOTP_Click(object sender, EventArgs e)
         {
             //check first if the email is already registered in the firebase
             // insert firebase code here
@@ -69,28 +68,6 @@ namespace Vaultify.Droid.Activities
                 auth.SendPasswordResetEmail(textFieldEmail.EditText?.Text.Trim())
                     .AddOnCompleteListener(this,this);
 
-                //if (userRecord == null)
-                //{
-                //    using (var builder = new AndroidX.AppCompat.App.AlertDialog.Builder(this))
-                //    {
-                //        var title = "There are no Vaultify Accounts associated with this email address.";
-                //        builder.SetTitle(title);
-                //        builder.SetPositiveButton("OK", (c, ev) =>
-                //        {
-                //            return;
-                //        });
-                //        var myCustomDialog = builder.Create();
-
-                //        myCustomDialog.Show();
-                //    }
-                    
-                
-
-                //await Onetimepassword.SendOTP(textFieldEmail.EditText?.Text);
-
-                //Intent accountRecovery = new Intent(this, typeof(ActivityRecoveryCode));
-                //StartActivity(accountRecovery);
-
 
             }
             catch(FirebaseAuthException ex)
@@ -105,10 +82,6 @@ namespace Vaultify.Droid.Activities
         {
             if (task.IsSuccessful)
             {
-                //Toast.MakeText(this, "Email sent, check your ", ToastLength.Short).Show();
-                //Intent Signup = new Intent(this, typeof(ActivitySignIn));
-                //StartActivity(Signup);
-                //Finish();
 
                 using (var builder = new AndroidX.AppCompat.App.AlertDialog.Builder(this))
                 {
