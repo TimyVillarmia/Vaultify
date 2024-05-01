@@ -54,8 +54,7 @@
 		<item name="android:windowContentOverlay">@null</item>
 		<item name="android:windowActionBar">true</item>
 	</style>
-
-
+	
 	<style name="AppTheme.NoActionBar">
 		<item name="windowActionBar">false</item>
 		<item name="windowNoTitle">true</item>

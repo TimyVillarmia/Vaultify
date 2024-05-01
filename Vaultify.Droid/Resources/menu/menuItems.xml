@@ -10,7 +10,7 @@
             android:icon="@drawable/Profile"
             android:title="johndoe@gmail.com"
 			android:divider="@color/test"
-	        android:dividerHeigh="1dp"
+	        android:dividerHeight="1dp"
 			/>
 	</group>	
 

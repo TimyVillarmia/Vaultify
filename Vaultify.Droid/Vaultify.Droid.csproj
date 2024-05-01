@@ -196,7 +196,10 @@
     <AndroidResource Include="Resources\drawable\Vector.png" />
     <AndroidResource Include="Resources\drawable\UpperSection.png" />
     <AndroidResource Include="Resources\drawable\splash.png" />
-    <Content Include="Resources\layout\header_navigation_drawer.xml" />
+    <AndroidResource Include="Resources\layout\app_bar_main.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\header_navigation_drawer.xml" />
     <AndroidResource Include="Resources\layout\recoveryChangePassword.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -206,13 +209,30 @@
     <AndroidResource Include="Resources\layout\navheader.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <Content Include="Resources\menu\drawer_menu.xml" />
+    <AndroidResource Include="Resources\menu\drawer_menu.xml" />
     <AndroidResource Include="Resources\menu\menuItems.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\fragments\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\dimens.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\nav_header_main.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\menu\activity_main_drawer.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\side_nav_bar.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\menu\menu_main.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
