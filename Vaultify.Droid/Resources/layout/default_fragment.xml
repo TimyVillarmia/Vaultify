@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/home"
+    android:paddingHorizontal="16dp"
+    android:gravity="">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout_textgroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingVertical="72dp"
+        >
+        <TextView
+            android:id="@+id/pretext_welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:text="Welcome, "
+            android:textColor="@color/vaultify_colorOnBackground"
+            style="@style/TextAppearance.MaterialComponents.Headline5"
+        />
+        <TextView
+            android:id="@+id/textView_placeholder"
+            android:layout_toRightOf="@id/pretext_welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="test"
+            android:textColor="@color/vaultify_colorSecondary"
+            style="@style/TextAppearance.MaterialComponents.Headline5"
+        />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_below="@id/relativeLayout_textgroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/category_24px"
+            android:backgroundTint="@color/vaultify_colorButtonIcon"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:id="@+id/button_allitems"
+            android:text="All Items"
+        />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/article_24px"
+            android:backgroundTint="@color/vaultify_colorButtonIcon"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:id="@+id/button_notes"
+            android:text="Private Notes"
+        />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/encrypted_24px"
+            android:backgroundTint="@color/vaultify_colorButtonIcon"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:id="@+id/button_logins"
+            android:text="Logins"
+        />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/credit_card_24px"
+            android:backgroundTint="@color/vaultify_colorButtonIcon"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:id="@+id/button_credits"
+            android:text="Credit Cards"
+        />
+    </LinearLayout>
+
+
+
+</RelativeLayout>
