@@ -11,6 +11,7 @@ using AndroidX.DrawerLayout.Widget;
 using Google.Android.Material.FloatingActionButton;
 using Google.Android.Material.Navigation;
 using Google.Android.Material.Snackbar;
+using Vaultify.Droid.Fragments;
 using static Android.Content.ClipData;
 
 namespace Vaultify.Droid.Activities
@@ -28,6 +29,7 @@ namespace Vaultify.Droid.Activities
 
             AndroidX.AppCompat.Widget.Toolbar toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
+     
 
             FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
             fab.Click += FabOnClick;
@@ -39,6 +41,10 @@ namespace Vaultify.Droid.Activities
 
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener((NavigationView.IOnNavigationItemSelectedListener)this);
+
+            SupportFragmentManager.BeginTransaction()
+                .Add(Resource.Id.frameLayout_fragment, new DefaultFragment(), "Default")
+                .Commit();
 
         }
 

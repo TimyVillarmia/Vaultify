@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:paddingVertical="48dp"
+        android:paddingVertical="72dp"
         >
         <TextView
             android:id="@+id/pretext_welcome"
@@ -43,7 +43,6 @@
         android:layout_below="@id/relativeLayout_textgroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:orientation="vertical">
         <Button
             android:layout_width="match_parent"
