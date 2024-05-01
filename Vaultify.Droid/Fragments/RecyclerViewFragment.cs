@@ -12,7 +12,7 @@ using System.Text;
 
 namespace Vaultify.Droid.Fragments
 {
-    public class DefaultFragment : AndroidX.Fragment.App.Fragment
+    public class RecyclerViewFragment : AndroidX.Fragment.App.Fragment
     {
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -23,7 +23,7 @@ namespace Vaultify.Droid.Fragments
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            View view = inflater.Inflate(Resource.Layout.default_fragment, container, false);
+            View view = inflater.Inflate(Resource.Layout.content_main, container, false);
             return view;
         }
     }

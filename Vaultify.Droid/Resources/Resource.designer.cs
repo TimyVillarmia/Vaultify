@@ -4808,10 +4808,10 @@ namespace Vaultify.Droid
 			public const int browser_actions_context_menu_row = 2131558430;
 			
 			// aapt resource value: 0x7F0D001F
-			public const int custom_dialog = 2131558431;
+			public const int content_main = 2131558431;
 			
 			// aapt resource value: 0x7F0D0020
-			public const int default_fragment = 2131558432;
+			public const int custom_dialog = 2131558432;
 			
 			// aapt resource value: 0x7F0D0021
 			public const int design_bottom_navigation_item = 2131558433;

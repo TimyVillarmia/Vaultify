@@ -8,9 +8,11 @@ using AndroidX.AppCompat.App;
 using AndroidX.AppCompat.Widget;
 using AndroidX.Core.View;
 using AndroidX.DrawerLayout.Widget;
+using Firebase.Auth;
 using Google.Android.Material.FloatingActionButton;
 using Google.Android.Material.Navigation;
 using Google.Android.Material.Snackbar;
+using Vaultify.Droid.Common;
 using Vaultify.Droid.Fragments;
 using static Android.Content.ClipData;
 
@@ -20,12 +22,28 @@ namespace Vaultify.Droid.Activities
     public class ActivityHome : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
     {
 
-        DrawerLayout drawerLayout;
+        Button button_allitems;
+        Button button_notes;
+        Button button_logins;
+        Button button_credits;
+        TextView textView_placeholder;
+
+        FirebaseAuth auth;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.home);
+            auth = FirebaseRepository.getFirebaseAuth();
+            FirebaseUser user = auth.CurrentUser;
+
+
+
+            button_allitems = FindViewById<Button>(Resource.Id.button_allitems);
+            button_notes = FindViewById<Button>(Resource.Id.button_notes);
+            button_logins = FindViewById<Button>(Resource.Id.button_logins);
+            button_credits = FindViewById<Button>(Resource.Id.button_credits);
+            textView_placeholder = FindViewById<TextView>(Resource.Id.textView_placeholder);
 
             AndroidX.AppCompat.Widget.Toolbar toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
@@ -42,11 +60,21 @@ namespace Vaultify.Droid.Activities
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener((NavigationView.IOnNavigationItemSelectedListener)this);
 
-            SupportFragmentManager.BeginTransaction()
-                .Add(Resource.Id.frameLayout_fragment, new DefaultFragment(), "Default")
-                .Commit();
-
+            //ReplaceFragment(new DefaultFragment(), "Default");
+            textView_placeholder.Text = user.Email;
+            button_allitems.Click += delegate { ReplaceFragment(new RecyclerViewFragment(), "Recycler"); };
         }
+
+        private void ReplaceFragment(AndroidX.Fragment.App.Fragment fragment, string tag)
+        {
+            var fragmentManager = SupportFragmentManager;
+
+            var fragmentTransaction = fragmentManager.BeginTransaction();
+
+            fragmentTransaction.Replace(Resource.Id.frameLayout_fragment, fragment, tag)
+                .Commit();
+        }
+
 
 
         public override bool OnCreateOptionsMenu(IMenu menu)
