@@ -1,15 +1,49 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" tools:showIn="navigation_view">
-	<!--<group android:checkableBehavior="single">
-		<item android:id="@+id/nav_camera" android:icon="@drawable/ic_menu_camera" android:title="Import"/>
-		<item android:id="@+id/nav_gallery" android:icon="@drawable/ic_menu_gallery" android:title="Gallery"/>
-		<item android:id="@+id/nav_slideshow" android:icon="@drawable/ic_menu_slideshow" android:title="Slideshow"/>
-		<item android:id="@+id/nav_manage" android:icon="@drawable/ic_menu_manage" android:title="Tools"/>
+
+	<group android:checkableBehavior="single">
+		<item
+            android:id="@+id/privatenotes"
+            android:icon="@drawable/privateNotes"
+            android:title="Private Notes"/>
+		<item
+            android:id="@+id/passwords"
+            android:icon="@drawable/password"
+            android:title="Passwords"/>
+		<item
+            android:id="@+id/financialcards"
+            android:icon="@drawable/cards"
+            android:title="Financial Cards"/>s
+		<item
+            android:id="@+id/identification"
+            android:icon="@drawable/identification"
+            android:title="Identification Cards"/>
 	</group>
-	<item android:title="Communicate">
+	
+	<item android:title="Tools">
 		<menu>
-			<item android:id="@+id/nav_share" android:icon="@drawable/ic_menu_share" android:title="Share"/>
-			<item android:id="@+id/nav_send" android:icon="@drawable/ic_menu_send" android:title="Send"/>
+			<item
+				android:id="@+id/generator"
+				android:icon="@drawable/Gears"
+				android:title="Password Generator"/>
+			<item
+				android:id="@+id/health"
+				android:icon="@drawable/vector"
+				android:title="Password Health"/>
 		</menu>
-	</item>-->
+	</item>
+
+	<item android:title="Others">
+		<menu>
+			<item
+				android:id="@+id/settings"
+				android:icon="@drawable/settings"
+				android:title="Settings"/>
+			<item
+				android:id="@+id/logout"
+				android:icon="@drawable/logout"
+				android:title="Logout"/>
+		</menu>
+	</item>
+	
 </menu>

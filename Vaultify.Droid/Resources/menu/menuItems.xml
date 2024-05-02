@@ -6,16 +6,6 @@
 
 	<group android:checkableBehavior="single">
 		<item
-            android:id="@+id/profile"
-            android:icon="@drawable/Profile"
-            android:title="johndoe@gmail.com"
-			android:divider="@color/test"
-	        android:dividerHeight="1dp"
-			/>
-	</group>	
-
-	<group android:checkableBehavior="single">
-		<item
             android:id="@+id/privatenotes"
             android:icon="@drawable/privateNotes"
             android:title="Private Notes"/>
