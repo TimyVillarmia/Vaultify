@@ -1,5 +1,6 @@
 ﻿using System;
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -122,30 +123,31 @@ namespace Vaultify.Droid.Activities
         {
             int id = item.ItemId;
 
-            //if (id == Resource.Id.nav_camera)
-            //{
-            //    // Handle the camera action
-            //}
-            //else if (id == Resource.Id.nav_gallery)
-            //{
+            if (id == Resource.Id.logout)
+            {
+                using (var builder = new AndroidX.AppCompat.App.AlertDialog.Builder(this))
+                {
+                    var title = "Logout";
+                    var msg = "Are you sure you want to logout out?";
+                    builder.SetTitle(title);
+                    builder.SetMessage(msg);
+                    builder.SetPositiveButton("Confirm", (c, ev) =>
+                    {
+                        auth.SignOut();
+                        StartActivity(new Intent(Application.Context, typeof(ActivitySignIn)));
+                        Finish();
+                    });
+                    builder.SetNegativeButton("Cancel", (c, ev) =>
+                    {
+                        return; 
 
-            //}
-            //else if (id == Resource.Id.nav_slideshow)
-            //{
+                    });
+                    var myCustomDialog = builder.Create();
 
-            //}
-            //else if (id == Resource.Id.nav_manage)
-            //{
+                    myCustomDialog.Show();
+                }
+            }
 
-            //}
-            //else if (id == Resource.Id.nav_share)
-            //{
-
-            //}
-            //else if (id == Resource.Id.nav_send)
-            //{
-
-            //}
 
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             drawer.CloseDrawer(GravityCompat.Start);
