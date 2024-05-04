@@ -8,6 +8,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/home"
     android:paddingHorizontal="16dp"
+    android:paddingTop="?android:attr/actionBarSize"
     android:gravity="">
 
     <RelativeLayout
@@ -15,7 +16,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:paddingVertical="72dp"
+        android:paddingVertical="16dp"
+        
         >
         <TextView
             android:id="@+id/pretext_welcome"
