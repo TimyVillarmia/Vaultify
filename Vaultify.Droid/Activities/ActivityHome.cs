@@ -1,4 +1,5 @@
 ﻿using System;
+using Android.Animation;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -12,22 +13,24 @@ using AndroidX.DrawerLayout.Widget;
 using Firebase.Auth;
 using Google.Android.Material.FloatingActionButton;
 using Google.Android.Material.Navigation;
-using Google.Android.Material.Snackbar;
 using Vaultify.Droid.Common;
 using Vaultify.Droid.Fragments;
-using static Android.Content.ClipData;
 
 namespace Vaultify.Droid.Activities
 {
     [Activity(Label = "ActivityHome")]
     public class ActivityHome : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
     {
+        private static bool isFabOpen;
 
         Button button_allitems;
         Button button_notes;
         Button button_logins;
         Button button_credits;
         TextView textView_placeholder;
+        FloatingActionButton fabAirballoon;
+        FloatingActionButton fabCake;
+        FloatingActionButton fab;
 
         FirebaseAuth auth;
         protected override void OnCreate(Bundle savedInstanceState)
@@ -39,7 +42,8 @@ namespace Vaultify.Droid.Activities
             FirebaseUser user = auth.CurrentUser;
 
 
-
+            fabAirballoon = FindViewById<FloatingActionButton>(Resource.Id.fab_airballoon);
+            fabCake = FindViewById<FloatingActionButton>(Resource.Id.fab_cake);
             button_allitems = FindViewById<Button>(Resource.Id.button_allitems);
             button_notes = FindViewById<Button>(Resource.Id.button_notes);
             button_logins = FindViewById<Button>(Resource.Id.button_logins);
@@ -49,10 +53,6 @@ namespace Vaultify.Droid.Activities
             AndroidX.AppCompat.Widget.Toolbar toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
      
-
-            FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
-            fab.Click += FabOnClick;
-
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, Resource.String.navigation_drawer_open, Resource.String.navigation_drawer_close);
             drawer.AddDrawerListener(toggle);
@@ -64,6 +64,88 @@ namespace Vaultify.Droid.Activities
             //ReplaceFragment(new DefaultFragment(), "Default");
             textView_placeholder.Text = user.Email;
             button_allitems.Click += delegate { ReplaceFragment(new RecyclerViewFragment(), "Recycler"); };
+
+            fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
+
+            fab.Click += (o, e) =>
+            {
+                if (!isFabOpen)
+                    ShowFabMenu();
+                else
+                    CloseFabMenu();
+            };
+
+            fabCake.Click += (o, e) =>
+            {
+                CloseFabMenu();
+                Toast.MakeText(this, "Cake!", ToastLength.Short).Show();
+            };
+
+            fabAirballoon.Click += (o, e) =>
+            {
+                CloseFabMenu();
+                Toast.MakeText(this, "Airballoon!", ToastLength.Short).Show();
+            };
+
+
+
+        }
+
+        private void ShowFabMenu()
+        {
+            isFabOpen = true;
+            fabAirballoon.Visibility = ViewStates.Visible;
+            fabCake.Visibility = ViewStates.Visible;
+
+            fab.Animate().Rotation(135f);
+            fabAirballoon.Animate()
+                .TranslationY(-Resources.GetDimension(Resource.Dimension.standard_100))
+                .Rotation(0f);
+            fabCake.Animate()
+                .TranslationY(-Resources.GetDimension(Resource.Dimension.standard_55))
+                .Rotation(0f);
+        }
+
+        private void CloseFabMenu()
+        {
+            isFabOpen = false;
+
+            fab.Animate().Rotation(0f);
+            fabAirballoon.Animate()
+                .TranslationY(0f)
+                .Rotation(90f);
+            fabCake.Animate()
+                .TranslationY(0f)
+                .Rotation(90f).SetListener(new FabAnimatorListener(fabCake, fabAirballoon));
+        }
+
+        private class FabAnimatorListener : Java.Lang.Object, Animator.IAnimatorListener
+        {
+            View[] viewsToHide;
+
+            public FabAnimatorListener(params View[] viewsToHide)
+            {
+                this.viewsToHide = viewsToHide;
+            }
+
+            public void OnAnimationCancel(Animator animation)
+            {
+            }
+
+            public void OnAnimationEnd(Animator animation)
+            {
+                if (!isFabOpen)
+                    foreach (var view in viewsToHide)
+                        view.Visibility = ViewStates.Gone;
+            }
+
+            public void OnAnimationRepeat(Animator animation)
+            {
+            }
+
+            public void OnAnimationStart(Animator animation)
+            {
+            }
         }
 
         private void ReplaceFragment(AndroidX.Fragment.App.Fragment fragment, string tag)
@@ -112,12 +194,6 @@ namespace Vaultify.Droid.Activities
         }
 
 
-        private void FabOnClick(object sender, EventArgs e)
-        {
-            View view = (View)sender;
-            Snackbar.Make(view, "Replace with your own action", Snackbar.LengthLong)
-                .SetAction("Action", (View.IOnClickListener)null).Show();
-        }
 
         public bool OnNavigationItemSelected(IMenuItem item)
         {
