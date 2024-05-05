@@ -30,24 +30,40 @@
     </FrameLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_airballoon"
+        android:id="@+id/fab_notes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/standard_23"
+        app:backgroundTint="@android:color/white"
         android:visibility="gone"
         app:fabSize="mini"
-        app:srcCompat="@drawable/add_24px"/>
+        android:tint="@color/vaultify_colorBackground"
+        app:srcCompat="@drawable/article_24px"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_cake"
+        android:id="@+id/fab_credit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/standard_23"
+        app:backgroundTint="@android:color/white"
         android:visibility="gone"
         app:fabSize="mini"
-        app:srcCompat="@drawable/add_24px"/>
+        android:tint="@color/vaultify_colorBackground"
+        app:srcCompat="@drawable/credit_card_24px"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/standard_23"
+        app:backgroundTint="@android:color/white"
+        android:visibility="gone"
+        app:fabSize="mini"
+        android:tint="@color/vaultify_colorBackground"
+        app:srcCompat="@drawable/encrypted_24px"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"

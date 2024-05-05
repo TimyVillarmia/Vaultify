@@ -28,8 +28,9 @@ namespace Vaultify.Droid.Activities
         Button button_logins;
         Button button_credits;
         TextView textView_placeholder;
-        FloatingActionButton fabAirballoon;
-        FloatingActionButton fabCake;
+        FloatingActionButton fabNotes;
+        FloatingActionButton fabCredit;
+        FloatingActionButton fabLogin;
         FloatingActionButton fab;
 
         FirebaseAuth auth;
@@ -42,8 +43,9 @@ namespace Vaultify.Droid.Activities
             FirebaseUser user = auth.CurrentUser;
 
 
-            fabAirballoon = FindViewById<FloatingActionButton>(Resource.Id.fab_airballoon);
-            fabCake = FindViewById<FloatingActionButton>(Resource.Id.fab_cake);
+            fabNotes = FindViewById<FloatingActionButton>(Resource.Id.fab_notes);
+            fabCredit = FindViewById<FloatingActionButton>(Resource.Id.fab_credit);
+            fabLogin = FindViewById<FloatingActionButton>(Resource.Id.fab_login);
             button_allitems = FindViewById<Button>(Resource.Id.button_allitems);
             button_notes = FindViewById<Button>(Resource.Id.button_notes);
             button_logins = FindViewById<Button>(Resource.Id.button_logins);
@@ -75,16 +77,21 @@ namespace Vaultify.Droid.Activities
                     CloseFabMenu();
             };
 
-            fabCake.Click += (o, e) =>
+            fabNotes.Click += (o, e) =>
             {
                 CloseFabMenu();
-                Toast.MakeText(this, "Cake!", ToastLength.Short).Show();
+                Toast.MakeText(this, "Notes!", ToastLength.Short).Show();
             };
 
-            fabAirballoon.Click += (o, e) =>
+            fabCredit.Click += (o, e) =>
             {
                 CloseFabMenu();
-                Toast.MakeText(this, "Airballoon!", ToastLength.Short).Show();
+                Toast.MakeText(this, "Credits!", ToastLength.Short).Show();
+            };
+            fabLogin.Click += (o, e) =>
+            {
+                CloseFabMenu();
+                Toast.MakeText(this, "Login!", ToastLength.Short).Show();
             };
 
 
@@ -94,14 +101,18 @@ namespace Vaultify.Droid.Activities
         private void ShowFabMenu()
         {
             isFabOpen = true;
-            fabAirballoon.Visibility = ViewStates.Visible;
-            fabCake.Visibility = ViewStates.Visible;
+            fabNotes.Visibility = ViewStates.Visible;
+            fabCredit.Visibility = ViewStates.Visible;
+            fabLogin.Visibility = ViewStates.Visible;
 
             fab.Animate().Rotation(135f);
-            fabAirballoon.Animate()
+            fabNotes.Animate()
+                .TranslationY(-Resources.GetDimension(Resource.Dimension.standard_145))
+                .Rotation(0f);
+            fabCredit.Animate()
                 .TranslationY(-Resources.GetDimension(Resource.Dimension.standard_100))
                 .Rotation(0f);
-            fabCake.Animate()
+            fabLogin.Animate()
                 .TranslationY(-Resources.GetDimension(Resource.Dimension.standard_55))
                 .Rotation(0f);
         }
@@ -111,12 +122,15 @@ namespace Vaultify.Droid.Activities
             isFabOpen = false;
 
             fab.Animate().Rotation(0f);
-            fabAirballoon.Animate()
+            fabNotes.Animate()
                 .TranslationY(0f)
                 .Rotation(90f);
-            fabCake.Animate()
+            fabCredit.Animate()
                 .TranslationY(0f)
-                .Rotation(90f).SetListener(new FabAnimatorListener(fabCake, fabAirballoon));
+                .Rotation(90f);
+            fabLogin.Animate()
+                .TranslationY(0f)
+                .Rotation(90f).SetListener(new FabAnimatorListener(fabLogin, fabCredit, fabNotes));
         }
 
         private class FabAnimatorListener : Java.Lang.Object, Animator.IAnimatorListener
