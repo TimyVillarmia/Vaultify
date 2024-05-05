@@ -14,6 +14,8 @@ namespace Vaultify.Droid.Fragments
 {
     public class MyDialogFragment : DialogFragment
     {
+
+
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -23,10 +25,17 @@ namespace Vaultify.Droid.Fragments
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            // Use this to return your custom view for this Fragment
-            // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
+            View view = inflater.Inflate(Resource.Layout.dialog_frag, container, false);
+            return view;
 
-            return base.OnCreateView(inflater, container, savedInstanceState);
+        }
+
+        public override void OnViewCreated(View view, Bundle savedInstanceState)
+        {
+            base.OnViewCreated(view, savedInstanceState);
+
+            // set DialogFragment title
+
         }
     }
 }
