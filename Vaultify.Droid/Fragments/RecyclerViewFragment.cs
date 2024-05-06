@@ -13,6 +13,8 @@ using AndroidX.Fragment.App;
 using AndroidX.RecyclerView.Widget;
 using Vaultify.Droid.Common;
 using Vaultify.Droid.Common.Models;
+using AndroidX.AppCompat.App;
+using Vaultify.Droid.Activities;
 
 namespace Vaultify.Droid.Fragments
 {
@@ -34,6 +36,10 @@ namespace Vaultify.Droid.Fragments
         public override void OnViewCreated(View view, Bundle savedInstanceState)
         {
             base.OnViewCreated(view, savedInstanceState);
+
+            //((ActivityHome)Activity).SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            //((ActivityHome)Activity).SupportActionBar.SetDisplayShowHomeEnabled(true);
+
 
             List<CardModel> cardlist = Constants.getEmployeeData();
             // Assign employeelist to ItemAdapter

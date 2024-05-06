@@ -69,6 +69,7 @@
     <Compile Include="Common\Constants.cs" />
     <Compile Include="Common\FirebaseRepository.cs" />
     <Compile Include="Common\Models\CardModel.cs" />
+    <Compile Include="Fragments\ContentMainFragment.cs" />
     <Compile Include="Fragments\MyDialogFragment.cs" />
     <Compile Include="Fragments\RecyclerViewFragment.cs" />
     <Compile Include="MainApplication.cs" />
