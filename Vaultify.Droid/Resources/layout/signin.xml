@@ -73,6 +73,7 @@
             android:textColor="@color/vaultify_colorOnSecondary"
             android:text="@string/button_signin"/>
 
+
         <TextView
             android:id="@+id/linkForgot"
             android:layout_width="match_parent"

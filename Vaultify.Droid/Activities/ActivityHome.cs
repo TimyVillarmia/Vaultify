@@ -10,6 +10,7 @@ using AndroidX.AppCompat.App;
 using AndroidX.AppCompat.Widget;
 using AndroidX.Core.View;
 using AndroidX.DrawerLayout.Widget;
+using AndroidX.Fragment.App;
 using Firebase.Auth;
 using Google.Android.Material.FloatingActionButton;
 using Google.Android.Material.Navigation;
@@ -81,6 +82,7 @@ namespace Vaultify.Droid.Activities
             {
                 CloseFabMenu();
                 Toast.MakeText(this, "Notes!", ToastLength.Short).Show();
+                ShowDialog();
             };
 
             fabCredit.Click += (o, e) =>
@@ -160,6 +162,15 @@ namespace Vaultify.Droid.Activities
             public void OnAnimationStart(Animator animation)
             {
             }
+        }
+
+        public void ShowDialog()
+        {
+            var fragmentManager = SupportFragmentManager;
+
+            var fragmentTransaction = fragmentManager.BeginTransaction();
+            var dialogFragment = new MyDialogFragment();
+            dialogFragment.Show(fragmentTransaction, "dialog_fragment");
         }
 
         private void ReplaceFragment(AndroidX.Fragment.App.Fragment fragment, string tag)
