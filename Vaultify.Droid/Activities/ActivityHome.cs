@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Android.Animation;
 using Android.App;
 using Android.Content;
@@ -35,6 +36,7 @@ namespace Vaultify.Droid.Activities
         FloatingActionButton fab;
 
         FirebaseAuth auth;
+        AndroidX.Fragment.App.FragmentManager fragmentManager;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -42,6 +44,8 @@ namespace Vaultify.Droid.Activities
             SetContentView(Resource.Layout.home);
             auth = FirebaseRepository.getFirebaseAuth();
             FirebaseUser user = auth.CurrentUser;
+
+            fragmentManager = SupportFragmentManager;
 
 
             fabNotes = FindViewById<FloatingActionButton>(Resource.Id.fab_notes);
@@ -55,6 +59,7 @@ namespace Vaultify.Droid.Activities
 
             AndroidX.AppCompat.Widget.Toolbar toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
+
      
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, Resource.String.navigation_drawer_open, Resource.String.navigation_drawer_close);
@@ -64,9 +69,8 @@ namespace Vaultify.Droid.Activities
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener((NavigationView.IOnNavigationItemSelectedListener)this);
 
-            //ReplaceFragment(new DefaultFragment(), "Default");
-            textView_placeholder.Text = user.Email;
-            button_allitems.Click += delegate { ReplaceFragment(new RecyclerViewFragment(), "Recycler"); };
+            ReplaceFragment(new ContentMainFragment(), "Default");
+
 
             fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
 
@@ -99,7 +103,7 @@ namespace Vaultify.Droid.Activities
 
 
         }
-
+        
         private void ShowFabMenu()
         {
             isFabOpen = true;
@@ -166,20 +170,18 @@ namespace Vaultify.Droid.Activities
 
         public void ShowDialog()
         {
-            var fragmentManager = SupportFragmentManager;
+            fragmentManager = SupportFragmentManager;
 
-            var fragmentTransaction = fragmentManager.BeginTransaction();
             var dialogFragment = new MyDialogFragment();
-            dialogFragment.Show(fragmentTransaction, "dialog_fragment");
+            dialogFragment.Show(fragmentManager.BeginTransaction(), "dialog_fragment");
         }
 
-        private void ReplaceFragment(AndroidX.Fragment.App.Fragment fragment, string tag)
+        public void ReplaceFragment(AndroidX.Fragment.App.Fragment fragment, string tag)
         {
-            var fragmentManager = SupportFragmentManager;
+            fragmentManager = SupportFragmentManager;
 
-            var fragmentTransaction = fragmentManager.BeginTransaction();
 
-            fragmentTransaction.Replace(Resource.Id.frameLayout_fragment, fragment, tag)
+            fragmentManager.BeginTransaction().Replace(Resource.Id.frameLayout_fragment, fragment, tag)
                 .Commit();
         }
 
@@ -198,24 +200,62 @@ namespace Vaultify.Droid.Activities
             {
                 return true;
             }
+            else if (id == Resource.Id.homeAsUp)
+            {
+                return true;
+            }
+
 
             return base.OnOptionsItemSelected(item);
         }
 
+
+
         [Obsolete]
         public override void OnBackPressed()
         {
-            DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
-            if (drawer.IsDrawerOpen(GravityCompat.Start))
+
+            if (!(fragmentManager.Fragments.First() is ContentMainFragment))
             {
-                drawer.CloseDrawer(GravityCompat.Start);
+
+                ReplaceFragment(new ContentMainFragment(), "Default");
             }
             else
             {
+                DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
+                if (drawer.IsDrawerOpen(GravityCompat.Start))
+                {
+                    drawer.CloseDrawer(GravityCompat.Start);
+                }
+                else
+                {
+                    using (var builder = new AndroidX.AppCompat.App.AlertDialog.Builder(this))
+                    {
+                        var title = "Exit";
+                        var msg = "Are you sure you want to exit?";
+                        builder.SetTitle(title);
+                        builder.SetMessage(msg);
+                        builder.SetPositiveButton("Confirm", (c, ev) =>
+                        {
+                            FinishAffinity();
+                        });
+                        builder.SetNegativeButton("Cancel", (c, ev) =>
+                        {
+                            return;
 
-                base.OnBackPressed();
+                        });
+                        var myCustomDialog = builder.Create();
 
+                        myCustomDialog.Show();
+                    }
+                }
             }
+
+
+            
+
+
+
         }
 
 

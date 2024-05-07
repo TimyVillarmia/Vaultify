@@ -5,6 +5,8 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 using AndroidX.Fragment.App;
+using AndroidX.RecyclerView.Widget;
+using Google.Android.Material.Button;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +36,14 @@ namespace Vaultify.Droid.Fragments
         {
             base.OnViewCreated(view, savedInstanceState);
 
-            // set DialogFragment title
+            MaterialButton testbtn
+                = (MaterialButton)view.FindViewById(Resource.Id.test);
+
+
+            testbtn.Click += (o, e) =>
+            {
+                Activity.SupportFragmentManager.BeginTransaction().Remove(this).Commit();
+            };
 
         }
     }
