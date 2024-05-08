@@ -30,6 +30,8 @@
 	<string name="navigation_drawer_open">Open Navigation Drawer</string>
 	<string name="navigation_drawer_close">Close Navigation Drawer</string>
 	<string name="appbar_title_allitems">All Items</string>
+	<string name="user_name">John Doe</string>
+	<string name="user_email">johndoe@gmail.com</string>
 	<string-array name="websites_array">
 		<item>Facebook</item>
 		<item>Gmail</item>

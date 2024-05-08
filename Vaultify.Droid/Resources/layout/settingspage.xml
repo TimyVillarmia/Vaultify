@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="#121212">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/goback"
+                android:layout_alignParentStart="true"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Settings"
+                android:gravity="center_vertical"
+                style="@style/TextAppearance.Vaultify.Headline5"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="260dp"
+                android:layout_marginTop="3dp"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@id/relativeLayout_textgroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="110dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/delete"
+            android:backgroundTint="@color/vaultify_colorButtonIcon"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:id="@+id/button_deleteall"
+            android:text="Delete all data"
+        />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:icon="@drawable/send"
+            android:backgroundTint="@color/vaultify_colorButtonIcon"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:id="@+id/button_feedback"
+            android:text="Send Feedback"
+        />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:icon="@drawable/terms"
+            android:backgroundTint="@color/vaultify_colorButtonIcon"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:id="@+id/button_terms"
+            android:text="Terms of Use"
+        />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:icon="@drawable/policy"
+            android:backgroundTint="@color/vaultify_colorButtonIcon"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:id="@+id/button_policy"
+            android:text="Privacy Policy"
+        />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:icon="@drawable/about"
+            android:backgroundTint="@color/vaultify_colorButtonIcon"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:id="@+id/button_about"
+            android:text="About"
+        />
+    </LinearLayout>
+
+</LinearLayout>
