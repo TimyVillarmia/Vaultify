@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">Vaultify.Droid</string>
+	<string name="app_name">Vaultify</string>
 	<string name="action_settings">Settings</string>
 	<string name="headline_signin">Sign In to Your Vaultify Account</string>
 	<string name="placeholder_email">Enter email</string>
@@ -26,6 +26,13 @@
 	<string name="placeholder_newpass">Enter new password</string>
 	<string name="button_resetpass">Reset Password</string>
 	<string name="button_proceed">Proceed</string>
+	<string name="spinner_prompt">Choose a website</string>
 	<string name="navigation_drawer_open">Open Navigation Drawer</string>
 	<string name="navigation_drawer_close">Close Navigation Drawer</string>
+	<string-array name="websites_array">
+		<item>Facebook</item>
+		<item>Gmail</item>
+		<item>LinkedIn</item>
+		<item>Tiktok</item>
+	</string-array>
 </resources>

@@ -14,7 +14,7 @@ using System.Text;
 
 namespace Vaultify.Droid.Fragments
 {
-    public class MyDialogFragment : DialogFragment
+    public class LoginsDialogFragment : DialogFragment
     {
 
 
@@ -27,7 +27,7 @@ namespace Vaultify.Droid.Fragments
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            View view = inflater.Inflate(Resource.Layout.dialog_frag, container, false);
+            View view = inflater.Inflate(Resource.Layout.login_dialog_frag, container, false);
             return view;
 
         }
@@ -36,15 +36,26 @@ namespace Vaultify.Droid.Fragments
         {
             base.OnViewCreated(view, savedInstanceState);
 
-            MaterialButton testbtn
-                = (MaterialButton)view.FindViewById(Resource.Id.test);
+            MaterialButton btnCancel = (MaterialButton)view.FindViewById(Resource.Id.materialButton1_cancel);
+
+            Spinner spinner = view.FindViewById<Spinner>(Resource.Id.spinner_website);
 
 
-            testbtn.Click += (o, e) =>
+            spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
+            var adapter = ArrayAdapter.CreateFromResource(
+                    Context, Resource.Array.websites_array, Android.Resource.Layout.SimpleSpinnerItem);
+
+            adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            spinner.Adapter = adapter;
+            btnCancel.Click += (o, e) =>
             {
                 Activity.SupportFragmentManager.BeginTransaction().Remove(this).Commit();
             };
 
+        }
+
+        private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
+        {
         }
     }
 }
