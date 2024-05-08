@@ -70,7 +70,7 @@
     <Compile Include="Common\FirebaseRepository.cs" />
     <Compile Include="Common\Models\CardModel.cs" />
     <Compile Include="Fragments\ContentMainFragment.cs" />
-    <Compile Include="Fragments\MyDialogFragment.cs" />
+    <Compile Include="Fragments\LoginsDialogFragment.cs" />
     <Compile Include="Fragments\RecyclerViewFragment.cs" />
     <Compile Include="MainApplication.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
@@ -264,7 +264,7 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\dialog_frag.xml">
+    <AndroidResource Include="Resources\layout\login_dialog_frag.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

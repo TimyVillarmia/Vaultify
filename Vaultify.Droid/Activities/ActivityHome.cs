@@ -171,9 +171,12 @@ namespace Vaultify.Droid.Activities
         public void ShowDialog()
         {
             fragmentManager = SupportFragmentManager;
-
-            var dialogFragment = new MyDialogFragment();
-            dialogFragment.Show(fragmentManager.BeginTransaction(), "dialog_fragment");
+            AndroidX.Fragment.App.FragmentTransaction transaction = fragmentManager.BeginTransaction();
+            transaction.SetTransition(AndroidX.Fragment.App.FragmentTransaction.TransitFragmentOpen);
+            // To make it fullscreen, use the 'content' root view as the container
+            // for the fragment, which is always the root view for the activity.
+            transaction.Add(Android.Resource.Id.Content, new LoginsDialogFragment())
+                       .AddToBackStack(null).Commit();
         }
 
         public void ReplaceFragment(AndroidX.Fragment.App.Fragment fragment, string tag)

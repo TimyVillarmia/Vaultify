@@ -38,9 +38,34 @@ namespace Vaultify.Droid.Common
             return FirebaseAuth.GetInstance(app);
         }
 
+        public static FirebaseFirestore getFirebaseDB()
+        {
+            //app instance
+            var app = FirebaseApp.InitializeApp(Application.Context);
+
+            if (app == null)
+            {
+                var options = new FirebaseOptions.Builder()
+                   .SetProjectId("vaultify-1556e")
+                   .SetApplicationId("vaultify-1556e")
+                   .SetApiKey("AIzaSyDOF3-W3yS5DL24QY7fCv9s7VVHHW7BAIU")
+                   .SetStorageBucket("vaultify-1556e.appspot.com")
+                   .Build();
+
+                app = FirebaseApp.InitializeApp(Application.Context, options);
+
+            }
+
+            return FirebaseFirestore.GetInstance(app);
+        }
+
+
+
+
+
 
     }
 
 
-    
+
 }
