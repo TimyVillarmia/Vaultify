@@ -29,6 +29,7 @@
 	<string name="spinner_prompt">Choose a website</string>
 	<string name="navigation_drawer_open">Open Navigation Drawer</string>
 	<string name="navigation_drawer_close">Close Navigation Drawer</string>
+	<string name="appbar_title_allitems">All Items</string>
 	<string-array name="websites_array">
 		<item>Facebook</item>
 		<item>Gmail</item>

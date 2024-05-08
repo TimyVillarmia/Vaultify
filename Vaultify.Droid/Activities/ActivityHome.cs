@@ -37,6 +37,7 @@ namespace Vaultify.Droid.Activities
 
         FirebaseAuth auth;
         AndroidX.Fragment.App.FragmentManager fragmentManager;
+        public AndroidX.AppCompat.Widget.Toolbar toolbar;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -57,7 +58,7 @@ namespace Vaultify.Droid.Activities
             button_credits = FindViewById<Button>(Resource.Id.button_credits);
             textView_placeholder = FindViewById<TextView>(Resource.Id.textView_placeholder);
 
-            AndroidX.AppCompat.Widget.Toolbar toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.toolbar);
+            toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
 
      
@@ -69,6 +70,7 @@ namespace Vaultify.Droid.Activities
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener((NavigationView.IOnNavigationItemSelectedListener)this);
 
+            // insert default fragment
             ReplaceFragment(new ContentMainFragment(), "Default");
 
 
@@ -222,6 +224,7 @@ namespace Vaultify.Droid.Activities
             {
 
                 ReplaceFragment(new ContentMainFragment(), "Default");
+                toolbar.SetTitle(Resource.String.app_name);
             }
             else
             {

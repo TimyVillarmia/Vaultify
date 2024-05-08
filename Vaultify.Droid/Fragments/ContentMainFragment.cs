@@ -55,6 +55,7 @@ namespace Vaultify.Droid.Fragments
 
             button_allitems.Click += delegate {
                 ((ActivityHome)Activity).ReplaceFragment(new RecyclerViewFragment(), "Recycler");
+                ((ActivityHome)Activity).toolbar.SetTitle(Resource.String.appbar_title_allitems);
             };
 
         }
