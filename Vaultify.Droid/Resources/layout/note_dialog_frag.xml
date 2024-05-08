@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/vaultify_colorBackground"
+    >
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:titleTextColor="@android:color/white"
+            android:background="@color/vaultify_colorBackground"
+            app:popupTheme="@style/AppTheme.PopupOverlay"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:paddingHorizontal="16dp"
+        android:layout_below="@id/appBarLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/imageView_notes"
+            android:src="@drawable/article_24px"
+            android:layout_below="@id/appBarLayout1"
+            android:layout_marginBottom="24dp"
+            android:layout_marginRight="8dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"/>
+
+        <TextView
+            android:text="Private Notes"
+            android:paddingTop="8dp"
+            style="@style/TextAppearance.Vaultify.Headline6"
+            android:layout_toRightOf="@id/imageView_notes"
+            android:layout_alignTop="@id/imageView_notes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textColor="@android:color/white"
+            android:id="@+id/textView_titlelabel"
+            android:layout_marginBottom="4dp"
+            android:text="Title:"
+            android:layout_below="@id/imageView_notes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/editText_notetitle"
+            android:layout_below="@id/textView_titlelabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:textColor="@color/vaultify_colorOnSecondary"
+            android:layout_marginBottom="24dp"
+            style="@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox.Dense"
+            />
+
+        <TextView
+            android:textColor="@android:color/white"
+            android:id="@+id/textView_notelabel"
+            android:layout_marginBottom="4dp"
+            android:text="Content:"
+            android:layout_below="@id/editText_notetitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/editText_noteContent"
+            android:layout_below="@id/textView_notelabel"
+            android:lines="4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:textColor="@color/vaultify_colorOnSecondary"
+            android:layout_marginBottom="24dp"
+            style="@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox.Dense"
+            />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="20dp"
+        android:orientation="horizontal">
+
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/materialButton1_cancel"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/vaultify_colorSecondary"
+            app:strokeColor="@color/vaultify_colorSecondary"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:text="Cancel"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/materialButton_confirm"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:textColor="@color/vaultify_colorOnSecondary"
+            style="@style/Widget.MaterialComponents.Button"
+            android:text="Confirm"/>
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>
