@@ -12,7 +12,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using Vaultify.Droid.Common;
+using static Android.Provider.CalendarContract;
+using static System.Net.Mime.MediaTypeNames;
+using static Xamarin.Grpc.NameResolver;
 
 namespace Vaultify.Droid.Fragments
 {
@@ -65,8 +69,52 @@ namespace Vaultify.Droid.Fragments
                 Activity.SupportFragmentManager.BeginTransaction().Remove(this).Commit();
             };
             btnConfirm.Click += BtnConfirm_Click;
+            editText_expirydate.TextChanged += EditText_expirydate_TextChanged;
 
         }
+
+        private void EditText_expirydate_TextChanged(object sender, Android.Text.TextChangedEventArgs e)
+        {
+            var editText = (EditText)sender;
+
+            // get current text
+            var text = editText.Text;
+
+            // Remove non-digit characters and apply MM/YY format
+            text = Regex.Replace(text, "[^0-9]", "");
+
+            // Check is MM is valid 01 to 12
+            if (text.Length > 1 && !Regex.IsMatch(text.Substring(0,2), @"^(0[1-9]|1[0-2])$"))
+            {
+                // if not remove second digit of MM
+                // example: 13, removes 3 from text
+                text = text.Substring(0, 1);
+            }
+
+                
+            if (text.Length > 2)
+            {
+                // add slash after valid MM 
+                text = text.Insert(2, "/");
+            }
+            
+            
+
+            // Ensure maximum length of 5 (MM/YY)
+            if (text.Length > 5)
+            {
+                text = text.Substring(0, 5);
+            }
+
+            // Update the EditText if the formatted text is different
+            if (editText.Text != text)
+            {
+                editText.Text = text;
+                editText.SetSelection(text.Length); // Move cursor to the end
+            }
+
+        }
+
 
         private void BtnConfirm_Click(object sender, EventArgs e)
         {
