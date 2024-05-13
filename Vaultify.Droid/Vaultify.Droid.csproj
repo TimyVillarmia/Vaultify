@@ -74,7 +74,9 @@
     <Compile Include="Common\FirebaseRepository.cs" />
     <Compile Include="Common\Models\CardModel.cs" />
     <Compile Include="Fragments\ContentMainFragment.cs" />
+    <Compile Include="Fragments\CreditDialogFragment.cs" />
     <Compile Include="Fragments\LoginsDialogFragment.cs" />
+    <Compile Include="Fragments\NoteDialogFragment.cs" />
     <Compile Include="Fragments\RecyclerViewFragment.cs" />
     <Compile Include="MainApplication.cs" />
     <Compile Include="Resources\Resource.designer.cs" />

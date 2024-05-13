@@ -38,4 +38,9 @@
 		<item>LinkedIn</item>
 		<item>Tiktok</item>
 	</string-array>
+	<string-array name="card_type_array">
+		<item>Visa</item>
+		<item>Mastercard</item>
+		<item>American Express</item>
+	</string-array>
 </resources>

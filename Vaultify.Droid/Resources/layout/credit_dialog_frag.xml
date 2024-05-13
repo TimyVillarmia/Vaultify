@@ -51,7 +51,7 @@
             android:textColor="@android:color/white"
             android:id="@+id/textView_typelabel"
             android:layout_marginBottom="4dp"
-            android:text="Title:"
+            android:text="Card Type:"
             android:layout_below="@id/imageView_credit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -75,7 +75,7 @@
             android:layout_height="wrap_content"/>
 
         <EditText
-            android:id="@+id/editText_notetitle"
+            android:id="@+id/editText_holder"
             android:layout_below="@id/textView_holderlabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -90,7 +90,7 @@
             android:id="@+id/textView_cardnumberlabel"
             android:layout_marginBottom="4dp"
             android:text="Card Number:"
-            android:layout_below="@id/editText_notetitle"
+            android:layout_below="@id/editText_holder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
@@ -131,7 +131,7 @@
             android:textColor="@android:color/white"
             android:id="@+id/textView_datelabel"
             android:layout_marginBottom="4dp"
-            android:text="Security Code:"
+            android:text="Expiry Date:"
             android:layout_below="@id/editText_securitycode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>

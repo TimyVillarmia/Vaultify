@@ -79,7 +79,6 @@
         <EditText
             android:id="@+id/editText_noteContent"
             android:layout_below="@id/textView_notelabel"
-            android:lines="4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/white"

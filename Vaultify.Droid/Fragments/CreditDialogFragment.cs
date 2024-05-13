@@ -5,7 +5,6 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 using AndroidX.Fragment.App;
-using AndroidX.RecyclerView.Widget;
 using Firebase.Auth;
 using Google.Android.Material.Button;
 using Java.Util;
@@ -17,15 +16,17 @@ using Vaultify.Droid.Common;
 
 namespace Vaultify.Droid.Fragments
 {
-    public class LoginsDialogFragment : DialogFragment
+    public class CreditDialogFragment : DialogFragment
     {
-
-        EditText editText_newemail;
-        EditText editText_newpassword;
-        Spinner spinner;
-
         FirebaseAuth auth;
         FirebaseUser user;
+
+        TextView editText_holder;
+        TextView editText_cardnumber;
+        TextView editText_securitycode;
+        TextView editText_expirydate;
+        Spinner spinner;
+
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -33,16 +34,13 @@ namespace Vaultify.Droid.Fragments
             // Create your fragment here
             auth = FirebaseRepository.getFirebaseAuth();
             user = auth.CurrentUser;
-
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            View view = inflater.Inflate(Resource.Layout.login_dialog_frag, container, false);
+            View view = inflater.Inflate(Resource.Layout.credit_dialog_frag, container, false);
             return view;
-
         }
-
         public override void OnViewCreated(View view, Bundle savedInstanceState)
         {
             base.OnViewCreated(view, savedInstanceState);
@@ -50,18 +48,17 @@ namespace Vaultify.Droid.Fragments
             MaterialButton btnCancel = (MaterialButton)view.FindViewById(Resource.Id.materialButton1_cancel);
             MaterialButton btnConfirm = (MaterialButton)view.FindViewById(Resource.Id.materialButton_confirm);
 
-            editText_newemail = (EditText)view.FindViewById(Resource.Id.editText_newemail);
-            editText_newpassword = (EditText)view.FindViewById(Resource.Id.editText_newpassword);
-            spinner = view.FindViewById<Spinner>(Resource.Id.spinner_website);
+            editText_holder = (TextView)view.FindViewById(Resource.Id.editText_holder);
+            editText_cardnumber = (TextView)view.FindViewById(Resource.Id.editText_cardnumber);
+            editText_securitycode = (TextView)view.FindViewById(Resource.Id.editText_securitycode);
+            editText_expirydate = (TextView)view.FindViewById(Resource.Id.editText_expirydate);
+            spinner = view.FindViewById<Spinner>(Resource.Id.spinner_card_type);
 
-
-            spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
             var adapter = ArrayAdapter.CreateFromResource(
-                    Context, Resource.Array.websites_array, Android.Resource.Layout.SimpleSpinnerItem);
+                    Context, Resource.Array.card_type_array, Android.Resource.Layout.SimpleSpinnerItem);
 
             adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             spinner.Adapter = adapter;
-
 
             btnCancel.Click += (o, e) =>
             {
@@ -73,27 +70,22 @@ namespace Vaultify.Droid.Fragments
 
         private void BtnConfirm_Click(object sender, EventArgs e)
         {
-            HashMap logins = new HashMap();
-            logins.Put("Email", editText_newemail.Text);
-            logins.Put("Password", editText_newpassword.Text);
-            logins.Put("Website", spinner.SelectedItem);
+            HashMap credits = new HashMap();
+            credits.Put("Type", spinner.SelectedItem);
+            credits.Put("Account Holder", editText_holder.Text);
+            credits.Put("Card Number", editText_cardnumber.Text);
+            credits.Put("Security Code", editText_securitycode.Text);
+            credits.Put("Expiry Date", editText_expirydate.Text);
 
 
             FirebaseRepository.FirestoreCloudInsertDB(
                 FirebaseRepository.getFirebaseDB(),
-                "Logins",
+                "Credits",
                 user.Uid,
-                logins);
+                credits);
 
-            Toast.MakeText(Context, "Successfully added to Logins", ToastLength.Long).Show();
+            Toast.MakeText(Context, "Successfully added to Credits", ToastLength.Long).Show();
             Activity.SupportFragmentManager.BeginTransaction().Remove(this).Commit();
-
-
-        }
-
-        private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
-        {
-
         }
     }
 }

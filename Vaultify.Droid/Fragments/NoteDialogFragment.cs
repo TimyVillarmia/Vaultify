@@ -5,8 +5,8 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 using AndroidX.Fragment.App;
-using AndroidX.RecyclerView.Widget;
 using Firebase.Auth;
+using Firebase.Firestore.Auth;
 using Google.Android.Material.Button;
 using Java.Util;
 using System;
@@ -17,15 +17,13 @@ using Vaultify.Droid.Common;
 
 namespace Vaultify.Droid.Fragments
 {
-    public class LoginsDialogFragment : DialogFragment
+    public class NoteDialogFragment : DialogFragment
     {
-
-        EditText editText_newemail;
-        EditText editText_newpassword;
-        Spinner spinner;
-
         FirebaseAuth auth;
         FirebaseUser user;
+
+        TextView editText_notetitle;
+        TextView editText_noteContent;
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -33,14 +31,12 @@ namespace Vaultify.Droid.Fragments
             // Create your fragment here
             auth = FirebaseRepository.getFirebaseAuth();
             user = auth.CurrentUser;
-
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            View view = inflater.Inflate(Resource.Layout.login_dialog_frag, container, false);
+            View view = inflater.Inflate(Resource.Layout.note_dialog_frag, container, false);
             return view;
-
         }
 
         public override void OnViewCreated(View view, Bundle savedInstanceState)
@@ -49,51 +45,32 @@ namespace Vaultify.Droid.Fragments
 
             MaterialButton btnCancel = (MaterialButton)view.FindViewById(Resource.Id.materialButton1_cancel);
             MaterialButton btnConfirm = (MaterialButton)view.FindViewById(Resource.Id.materialButton_confirm);
-
-            editText_newemail = (EditText)view.FindViewById(Resource.Id.editText_newemail);
-            editText_newpassword = (EditText)view.FindViewById(Resource.Id.editText_newpassword);
-            spinner = view.FindViewById<Spinner>(Resource.Id.spinner_website);
-
-
-            spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
-            var adapter = ArrayAdapter.CreateFromResource(
-                    Context, Resource.Array.websites_array, Android.Resource.Layout.SimpleSpinnerItem);
-
-            adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            spinner.Adapter = adapter;
-
+            editText_notetitle = (TextView)view.FindViewById(Resource.Id.editText_notetitle);
+            editText_noteContent = (TextView)view.FindViewById(Resource.Id.editText_noteContent);
 
             btnCancel.Click += (o, e) =>
             {
                 Activity.SupportFragmentManager.BeginTransaction().Remove(this).Commit();
             };
-            btnConfirm.Click += BtnConfirm_Click;
+            btnConfirm.Click += BtnConfirm_Click; ;
 
         }
 
         private void BtnConfirm_Click(object sender, EventArgs e)
         {
-            HashMap logins = new HashMap();
-            logins.Put("Email", editText_newemail.Text);
-            logins.Put("Password", editText_newpassword.Text);
-            logins.Put("Website", spinner.SelectedItem);
+            HashMap notes = new HashMap();
+            notes.Put("Title", editText_notetitle.Text);
+            notes.Put("Content", editText_noteContent.Text);
 
 
             FirebaseRepository.FirestoreCloudInsertDB(
                 FirebaseRepository.getFirebaseDB(),
-                "Logins",
+                "Notes",
                 user.Uid,
-                logins);
+                notes);
 
-            Toast.MakeText(Context, "Successfully added to Logins", ToastLength.Long).Show();
+            Toast.MakeText(Context, "Successfully added to Notes", ToastLength.Long).Show();
             Activity.SupportFragmentManager.BeginTransaction().Remove(this).Commit();
-
-
-        }
-
-        private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
-        {
-
         }
     }
 }

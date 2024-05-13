@@ -1,5 +1,6 @@
 ﻿using Android.App;
 using Android.Content;
+using Android.Gms.Extensions;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -7,6 +8,8 @@ using Android.Widget;
 using Firebase;
 using Firebase.Auth;
 using Firebase.Firestore;
+using Firebase.Firestore.Auth;
+using Java.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +21,7 @@ namespace Vaultify.Droid.Common
     {
 
         public static FirebaseAuth getFirebaseAuth()
-        {          
+        {
             //app instance
             var app = FirebaseApp.InitializeApp(Application.Context);
 
@@ -57,6 +60,12 @@ namespace Vaultify.Droid.Common
             }
 
             return FirebaseFirestore.GetInstance(app);
+        }
+
+        public static async void FirestoreCloudInsertDB(FirebaseFirestore db, string collection, string user_id, HashMap payload)
+        {
+            DocumentReference docRef = db.Collection(collection).Document(user_id);
+            await docRef.Set(payload);
         }
 
 
