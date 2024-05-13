@@ -40,7 +40,7 @@
 	</string-array>
 
 
-	<!--Terms Texts-->>
+	<!--Terms Texts-->
 
 	<string name="first_title">Terms of Use</string>
 	<string name="first_paragraph1">It is imperative to carefully review and comprehend the terms and conditions when utilizing the Authenticator service within our application. We assure you that we do not intervene in or retain any of your data information.</string>
@@ -78,7 +78,7 @@
 	<string name="ninth_title">Contact Us:</string>
 	<string name="ninth_paragraph">For any inquiries regarding our Terms of Use, practices on this site, or your interactions with our apps, please feel free to contact us at: johndoe@gmail.com.</string>
 
-	<!--Policy Texts-->>
+	<!--Policy Texts-->
 
 	<string name="first">Our Privacy Policy describes the information collected by our TuatTran Studios, and our partners, through our mobile applications and the use of the information.</string>
 	<string name="second">What third parties collect via our apps</string>
@@ -93,7 +93,7 @@
 	<string name="analytics_three">Mobile (OS, service provider, screen resolution);</string>
 	<string name="analytics_four">Site behaviour (which pages users visit, duration of visit);</string>
 	<string name="analytics_five">For more information about our partners’ practices, please visit the following links:</string>
-	<string name="analytics_six">https://www.google.com/policies/privacy/partners/</string>
+	<string name="analytics_six">.https://www.google.com/policies/privacy/partners/</string>
 	
 	<string name="analytics_how">How we use this information collected in our application</string>
 	<string name="analytics_paragraph">We collect this Information to improve performance and reliability of our App and to get a better understanding of what users in general prefer. We do not link any of this Information in any way to individuals or any other information we might obtain. We do not share, sell or in any other way give other persons or companies. We don’t rent or sell your email address.</string>

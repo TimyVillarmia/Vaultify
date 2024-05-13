@@ -237,7 +237,7 @@
                     android:textColor="@color/vaultify_colorOnSecondary"
                     style="@style/TextAppearance.Vaultify.Body1"
                     android:layout_marginTop="20dp"/>
-
+            
             </LinearLayout>
 
         </ScrollView>
