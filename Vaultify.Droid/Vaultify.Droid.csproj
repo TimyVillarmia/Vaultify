@@ -70,7 +70,6 @@
     <Compile Include="Activities\ActivitySignUp.cs" />
     <Compile Include="Activities\SplashActivity.cs" />
     <Compile Include="Common\Adapter1.cs" />
-    <Compile Include="Common\Constants.cs" />
     <Compile Include="Common\FirebaseRepository.cs" />
     <Compile Include="Common\Models\CardModel.cs" />
     <Compile Include="Fragments\ContentMainFragment.cs" />
@@ -124,9 +123,15 @@
     <PackageReference Include="MimeKit">
       <Version>4.5.0</Version>
     </PackageReference>
+    <PackageReference Include="Square.Picasso">
+      <Version>2.71828.0</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.2.0.5" />
     <PackageReference Include="Xamarin.AndroidX.CardView">
       <Version>1.0.0.25</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.AndroidX.ExifInterface">
+      <Version>1.3.7.1</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.Fragment">
       <Version>1.6.2.2</Version>

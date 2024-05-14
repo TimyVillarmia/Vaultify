@@ -1,4 +1,5 @@
 ﻿using Android.Content;
+using Android.Icu.Text;
 using Android.OS;
 using Android.Runtime;
 using Android.Util;
@@ -59,6 +60,7 @@ namespace Vaultify.Droid.Fragments
         private void BtnConfirm_Click(object sender, EventArgs e)
         {
             HashMap notes = new HashMap();
+            notes.Put("UID", user.Uid);
             notes.Put("Title", editText_notetitle.Text);
             notes.Put("Content", editText_noteContent.Text);
 
@@ -66,7 +68,6 @@ namespace Vaultify.Droid.Fragments
             FirebaseRepository.FirestoreCloudInsertDB(
                 FirebaseRepository.getFirebaseDB(),
                 "Notes",
-                user.Uid,
                 notes);
 
             Toast.MakeText(Context, "Successfully added to Notes", ToastLength.Long).Show();

@@ -13,23 +13,10 @@ namespace Vaultify.Droid.Common.Models
 {
     public class CardModel
     {
-        private string logoName; 
-        private string previewText;  
+        public string Row_Headline { get; set; }
+        public string Row_SubHeadline { get; set; }
+        public string Row_Image { get; set; }
 
-        public CardModel(string logoName, string previewText)
-        {
-            this.logoName = logoName;
-            this.previewText = previewText;
-        }
 
-        public string getlogoName()
-        {
-            return logoName;
-        }
-
-        public string getpreviewText()
-        {
-            return previewText;
-        }
     }
 }

@@ -30,11 +30,14 @@
 	<string name="navigation_drawer_open">Open Navigation Drawer</string>
 	<string name="navigation_drawer_close">Close Navigation Drawer</string>
 	<string name="appbar_title_allitems">All Items</string>
+	<string name="appbar_title_logins">Logins</string>
+	<string name="appbar_title_credits">Credit Cards</string>
+	<string name="appbar_title_notes">Notes</string>
 	<string name="user_name">John Doe</string>
 	<string name="user_email">johndoe@gmail.com</string>
 	<string-array name="websites_array">
 		<item>Facebook</item>
-		<item>Gmail</item>
+		<item>Google</item>
 		<item>LinkedIn</item>
 		<item>Tiktok</item>
 	</string-array>

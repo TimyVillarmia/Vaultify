@@ -119,6 +119,7 @@ namespace Vaultify.Droid.Fragments
         private void BtnConfirm_Click(object sender, EventArgs e)
         {
             HashMap credits = new HashMap();
+            credits.Put("UID", user.Uid);
             credits.Put("Type", spinner.SelectedItem);
             credits.Put("Account Holder", editText_holder.Text);
             credits.Put("Card Number", editText_cardnumber.Text);
@@ -128,8 +129,7 @@ namespace Vaultify.Droid.Fragments
 
             FirebaseRepository.FirestoreCloudInsertDB(
                 FirebaseRepository.getFirebaseDB(),
-                "Credits",
-                user.Uid,
+                "Cards",
                 credits);
 
             Toast.MakeText(Context, "Successfully added to Credits", ToastLength.Long).Show();

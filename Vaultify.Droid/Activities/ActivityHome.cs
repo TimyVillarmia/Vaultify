@@ -45,7 +45,7 @@ namespace Vaultify.Droid.Activities
             SetContentView(Resource.Layout.home);
             auth = FirebaseRepository.getFirebaseAuth();
             FirebaseUser user = auth.CurrentUser;
-
+    
             fragmentManager = SupportFragmentManager;
 
 
@@ -178,7 +178,7 @@ namespace Vaultify.Droid.Activities
             transaction.SetTransition(AndroidX.Fragment.App.FragmentTransaction.TransitFragmentOpen);
             // To make it fullscreen, use the 'content' root view as the container
             // for the fragment, which is always the root view for the activity.
-            transaction.Add(Android.Resource.Id.Content, dialogFragment)
+            transaction.Add(Android.Resource.Id.Content, dialogFragment, "DialogFragment")
                        .AddToBackStack(null).Commit();
         }
 
@@ -220,12 +220,17 @@ namespace Vaultify.Droid.Activities
         [Obsolete]
         public override void OnBackPressed()
         {
+            var dialog = fragmentManager.FindFragmentByTag("DialogFragment");
 
             if (!(fragmentManager.Fragments.First() is ContentMainFragment))
             {
 
                 ReplaceFragment(new ContentMainFragment(), "Default");
                 toolbar.SetTitle(Resource.String.app_name);
+            }
+            else if (dialog != null)
+            {
+                fragmentManager.BeginTransaction().Remove(dialog).Commit();
             }
             else
             {

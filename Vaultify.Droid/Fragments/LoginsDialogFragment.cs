@@ -74,6 +74,7 @@ namespace Vaultify.Droid.Fragments
         private void BtnConfirm_Click(object sender, EventArgs e)
         {
             HashMap logins = new HashMap();
+            logins.Put("UID", user.Uid);
             logins.Put("Email", editText_newemail.Text);
             logins.Put("Password", editText_newpassword.Text);
             logins.Put("Website", spinner.SelectedItem);
@@ -82,7 +83,6 @@ namespace Vaultify.Droid.Fragments
             FirebaseRepository.FirestoreCloudInsertDB(
                 FirebaseRepository.getFirebaseDB(),
                 "Logins",
-                user.Uid,
                 logins);
 
             Toast.MakeText(Context, "Successfully added to Logins", ToastLength.Long).Show();

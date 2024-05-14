@@ -21,6 +21,8 @@ namespace Vaultify.Droid.Fragments
     {
         FirebaseAuth auth;
         FirebaseUser user;
+
+        public static string QueryString { get; set; }
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -56,6 +58,22 @@ namespace Vaultify.Droid.Fragments
             button_allitems.Click += delegate {
                 ((ActivityHome)Activity).ReplaceFragment(new RecyclerViewFragment(), "Recycler");
                 ((ActivityHome)Activity).toolbar.SetTitle(Resource.String.appbar_title_allitems);
+                QueryString = "AllItems";
+            };
+            button_notes.Click += delegate {
+                ((ActivityHome)Activity).ReplaceFragment(new RecyclerViewFragment(), "Recycler");
+                ((ActivityHome)Activity).toolbar.SetTitle(Resource.String.appbar_title_notes);
+                QueryString = "Notes";
+            };
+            button_logins.Click += delegate {
+                ((ActivityHome)Activity).ReplaceFragment(new RecyclerViewFragment(), "Recycler");
+                ((ActivityHome)Activity).toolbar.SetTitle(Resource.String.appbar_title_logins);
+                QueryString = "Logins";
+            };
+            button_credits.Click += delegate {
+                ((ActivityHome)Activity).ReplaceFragment(new RecyclerViewFragment(), "Recycler");
+                ((ActivityHome)Activity).toolbar.SetTitle(Resource.String.appbar_title_credits);
+                QueryString = "Cards";
             };
 
         }
