@@ -13,6 +13,7 @@ using AndroidX.Core.View;
 using AndroidX.DrawerLayout.Widget;
 using AndroidX.Fragment.App;
 using Firebase.Auth;
+using Firebase.Firestore.Auth;
 using Google.Android.Material.FloatingActionButton;
 using Google.Android.Material.Navigation;
 using Vaultify.Droid.Common;
@@ -45,7 +46,7 @@ namespace Vaultify.Droid.Activities
             SetContentView(Resource.Layout.home);
             auth = FirebaseRepository.getFirebaseAuth();
             FirebaseUser user = auth.CurrentUser;
-    
+
             fragmentManager = SupportFragmentManager;
 
 
@@ -61,7 +62,7 @@ namespace Vaultify.Droid.Activities
             toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
 
-     
+
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, Resource.String.navigation_drawer_open, Resource.String.navigation_drawer_close);
             drawer.AddDrawerListener(toggle);
@@ -106,7 +107,7 @@ namespace Vaultify.Droid.Activities
 
 
         }
-        
+
         private void ShowFabMenu()
         {
             isFabOpen = true;
@@ -173,7 +174,7 @@ namespace Vaultify.Droid.Activities
 
         public void ShowDialog(AndroidX.Fragment.App.DialogFragment dialogFragment)
         {
-            fragmentManager = SupportFragmentManager;
+            
             AndroidX.Fragment.App.FragmentTransaction transaction = fragmentManager.BeginTransaction();
             transaction.SetTransition(AndroidX.Fragment.App.FragmentTransaction.TransitFragmentOpen);
             // To make it fullscreen, use the 'content' root view as the container
@@ -184,8 +185,6 @@ namespace Vaultify.Droid.Activities
 
         public void ReplaceFragment(AndroidX.Fragment.App.Fragment fragment, string tag)
         {
-            fragmentManager = SupportFragmentManager;
-
 
             fragmentManager.BeginTransaction().Replace(Resource.Id.frameLayout_fragment, fragment, tag)
                 .Commit();
@@ -228,10 +227,10 @@ namespace Vaultify.Droid.Activities
                 ReplaceFragment(new ContentMainFragment(), "Default");
                 toolbar.SetTitle(Resource.String.app_name);
             }
-            else if (dialog != null)
-            {
-                fragmentManager.BeginTransaction().Remove(dialog).Commit();
-            }
+            //else if (dialog != null)
+            //{
+            //    fragmentManager.BeginTransaction().Remove(dialog).Commit();
+            //}
             else
             {
                 DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
@@ -264,7 +263,7 @@ namespace Vaultify.Droid.Activities
             }
 
 
-            
+
 
 
 
@@ -292,7 +291,7 @@ namespace Vaultify.Droid.Activities
                     });
                     builder.SetNegativeButton("Cancel", (c, ev) =>
                     {
-                        return; 
+                        return;
 
                     });
                     var myCustomDialog = builder.Create();
@@ -300,6 +299,30 @@ namespace Vaultify.Droid.Activities
                     myCustomDialog.Show();
                 }
             }
+            else if (id == Resource.Id.homebutton)
+            {
+                OnBackPressed();
+            }
+            else if (id == Resource.Id.privatenotes)
+            {
+                ReplaceFragment(new RecyclerViewFragment(), "Recycler");
+                toolbar.SetTitle(Resource.String.appbar_title_notes);
+                ContentMainFragment.QueryString = "Notes";
+            }
+            else if (id == Resource.Id.passwords)
+            {
+                ReplaceFragment(new RecyclerViewFragment(), "Recycler");
+                toolbar.SetTitle(Resource.String.appbar_title_logins);
+                ContentMainFragment.QueryString = "Logins";
+            }
+            else if (id == Resource.Id.financialcards)
+            {
+                ReplaceFragment(new RecyclerViewFragment(), "Recycler");
+                toolbar.SetTitle(Resource.String.appbar_title_credits);
+                ContentMainFragment.QueryString = "Cards";
+
+            }
+
 
 
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);

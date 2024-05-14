@@ -19,29 +19,14 @@
 		<item
             android:id="@+id/passwords"
             android:icon="@drawable/password"
-            android:title="Passwords"/>
+            android:title="Logins"/>
 		<item
             android:id="@+id/financialcards"
             android:icon="@drawable/cards"
-            android:title="Financial Cards"/>s
-		<item
-            android:id="@+id/identification"
-            android:icon="@drawable/identification"
-            android:title="Identification Cards"/>
+            android:title="Credit Cards"/>s
 	</group>
 	
-	<item android:title="Tools">
-		<menu>
-			<item
-				android:id="@+id/generator"
-				android:icon="@drawable/Gears"
-				android:title="Password Generator"/>
-			<item
-				android:id="@+id/health"
-				android:icon="@drawable/vector"
-				android:title="Password Health"/>
-		</menu>
-	</item>
+
 
 	<item android:title="Others">
 		<menu>

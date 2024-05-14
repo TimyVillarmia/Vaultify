@@ -30,6 +30,7 @@ namespace Vaultify.Droid.Fragments
         FirebaseFirestore db;
         FirebaseAuth auth;
         FirebaseUser user;
+
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -104,15 +105,15 @@ namespace Vaultify.Droid.Fragments
                             //cardmodel.Row_Image = item.Get("Website").ToString();
                             //break;
                         case "Notes":
-                            //cardmodel.Row_Headline = item.Get("Website").ToString();
-                            //cardmodel.Row_SubHeadline = item.Get("Email").ToString();
-                            //cardmodel.Row_Image = item.Get("Website").ToString();
-                            //break;          
+                            cardmodel.Row_Headline = item.Get("Title").ToString();
+                            cardmodel.Row_SubHeadline = item.Get("Content").ToString();
+                            cardmodel.Row_Image = "Notes";
+                            break;
                         case "Cards":
-                        //cardmodel.Row_Headline = item.Get("Website").ToString();
-                        //cardmodel.Row_SubHeadline = item.Get("Email").ToString();
-                        //cardmodel.Row_Image = item.Get("Website").ToString();
-                        //break;
+                            cardmodel.Row_Headline = item.Get("Type").ToString();
+                            cardmodel.Row_SubHeadline = item.Get("Account Holder").ToString();
+                            cardmodel.Row_Image = item.Get("Type").ToString();
+                            break;
                         case "Logins":
                             cardmodel.Row_Headline = item.Get("Website").ToString();
                             cardmodel.Row_SubHeadline = item.Get("Email").ToString();

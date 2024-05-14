@@ -54,29 +54,47 @@ namespace Vaultify.Droid.Fragments
             TextView textView_placeholder = view.FindViewById<TextView>(Resource.Id.textView_placeholder);
             textView_placeholder.Text = user.Email;
 
+            button_allitems.Click += Button_allitems_Click;
 
-            button_allitems.Click += delegate {
-                ((ActivityHome)Activity).ReplaceFragment(new RecyclerViewFragment(), "Recycler");
-                ((ActivityHome)Activity).toolbar.SetTitle(Resource.String.appbar_title_allitems);
-                QueryString = "AllItems";
-            };
-            button_notes.Click += delegate {
-                ((ActivityHome)Activity).ReplaceFragment(new RecyclerViewFragment(), "Recycler");
-                ((ActivityHome)Activity).toolbar.SetTitle(Resource.String.appbar_title_notes);
-                QueryString = "Notes";
-            };
-            button_logins.Click += delegate {
-                ((ActivityHome)Activity).ReplaceFragment(new RecyclerViewFragment(), "Recycler");
-                ((ActivityHome)Activity).toolbar.SetTitle(Resource.String.appbar_title_logins);
-                QueryString = "Logins";
-            };
-            button_credits.Click += delegate {
-                ((ActivityHome)Activity).ReplaceFragment(new RecyclerViewFragment(), "Recycler");
-                ((ActivityHome)Activity).toolbar.SetTitle(Resource.String.appbar_title_credits);
-                QueryString = "Cards";
-            };
+            button_notes.Click += Button_notes_Click;
+            button_logins.Click += Button_logins_Click;
+            button_credits.Click += Button_credits_Click;
 
         }
+        
+  
 
+
+
+
+
+
+        private void Button_credits_Click(object sender, EventArgs e)
+        {
+            ((ActivityHome)Activity).ReplaceFragment(new RecyclerViewFragment(), "Recycler");
+            ((ActivityHome)Activity).toolbar.SetTitle(Resource.String.appbar_title_credits);
+            QueryString = "Cards";
+        }
+
+        private void Button_logins_Click(object sender, EventArgs e)
+        {
+            ((ActivityHome)Activity).ReplaceFragment(new RecyclerViewFragment(), "Recycler");
+            ((ActivityHome)Activity).toolbar.SetTitle(Resource.String.appbar_title_logins);
+            QueryString = "Logins";
+        }
+
+        private void Button_notes_Click(object sender, EventArgs e)
+        {
+            ((ActivityHome)Activity).ReplaceFragment(new RecyclerViewFragment(), "Recycler");
+            ((ActivityHome)Activity).toolbar.SetTitle(Resource.String.appbar_title_notes);
+            QueryString = "Notes";
+        }
+
+        private void Button_allitems_Click(object sender, EventArgs e)
+        {
+            ((ActivityHome)Activity).ReplaceFragment(new RecyclerViewFragment(), "Recycler");
+            ((ActivityHome)Activity).toolbar.SetTitle(Resource.String.appbar_title_allitems);
+            QueryString = "AllItems";
+        }
     }
 }
