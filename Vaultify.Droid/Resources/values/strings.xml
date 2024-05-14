@@ -46,4 +46,71 @@
 		<item>Mastercard</item>
 		<item>American Express</item>
 	</string-array>
+
+	<!--Terms Texts-->
+
+	<string name="first_title">Terms of Use</string>
+	<string name="first_paragraph1">It is imperative to carefully review and comprehend the terms and conditions when utilizing the Authenticator service within our application. We assure you that we do not intervene in or retain any of your data information.</string>
+	<string name="first_paragraph2">Authenticator provides a secure and convenient method for safeguarding your online information.</string>
+
+	<string name="second_title">Firebase Integration</string>
+	<string name="second_paragraph">Our application seamlessly integrates with Firebase, automatically creating backups to mitigate the risk of data loss due to device misplacement or when transitioning to a new device.</string>
+
+	<string name="third_title">Cross-Device Synchronization</string>
+	<string name="third_paragraph">Effortlessly synchronize all your devices for a unified experience.</string>
+
+	<string name="fourth_title">Biometric Security</string>
+	<string name="fourth_paragraph">Securely unlock the app using TouchID and FaceID for added convenience.</string>
+
+	<string name="fifth_title">Google Authenticator Integration</string>
+	<string name="fifth_paragraph">Easily and securely import your accounts from Google Authenticator, supporting a wide array of popular services, including Facebook, Coinbase, Amazon, Gmail, Instagram, Roblox, and many others.</string>
+
+	<string name="sixth_title">Authenticator App Features:</string>
+	<string name="sixth_paragraph1">Account Security: Add accounts by scanning QR codes or entering details manually.</string>
+	<string name="sixth_paragraph2">Password Protection: Manage and securely store your account passwords.</string>
+	<string name="sixth_paragraph3">2FA Backup and Sync: Safeguard your 2FA accounts with iCloud backup and synchronization.</string>
+	<string name="sixth_paragraph4">Biometric Authentication: Unlock the app seamlessly with TouchID and FaceID.</string>
+	<string name="sixth_paragraph5">Google Authenticator Data Import: Effortlessly import data from Google Authenticator.</string>
+
+	<string name="seventh_title">About Subscriptions:</string>
+	<string name="seventh_paragraph1">Payment will be charged to your iTunes Account upon confirmation of purchase.</string>
+	<string name="seventh_paragraph2">Subscriptions automatically renew unless auto-renewal is turned off at least 24 hours before the current period ends.</string>
+	<string name="seventh_paragraph3">Account renewal charges are made within 24 hours before the end of the current period, specifying the renewal cost.</string>
+	<string name="seventh_paragraph4">Users can manage subscriptions and turn off auto-renewal through Account Settings post-purchase.</string>
+	<string name="seventh_paragraph5">Rest assured, we do not store any of your data. All information is stored and encrypted on your device. Upon application deletion, data is completely erased, aligning with our commitment to your privacy.</string>
+
+	<string name="eighth_title">VIP Membership Benefits:</string>
+	<string name="eighth_paragraph">As a VIP member, you gain access to the Sync and Backup feature, facilitating data synchronization and storage across multiple devices and iCloud. We highly recommend utilizing this feature.</string>
+
+	<string name="ninth_title">Contact Us:</string>
+	<string name="ninth_paragraph">For any inquiries regarding our Terms of Use, practices on this site, or your interactions with our apps, please feel free to contact us at: johndoe@gmail.com.</string>
+
+	<!--Policy Texts-->
+
+	<string name="first">Our Privacy Policy describes the information collected by our TuatTran Studios, and our partners, through our mobile applications and the use of the information.</string>
+	<string name="second">What third parties collect via our apps</string>
+	<string name="third">We receive some information automatically when you use our Apps. This includes data about your device, software, operating system, the language you’ve set for your Device, advertising IDs for advertisement tracking (“Advertising IDs”) and your IP address.</string>
+	<string name="fourth">We collect personal information that you voluntarily provide to us (for example, the email you sign in to the app, the email address you give us when you submit your web or email support request. we).</string>
+	<string name="fifth">When you make in-app purchases in the our Games or App, we do not collect or have any access to your name and billing information. This information is collected and stored by your platform (Android’s Google Play) or your platform’s payment processor.</string>
+	<string name="sixth">Few of our apps might use Google Analytics (third party scripts) that collect the following information and might (also) store such information as a cookie on the device you use to access our Apps:</string>
+
+	<string name="analytics">Google Analytics:</string>
+	<string name="analytics_one">Demographics (browser language, country, city);</string>
+	<string name="analytics_two">System information (browser, OS, service provider);</string>
+	<string name="analytics_three">Mobile (OS, service provider, screen resolution);</string>
+	<string name="analytics_four">Site behaviour (which pages users visit, duration of visit);</string>
+	<string name="analytics_five">For more information about our partners’ practices, please visit the following links:</string>
+	<string name="analytics_six">.https://www.google.com/policies/privacy/partners/</string>
+
+	<string name="analytics_how">How we use this information collected in our application</string>
+	<string name="analytics_paragraph">We collect this Information to improve performance and reliability of our App and to get a better understanding of what users in general prefer. We do not link any of this Information in any way to individuals or any other information we might obtain. We do not share, sell or in any other way give other persons or companies. We don’t rent or sell your email address.</string>
+
+	<string name="change">Changes to this privacy policy</string>
+	<string name="change_paragraph">Our Team of developers has the discretion to update this privacy policy at any time. When we do, we will revise the updated date at the bottom of this page. We encourage Users to frequently check this page for any changes to stay informed about how we are helping to protect the personal information we collect. You acknowledge and agree that it is your responsibility to review this privacy policy periodically and become aware of modifications.</string>
+
+	<string name="contact">Contacting us</string>
+	<string name="contact_paragraph">If you have any questions about this Privacy Policy, the practices of this site, or your dealings with our Apps, please contact us at:</string>
+	<string name="contact_email">johndoe@gmail.com</string>
+	<string name="update_date">Last Updated : 03/03/2024</string>
+	
 </resources>
