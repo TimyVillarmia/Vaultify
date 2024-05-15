@@ -78,6 +78,8 @@ namespace Vaultify.Droid.Common
             return new Adapter1ViewHolder(itemView);
         }
 
+
+
         public override int ItemCount => cardList.Count;
     }
 

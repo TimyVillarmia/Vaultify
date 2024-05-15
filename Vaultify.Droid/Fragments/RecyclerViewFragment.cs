@@ -17,6 +17,7 @@ using AndroidX.AppCompat.App;
 using Vaultify.Droid.Activities;
 using Firebase.Firestore;
 using Firebase.Auth;
+using AndroidX.CardView.Widget;
 
 namespace Vaultify.Droid.Fragments
 {
@@ -59,7 +60,6 @@ namespace Vaultify.Droid.Fragments
             //((ActivityHome)Activity).SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             //((ActivityHome)Activity).SupportActionBar.SetDisplayShowHomeEnabled(true);
 
-
             // Assign employeelist to ItemAdapter
             itemAdapter = new Adapter1(cardlist);
             // Set the LayoutManager that
@@ -72,6 +72,10 @@ namespace Vaultify.Droid.Fragments
             // recyclerview to inflate the items.
             recyclerView.SetAdapter(itemAdapter);
         }
+
+
+
+
         private void FetchDataListen()
         {
             db.Collection(ContentMainFragment.QueryString).WhereEqualTo("UID", user.Uid).AddSnapshotListener(this);
@@ -97,7 +101,9 @@ namespace Vaultify.Droid.Fragments
                 {
                     CardModel cardmodel = new CardModel();
 
-                    switch (ContentMainFragment.QueryString)
+                    var query = ContentMainFragment.QueryString;
+
+                    switch (query)
                     {
                         case "AllItems":
                             //cardmodel.Row_Headline = item.Get("Website").ToString();
