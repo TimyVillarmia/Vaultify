@@ -13,6 +13,8 @@ namespace Vaultify.Droid.Common.Models
 {
     public class CardModel
     {
+
+        public string Id { get; set; }
         public string Row_Headline { get; set; }
         public string Row_SubHeadline { get; set; }
         public string Row_Image { get; set; }

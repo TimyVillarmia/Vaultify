@@ -18,11 +18,16 @@ using Vaultify.Droid.Activities;
 using Firebase.Firestore;
 using Firebase.Auth;
 using AndroidX.CardView.Widget;
+using AndroidX.Activity.ContextAware;
+using Google.Android.Material.Snackbar;
+using Android.Gms.Tasks;
+using System.Threading.Tasks;
+using static Android.Icu.Text.Transliterator;
 
 namespace Vaultify.Droid.Fragments
 {
 
-    public class RecyclerViewFragment : Fragment, Firebase.Firestore.IEventListener
+    public class RecyclerViewFragment : Fragment, Firebase.Firestore.IEventListener, IOnSuccessListener, IOnFailureListener
     {
 
         List<CardModel> cardlist = new List<CardModel>();
@@ -43,7 +48,7 @@ namespace Vaultify.Droid.Fragments
             FetchDataListen();
         }
 
-    
+
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
@@ -51,7 +56,7 @@ namespace Vaultify.Droid.Fragments
             return view;
         }
 
-        
+
 
         public override void OnViewCreated(View view, Bundle savedInstanceState)
         {
@@ -74,8 +79,28 @@ namespace Vaultify.Droid.Fragments
         }
 
 
+        int group_id;
+        public override bool OnContextItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case 1:
+                    group_id = item.GroupId;
+                    RemoveDataListen(cardlist[item.GroupId].Id);
+                    break;
+                case 2:
+                    break;
+            }
 
+            return true;
+        }
+        private void RemoveDataListen(string document_id)
+        {
+            db.Collection(ContentMainFragment.QueryString).Document(document_id).Delete()
+                .AddOnSuccessListener(this)
+                .AddOnFailureListener(this);
 
+        }
         private void FetchDataListen()
         {
             db.Collection(ContentMainFragment.QueryString).WhereEqualTo("UID", user.Uid).AddSnapshotListener(this);
@@ -102,25 +127,27 @@ namespace Vaultify.Droid.Fragments
                     CardModel cardmodel = new CardModel();
 
                     var query = ContentMainFragment.QueryString;
-
                     switch (query)
                     {
                         case "AllItems":
-                            //cardmodel.Row_Headline = item.Get("Website").ToString();
-                            //cardmodel.Row_SubHeadline = item.Get("Email").ToString();
-                            //cardmodel.Row_Image = item.Get("Website").ToString();
-                            //break;
+                        //cardmodel.Row_Headline = item.Get("Website").ToString();
+                        //cardmodel.Row_SubHeadline = item.Get("Email").ToString();
+                        //cardmodel.Row_Image = item.Get("Website").ToString();
+                        //break;
                         case "Notes":
+                            cardmodel.Id = item.Id;
                             cardmodel.Row_Headline = item.Get("Title").ToString();
                             cardmodel.Row_SubHeadline = item.Get("Content").ToString();
                             cardmodel.Row_Image = "Notes";
                             break;
                         case "Cards":
+                            cardmodel.Id = item.Id;
                             cardmodel.Row_Headline = item.Get("Type").ToString();
                             cardmodel.Row_SubHeadline = item.Get("Account Holder").ToString();
                             cardmodel.Row_Image = item.Get("Type").ToString();
                             break;
                         case "Logins":
+                            cardmodel.Id = item.Id;
                             cardmodel.Row_Headline = item.Get("Website").ToString();
                             cardmodel.Row_SubHeadline = item.Get("Email").ToString();
                             cardmodel.Row_Image = item.Get("Website").ToString();
@@ -142,6 +169,21 @@ namespace Vaultify.Droid.Fragments
             }
 
 
+        }
+
+        public void OnSuccess(Java.Lang.Object result)
+        {
+            itemAdapter.NotifyDataSetChanged();
+ 
+
+            Toast.MakeText(Activity, "Successfully deleted", ToastLength.Short).Show();
+            Log.Debug("X", "DocumentSnapshot successfully deleted!");
+        }
+
+        public void OnFailure(Java.Lang.Exception e)
+        {
+            Toast.MakeText(Activity, "Something went wrong", ToastLength.Short).Show();
+            Log.Debug("X", "Error deleting document", e);
         }
     }
 }

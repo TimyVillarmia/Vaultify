@@ -68,6 +68,7 @@ namespace Vaultify.Droid.Common
         public static async void FirestoreCloudInsertDB(FirebaseFirestore db, string collection, HashMap payload)
         {
             DocumentReference docRef = db.Collection(collection).Document();
+            payload.Put("Id", docRef.Id);
             await docRef.Set(payload);
         }
 

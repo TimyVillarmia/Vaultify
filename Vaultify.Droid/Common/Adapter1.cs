@@ -14,6 +14,7 @@ using Android.Views;
 using static Java.Util.Jar.Attributes;
 using Square.Picasso;
 using Vaultify.Droid.Fragments;
+using AndroidX.CardView.Widget;
 
 namespace Vaultify.Droid.Common
 {
@@ -83,17 +84,35 @@ namespace Vaultify.Droid.Common
         public override int ItemCount => cardList.Count;
     }
 
-    public class Adapter1ViewHolder : ViewHolder
+
+
+
+    public class Adapter1ViewHolder : ViewHolder, View.IOnCreateContextMenuListener
     {
         public TextView headline;
         public TextView subheadline;
         public ImageView logo;
+        public CardView cardView_recyclerItem;
+
+
 
         public Adapter1ViewHolder(View itemView) : base(itemView)
         {
             headline = (TextView)itemView.FindViewById(Resource.Id.textView_logoname);
             subheadline = (TextView)itemView.FindViewById(Resource.Id.textView_preview);
             logo = (ImageView)itemView.FindViewById(Resource.Id.imageView_logo);
+            cardView_recyclerItem = (CardView)itemView.FindViewById(Resource.Id.cardView_recyclerItem);
+            cardView_recyclerItem.SetOnCreateContextMenuListener(this);
+
         }
+
+        public void OnCreateContextMenu(IContextMenu menu, View v, IContextMenuContextMenuInfo menuInfo)
+        {
+            menu.Add(BindingAdapterPosition, 1, 0, "Delete");
+            menu.Add(BindingAdapterPosition, 2, 1, "Edit");
+        }
+
     }
+
+  
 }
