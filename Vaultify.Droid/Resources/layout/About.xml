@@ -16,7 +16,7 @@
 
             <ImageView
                 android:clickable="true"
-                android:id="@+id/policy_back"
+                android:id="@+id/about_back"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/goback"
@@ -26,7 +26,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Privacy"
+                android:text="About"
                 android:gravity="center"
                 android:textColor="@color/vaultify_colorOnPrimary"
                 style="@style/TextAppearance.Vaultify.Headline3"
@@ -34,7 +34,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Policy"
+                android:text="Application"
                 android:gravity="center"
                 android:textColor="@color/vaultify_colorOnPrimary"
                 style="@style/TextAppearance.Vaultify.Headline3"
@@ -64,33 +64,34 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="“We respect and value your privacy”"
+                    android:text="“We uphold and prioritize your privacy.”"
                     android:textColor="@color/vaultify_colorOnSecondary"
                     android:textStyle="bold"
-                    style="@style/TextAppearance.Vaultify.Headline6"
+                    style="@style/TextAppearance.Vaultify.Body2"
                     android:textAlignment="center"
                     android:layout_marginTop="10dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/first"
+                    android:text="@string/first_title"
                     android:textColor="@color/vaultify_colorOnSecondary"
+                    android:textStyle="bold"
                     style="@style/TextAppearance.Vaultify.Body1"
-                    android:layout_marginTop="50dp"/>
+                    android:layout_marginTop="15dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/second"
+                    android:text="@string/first_paragraph1"
                     android:textColor="@color/vaultify_colorOnSecondary"
                     style="@style/TextAppearance.Vaultify.Body1"
-                    android:layout_marginTop="40dp"/>
+                    android:layout_marginTop="10dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/third"
+                    android:text="@string/first_paragraph2"
                     android:textColor="@color/vaultify_colorOnSecondary"
                     style="@style/TextAppearance.Vaultify.Body1"
                     android:layout_marginTop="10dp"/>
@@ -98,147 +99,214 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/fourth"
+                    android:text="@string/second_title"
                     android:textColor="@color/vaultify_colorOnSecondary"
+                    android:textStyle="bold"
                     style="@style/TextAppearance.Vaultify.Body1"
                     android:layout_marginTop="60dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/fifth"
+                    android:text="@string/second_paragraph"
                     android:textColor="@color/vaultify_colorOnSecondary"
+                    style="@style/TextAppearance.Vaultify.Body1"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/third_title"
+                    android:textColor="@color/vaultify_colorOnSecondary"
+                    android:textStyle="bold"
                     style="@style/TextAppearance.Vaultify.Body1"
                     android:layout_marginTop="30dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/sixth"
+                    android:text="@string/third_paragraph"
                     android:textColor="@color/vaultify_colorOnSecondary"
+                    style="@style/TextAppearance.Vaultify.Body1"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fourth_title"
+                    android:textColor="@color/vaultify_colorOnSecondary"
+                    android:textStyle="bold"
                     style="@style/TextAppearance.Vaultify.Body1"
                     android:layout_marginTop="30dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/analytics"
+                    android:text="@string/fourth_paragraph"
                     android:textColor="@color/vaultify_colorOnSecondary"
                     style="@style/TextAppearance.Vaultify.Body1"
-                    android:layout_marginTop="50dp"/>
+                    android:layout_marginTop="10dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/analytics_one"
+                    android:text="@string/fifth_title"
                     android:textColor="@color/vaultify_colorOnSecondary"
+                    android:textStyle="bold"
                     style="@style/TextAppearance.Vaultify.Body1"
-                    android:layout_marginTop="20dp"/>
+                    android:layout_marginTop="30dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/analytics_two"
+                    android:text="@string/fifth_paragraph"
                     android:textColor="@color/vaultify_colorOnSecondary"
                     style="@style/TextAppearance.Vaultify.Body1"
-                    android:layout_marginTop="20dp"/>
+                    android:layout_marginTop="10dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/analytics_three"
+                    android:text="@string/sixth_title"
                     android:textColor="@color/vaultify_colorOnSecondary"
+                    android:textStyle="bold"
                     style="@style/TextAppearance.Vaultify.Body1"
-                    android:layout_marginTop="20dp"/>
+                    android:layout_marginTop="60dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/analytics_four"
+                    android:text="@string/sixth_paragraph1"
                     android:textColor="@color/vaultify_colorOnSecondary"
                     style="@style/TextAppearance.Vaultify.Body1"
-                    android:layout_marginTop="20dp"/>
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/analytics_five"
+                    android:text="@string/sixth_paragraph2"
                     android:textColor="@color/vaultify_colorOnSecondary"
                     style="@style/TextAppearance.Vaultify.Body1"
-                    android:layout_marginTop="20dp"/>
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/analytics_six"
+                    android:text="@string/sixth_paragraph3"
                     android:textColor="@color/vaultify_colorOnSecondary"
                     style="@style/TextAppearance.Vaultify.Body1"
-                    android:layout_marginTop="20dp"/>
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/analytics_how"
+                    android:text="@string/sixth_paragraph4"
                     android:textColor="@color/vaultify_colorOnSecondary"
                     style="@style/TextAppearance.Vaultify.Body1"
-                    android:layout_marginTop="40dp"/>
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/analytics_paragraph"
+                    android:text="@string/sixth_paragraph5"
                     android:textColor="@color/vaultify_colorOnSecondary"
                     style="@style/TextAppearance.Vaultify.Body1"
-                    android:layout_marginTop="20dp"/>
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/change"
+                    android:text="@string/seventh_title"
                     android:textColor="@color/vaultify_colorOnSecondary"
+                    android:textStyle="bold"
                     style="@style/TextAppearance.Vaultify.Body1"
-                    android:layout_marginTop="40dp"/>
+                    android:layout_marginTop="60dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/change_paragraph"
+                    android:text="@string/seventh_paragraph1"
                     android:textColor="@color/vaultify_colorOnSecondary"
                     style="@style/TextAppearance.Vaultify.Body1"
-                    android:layout_marginTop="20dp"/>
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/contact"
+                    android:text="@string/seventh_paragraph2"
                     android:textColor="@color/vaultify_colorOnSecondary"
                     style="@style/TextAppearance.Vaultify.Body1"
-                    android:layout_marginTop="40dp"/>
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/contact_paragraph"
+                    android:text="@string/seventh_paragraph3"
                     android:textColor="@color/vaultify_colorOnSecondary"
                     style="@style/TextAppearance.Vaultify.Body1"
-                    android:layout_marginTop="20dp"/>
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/contact_email"
+                    android:text="@string/seventh_paragraph4"
                     android:textColor="@color/vaultify_colorOnSecondary"
                     style="@style/TextAppearance.Vaultify.Body1"
-                    android:layout_marginTop="40dp"/>
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/update_date"
+                    android:text="@string/seventh_paragraph5"
                     android:textColor="@color/vaultify_colorOnSecondary"
                     style="@style/TextAppearance.Vaultify.Body1"
-                    android:layout_marginTop="20dp"/>
-            
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/eighth_title"
+                    android:textColor="@color/vaultify_colorOnSecondary"
+                    android:textStyle="bold"
+                    style="@style/TextAppearance.Vaultify.Body1"
+                    android:layout_marginTop="60dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/eighth_paragraph"
+                    android:textColor="@color/vaultify_colorOnSecondary"
+                    style="@style/TextAppearance.Vaultify.Body1"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ninth_title"
+                    android:textColor="@color/vaultify_colorOnSecondary"
+                    android:textStyle="bold"
+                    style="@style/TextAppearance.Vaultify.Body1"
+                    android:layout_marginTop="60dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ninth_paragraph"
+                    android:textColor="@color/vaultify_colorOnSecondary"
+                    style="@style/TextAppearance.Vaultify.Body1"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"/>
+
             </LinearLayout>
 
         </ScrollView>
