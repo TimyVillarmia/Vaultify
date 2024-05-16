@@ -203,6 +203,8 @@ namespace Vaultify.Droid.Activities
             int id = item.ItemId;
             if (id == Resource.Id.action_settings)
             {
+                Intent settings = new Intent(this, typeof(SettingsActivity));
+                StartActivity(settings);
                 return true;
             }
             else if (id == Resource.Id.homeAsUp)
@@ -318,6 +320,13 @@ namespace Vaultify.Droid.Activities
             else if (id == Resource.Id.financialcards)
             {
                 ReplaceFragment(new RecyclerViewFragment(), "Recycler");
+                toolbar.SetTitle(Resource.String.appbar_title_credits);
+                ContentMainFragment.QueryString = "Cards";
+
+            }
+            else if (id == Resource.Id.settings)
+            {
+                StartActivity(new Intent(Application.Context, typeof(SettingsActivity)));
                 toolbar.SetTitle(Resource.String.appbar_title_credits);
                 ContentMainFragment.QueryString = "Cards";
 

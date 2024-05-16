@@ -64,10 +64,17 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activities\ActivityAbout.cs" />
+    <Compile Include="Activities\ActivityDelSuccess.cs" />
+    <Compile Include="Activities\ActivityFeedSuccess.cs" />
     <Compile Include="Activities\ActivityHome.cs" />
+    <Compile Include="Activities\ActivityPolicy.cs" />
     <Compile Include="Activities\ActivityRecovery.cs" />
+    <Compile Include="Activities\ActivitySentFeed.cs" />
     <Compile Include="Activities\ActivitySignIn.cs" />
     <Compile Include="Activities\ActivitySignUp.cs" />
+    <Compile Include="Activities\ActivityTerms.cs" />
+    <Compile Include="Activities\SettingsActivity.cs" />
     <Compile Include="Activities\SplashActivity.cs" />
     <Compile Include="Common\Adapter1.cs" />
     <Compile Include="Common\FirebaseRepository.cs" />
@@ -394,6 +401,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\menu\recycler_item_menu.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\About.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

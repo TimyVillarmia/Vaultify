@@ -5,9 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:background="@drawable/bg"
-    android:paddingHorizontal="16dp">
+    android:background="@drawable/bg">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,6 +21,8 @@
             android:layout_marginRight="16dp">
 
             <ImageView
+                android:clickable="true"
+                android:id="@+id/feedgoback"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/goback"
@@ -34,7 +34,7 @@
                 android:gravity="center_vertical"
                 style="@style/TextAppearance.Vaultify.Headline5"
                 android:layout_alignParentEnd="true"
-                android:layout_marginLeft="260dp"
+                android:layout_marginLeft="255dp"
                 android:layout_marginTop="3dp"/>
 
         </RelativeLayout>
@@ -47,7 +47,9 @@
         android:paddingHorizontal="20dp"
         android:paddingVertical="32dp"
         android:background="@drawable/container"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="60dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -98,7 +100,7 @@
             android:paddingBottom="200dp" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnsendcode"
+            android:id="@+id/btnsendfeed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/TextAppearance.Vaultify.Button"

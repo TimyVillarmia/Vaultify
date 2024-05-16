@@ -41,7 +41,7 @@
             android:textStyle="bold"/>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btncontinue"
+            android:id="@+id/btncontinue_feed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/vaultify_colorOnSecondary"
