@@ -17,6 +17,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Vaultify.Droid.Common.Models;
+using Vaultify.Droid.Fragments;
 
 namespace Vaultify.Droid.Common
 {
@@ -72,6 +73,12 @@ namespace Vaultify.Droid.Common
             await docRef.Set(payload);
         }
 
+        public static async void FirestoreCloudUpdateDB(FirebaseFirestore db, string collection, string document_id, Dictionary<string, Java.Lang.Object> updates)
+        {
+
+            DocumentReference docRef = db.Collection(collection).Document(document_id);
+            await docRef.Update(updates);
+        }
         public static DocumentReference FetchData(FirebaseFirestore db, string collection, string user_id)
         {
             DocumentReference docRef = db.Collection(collection).Document(user_id);

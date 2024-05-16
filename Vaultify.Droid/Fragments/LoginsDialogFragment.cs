@@ -1,4 +1,5 @@
 ﻿using Android.Content;
+using Android.Gms.Tasks;
 using Android.OS;
 using Android.Runtime;
 using Android.Util;
@@ -7,17 +8,21 @@ using Android.Widget;
 using AndroidX.Fragment.App;
 using AndroidX.RecyclerView.Widget;
 using Firebase.Auth;
+using Firebase.Firestore;
 using Google.Android.Material.Button;
 using Java.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using Vaultify.Droid.Activities;
 using Vaultify.Droid.Common;
+using Vaultify.Droid.Common.Models;
 
 namespace Vaultify.Droid.Fragments
 {
-    public class LoginsDialogFragment : DialogFragment
+    public class LoginsDialogFragment : DialogFragment, Firebase.Firestore.IEventListener
     {
 
         EditText editText_newemail;
@@ -26,6 +31,11 @@ namespace Vaultify.Droid.Fragments
 
         FirebaseAuth auth;
         FirebaseUser user;
+        FirebaseFirestore db;
+
+        string state;
+        string current_document;
+        ArrayAdapter adapter;
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -33,7 +43,15 @@ namespace Vaultify.Droid.Fragments
             // Create your fragment here
             auth = FirebaseRepository.getFirebaseAuth();
             user = auth.CurrentUser;
+            db = FirebaseRepository.getFirebaseDB();
 
+
+            Bundle bundle = this.Arguments;
+            if (bundle != null)
+            {
+                state = bundle.GetString("State", "Create");
+                current_document = bundle.GetString("Current_Document", "");
+            }
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -56,11 +74,23 @@ namespace Vaultify.Droid.Fragments
 
 
             spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
-            var adapter = ArrayAdapter.CreateFromResource(
+            adapter = ArrayAdapter.CreateFromResource(
                     Context, Resource.Array.websites_array, Android.Resource.Layout.SimpleSpinnerItem);
 
             adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             spinner.Adapter = adapter;
+
+            if (state == "Edit")
+            {
+                btnConfirm.Text = "Save";
+                FetchDataListen(current_document);
+
+            }
+            else
+            {
+                btnConfirm.Text = "Confirm";
+
+            }
 
 
             btnCancel.Click += (o, e) =>
@@ -71,29 +101,88 @@ namespace Vaultify.Droid.Fragments
 
         }
 
+        private void FetchDataListen(string document_id)
+        {
+            db.Collection("Logins").Document(document_id).AddSnapshotListener(this);
+
+
+        }
+
+        public void OnEvent(Java.Lang.Object obj, FirebaseFirestoreException error)
+        {
+            var snapshot = (DocumentSnapshot)obj;
+
+            if (snapshot.Exists())
+            {
+                Log.Debug("TAG", snapshot.Id);
+                editText_newemail.Text = snapshot.Get("Email").ToString();
+                editText_newpassword.Text = snapshot.Get("Password").ToString();
+                spinner.SetSelection(adapter.GetPosition(snapshot.Get("Website").ToString()));
+
+            }
+            else
+            {
+                Log.Debug("Document {0} does not exist!", snapshot.Id);
+
+            }
+        }
+
+
         private void BtnConfirm_Click(object sender, EventArgs e)
         {
-            HashMap logins = new HashMap();
-            logins.Put("UID", user.Uid);
-            logins.Put("Email", editText_newemail.Text);
-            logins.Put("Password", editText_newpassword.Text);
-            logins.Put("Website", spinner.SelectedItem);
+
+            if (state == "Edit")
+            {
+                HashMap logins = new HashMap();
+                logins.Put("UID", user.Uid);
+                logins.Put("Email", editText_newemail.Text);
+                logins.Put("Password", editText_newpassword.Text);
+                logins.Put("Website", spinner.SelectedItem);
+
+                Dictionary<string, Java.Lang.Object> updates = new Dictionary<string, Java.Lang.Object>
+                {
+                    { "Email", editText_newemail.Text },
+                    { "Password", editText_newpassword.Text },
+                    { "Website",  spinner.SelectedItem }
+                };
+
+                FirebaseRepository.FirestoreCloudUpdateDB(
+                    FirebaseRepository.getFirebaseDB(),
+                    "Logins",
+                    current_document,
+                    updates);
+
+                Toast.MakeText(Context, "Successfully edited", ToastLength.Long).Show();
+            }
+            else
+            {
+                HashMap logins = new HashMap();
+                logins.Put("UID", user.Uid);
+                logins.Put("Email", editText_newemail.Text);
+                logins.Put("Password", editText_newpassword.Text);
+                logins.Put("Website", spinner.SelectedItem);
 
 
-            FirebaseRepository.FirestoreCloudInsertDB(
-                FirebaseRepository.getFirebaseDB(),
-                "Logins",
-                logins);
+                FirebaseRepository.FirestoreCloudInsertDB(
+                    FirebaseRepository.getFirebaseDB(),
+                    "Logins",
+                    logins);
 
-            Toast.MakeText(Context, "Successfully added to Logins", ToastLength.Long).Show();
+                Toast.MakeText(Context, "Successfully added to Logins", ToastLength.Long).Show();
+            }
+
             Activity.SupportFragmentManager.BeginTransaction().Remove(this).Commit();
 
 
         }
 
+
+
         private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
 
         }
+
+     
     }
 }

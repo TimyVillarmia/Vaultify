@@ -23,6 +23,7 @@ using Google.Android.Material.Snackbar;
 using Android.Gms.Tasks;
 using System.Threading.Tasks;
 using static Android.Icu.Text.Transliterator;
+using Java.Util;
 
 namespace Vaultify.Droid.Fragments
 {
@@ -79,16 +80,42 @@ namespace Vaultify.Droid.Fragments
         }
 
 
-        int group_id;
+
+
         public override bool OnContextItemSelected(IMenuItem item)
         {
+            Bundle bundle = new Bundle();
+    
+
             switch (item.ItemId)
             {
                 case 1:
-                    group_id = item.GroupId;
                     RemoveDataListen(cardlist[item.GroupId].Id);
                     break;
                 case 2:
+
+                    if (ContentMainFragment.QueryString == "Logins")
+                    {
+                        LoginsDialogFragment fragment = new LoginsDialogFragment();
+                        bundle.PutString("State", "Edit");
+                        bundle.PutString("Current_Document", cardlist[item.GroupId].Id);
+                        fragment.Arguments = bundle;
+                        ((ActivityHome)Activity).ShowDialog(fragment);
+
+                    }
+
+
+                    if (ContentMainFragment.QueryString == "Notes")
+                        //((ActivityHome)Activity).ShowDialog(new NoteDialogFragment());
+                        return true;
+
+                    if (ContentMainFragment.QueryString == "Cards")
+                        //((ActivityHome)Activity).ShowDialog(new CreditDialogFragment());
+                        return true;
+
+
+
+
                     break;
             }
 
@@ -101,6 +128,8 @@ namespace Vaultify.Droid.Fragments
                 .AddOnFailureListener(this);
 
         }
+
+
         private void FetchDataListen()
         {
             db.Collection(ContentMainFragment.QueryString).WhereEqualTo("UID", user.Uid).AddSnapshotListener(this);
@@ -174,7 +203,7 @@ namespace Vaultify.Droid.Fragments
         public void OnSuccess(Java.Lang.Object result)
         {
             itemAdapter.NotifyDataSetChanged();
- 
+
 
             Toast.MakeText(Activity, "Successfully deleted", ToastLength.Short).Show();
             Log.Debug("X", "DocumentSnapshot successfully deleted!");
