@@ -103,15 +103,23 @@ namespace Vaultify.Droid.Fragments
                         ((ActivityHome)Activity).ShowDialog(fragment);
 
                     }
-
-
                     if (ContentMainFragment.QueryString == "Notes")
-                        //((ActivityHome)Activity).ShowDialog(new NoteDialogFragment());
-                        return true;
+                    {
+                        NoteDialogFragment fragment = new NoteDialogFragment();
+                        bundle.PutString("State", "Edit");
+                        bundle.PutString("Current_Document", cardlist[item.GroupId].Id);
+                        fragment.Arguments = bundle;
+                        ((ActivityHome)Activity).ShowDialog(fragment);
+                    }
 
                     if (ContentMainFragment.QueryString == "Cards")
-                        //((ActivityHome)Activity).ShowDialog(new CreditDialogFragment());
-                        return true;
+                    {
+                        CreditDialogFragment fragment = new CreditDialogFragment();
+                        bundle.PutString("State", "Edit");
+                        bundle.PutString("Current_Document", cardlist[item.GroupId].Id);
+                        fragment.Arguments = bundle;
+                        ((ActivityHome)Activity).ShowDialog(fragment);
+                    }
 
 
 

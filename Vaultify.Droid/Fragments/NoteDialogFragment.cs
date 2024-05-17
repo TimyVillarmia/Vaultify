@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using AndroidX.Fragment.App;
 using Firebase.Auth;
+using Firebase.Firestore;
 using Firebase.Firestore.Auth;
 using Google.Android.Material.Button;
 using Java.Util;
@@ -18,13 +19,18 @@ using Vaultify.Droid.Common;
 
 namespace Vaultify.Droid.Fragments
 {
-    public class NoteDialogFragment : DialogFragment
+    public class NoteDialogFragment : DialogFragment, Firebase.Firestore.IEventListener
     {
         FirebaseAuth auth;
         FirebaseUser user;
+        FirebaseFirestore db;
+
 
         TextView editText_notetitle;
         TextView editText_noteContent;
+
+        string state;
+        string current_document;
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -32,6 +38,15 @@ namespace Vaultify.Droid.Fragments
             // Create your fragment here
             auth = FirebaseRepository.getFirebaseAuth();
             user = auth.CurrentUser;
+            db = FirebaseRepository.getFirebaseDB();
+
+
+            Bundle bundle = this.Arguments;
+            if (bundle != null)
+            {
+                state = bundle.GetString("State", "Create");
+                current_document = bundle.GetString("Current_Document", "");
+            }
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -49,6 +64,18 @@ namespace Vaultify.Droid.Fragments
             editText_notetitle = (TextView)view.FindViewById(Resource.Id.editText_notetitle);
             editText_noteContent = (TextView)view.FindViewById(Resource.Id.editText_noteContent);
 
+            if (state == "Edit")
+            {
+                btnConfirm.Text = "Save";
+                FetchDataListen(current_document);
+
+            }
+            else
+            {
+                btnConfirm.Text = "Confirm";
+
+            }
+
             btnCancel.Click += (o, e) =>
             {
                 Activity.SupportFragmentManager.BeginTransaction().Remove(this).Commit();
@@ -57,21 +84,70 @@ namespace Vaultify.Droid.Fragments
 
         }
 
+        private void FetchDataListen(string document_id)
+        {
+            db.Collection("Notes").Document(document_id).AddSnapshotListener(this);
+
+
+        }
+
+        public void OnEvent(Java.Lang.Object obj, FirebaseFirestoreException error)
+        {
+            var snapshot = (DocumentSnapshot)obj;
+
+            if (snapshot.Exists())
+            {
+                Log.Debug("TAG", snapshot.Id);
+                editText_notetitle.Text = snapshot.Get("Title").ToString();
+                editText_noteContent.Text = snapshot.Get("Content").ToString();
+
+            }
+            else
+            {
+                Log.Debug("Document {0} does not exist!", snapshot.Id);
+
+            }
+        }
+
         private void BtnConfirm_Click(object sender, EventArgs e)
         {
-            HashMap notes = new HashMap();
-            notes.Put("UID", user.Uid);
-            notes.Put("Title", editText_notetitle.Text);
-            notes.Put("Content", editText_noteContent.Text);
+            if (state == "Edit")
+            {
 
 
-            FirebaseRepository.FirestoreCloudInsertDB(
-                FirebaseRepository.getFirebaseDB(),
-                "Notes",
-                notes);
+                Dictionary<string, Java.Lang.Object> updates = new Dictionary<string, Java.Lang.Object>
+                {
+                    { "Title", editText_notetitle.Text },
+                    { "Content", editText_noteContent.Text },
+                };
 
-            Toast.MakeText(Context, "Successfully added to Notes", ToastLength.Long).Show();
+                FirebaseRepository.FirestoreCloudUpdateDB(
+                    FirebaseRepository.getFirebaseDB(),
+                    "Notes",
+                    current_document,
+                    updates);
+
+                Toast.MakeText(Context, "Successfully edited", ToastLength.Long).Show();
+            }
+            else
+            {
+                HashMap notes = new HashMap();
+                notes.Put("UID", user.Uid);
+                notes.Put("Title", editText_notetitle.Text);
+                notes.Put("Content", editText_noteContent.Text);
+
+
+                FirebaseRepository.FirestoreCloudInsertDB(
+                    FirebaseRepository.getFirebaseDB(),
+                    "Notes",
+                    notes);
+
+                Toast.MakeText(Context, "Successfully added to Notes", ToastLength.Long).Show();
+            }
+                
             Activity.SupportFragmentManager.BeginTransaction().Remove(this).Commit();
         }
+
+       
     }
 }

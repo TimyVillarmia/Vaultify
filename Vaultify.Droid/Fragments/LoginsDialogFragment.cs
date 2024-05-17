@@ -133,11 +133,6 @@ namespace Vaultify.Droid.Fragments
 
             if (state == "Edit")
             {
-                HashMap logins = new HashMap();
-                logins.Put("UID", user.Uid);
-                logins.Put("Email", editText_newemail.Text);
-                logins.Put("Password", editText_newpassword.Text);
-                logins.Put("Website", spinner.SelectedItem);
 
                 Dictionary<string, Java.Lang.Object> updates = new Dictionary<string, Java.Lang.Object>
                 {

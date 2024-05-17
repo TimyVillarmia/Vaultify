@@ -57,6 +57,18 @@ namespace Vaultify.Droid.Common
                 case "Tiktok":
                     img_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Ionicons_logo-tiktok.svg/512px-Ionicons_logo-tiktok.svg.png?20230423144016";
                     break;
+                case "Notes":
+                    img_url = "https://cdn-icons-png.freepik.com/512/4021/4021693.png";
+                    break;
+                case "Visa":
+                    img_url = "https://i.pinimg.com/originals/71/fb/1a/71fb1a228e533f9b9bec7164680e0979.png";
+                    break;
+                case "Mastercard":
+                    img_url = "https://banner2.cleanpng.com/20180802/xri/kisspng-logo-mastercard-vector-graphics-font-visa-mastercard-logo-png-photo-png-arts-5b634298cd58d5.9008352515332317688411.jpg";
+                    break;
+                case "American Express":
+                    img_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/1200px-American_Express_logo_%282018%29.svg.png";
+                    break;
             }
 
             if (!string.IsNullOrEmpty(img_url))
@@ -114,5 +126,5 @@ namespace Vaultify.Droid.Common
 
     }
 
-  
+
 }
